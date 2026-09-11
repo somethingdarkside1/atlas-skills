@@ -19,18 +19,16 @@ flowchart TB
   classDef done fill:#dcfce7,stroke:#16a34a,color:#14532d
 
   five-things["The five things"]:::decided
-  atlas-skill["/atlas"]:::sketched
-  interview-skill["/interview"]:::sketched
-  map-skill["/map"]:::sketched
-  plan-skill["/plan"]:::sketched
-  build-skill["/build"]:::sketched
-  review-skill["/review"]:::sketched
-  side-skills["/prototype /handoff /publish"]:::sketched
   packaging["Packaging and install"]:::sketched
+  side-skills["/prototype /handoff /publish"]:::sketched
+  subgraph core[Core loop]
+    direction LR
+    atlas-skill["/atlas"]:::sketched --> interview-skill["/interview"]:::sketched --> map-skill["/map"]:::sketched --> plan-skill["/plan"]:::sketched --> build-skill["/build"]:::sketched --> review-skill["/review"]:::sketched
+  end
 
-  five-things --> atlas-skill --> interview-skill --> map-skill --> plan-skill --> build-skill --> review-skill
+  five-things --> core
   five-things --> side-skills
-  packaging --> atlas-skill
+  packaging --> core
 ```
 
 ## Five things
