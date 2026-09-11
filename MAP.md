@@ -21,7 +21,7 @@ flowchart TB
 
   five-things["The five things"]:::decided
   packaging["Packaging and install"]:::sketched
-  side-skills["/prototype-it /park-it /publish-it"]:::sketched
+  side-skills["/prototype-it /park-it"]:::sketched
   subgraph core[Core loop]
     direction LR
     atlas-skill["/atlas"]:::sketched --> interview-skill["/interview-me"]:::sketched --> map-skill["/map-it"]:::sketched --> plan-skill["/plan-it"]:::sketched --> build-skill["/build-it"]:::sketched --> review-skill["/review-it"]:::sketched
@@ -67,9 +67,9 @@ Plan: none yet.
 ## Plan skill
 
 **Status:** sketched
-`/plan-it` turns a decided part into `plan/<part>/brief.md` and numbered task files with blocking edges, in one pass, then quizzes the human on granularity.
-Open questions: task file fields. Whether the brief needs user stories for non-software projects.
-Decisions: [0001](decisions/0001-local-files-are-the-truth.md).
+`/plan-it` turns a decided part into a brief and tasks with blocking edges, in one pass, then quizzes the human on granularity. Files in `plan/<part>/`, or a parent issue with sub-issues when the project tracks in GitHub.
+Open questions: whether the brief needs user stories for non-software projects.
+Decisions: [0001](decisions/0001-one-home-for-the-plan.md).
 Plan: none yet.
 
 ## Build skill
@@ -91,15 +91,15 @@ Plan: none yet.
 ## Side skills
 
 **Status:** sketched
-`/prototype-it` answers one question with a throwaway thing and files the verdict as a note. `/park-it` pauses into a dated note. `/publish-it` mirrors the plan to GitHub issues, one way, writing issue numbers back.
-Open questions: how `/publish-it` maps tasks to issues, dependencies, and a Project. Whether PR conventions belong in `/build-it` or `/publish-it`.
-Decisions: [0001](decisions/0001-local-files-are-the-truth.md).
+`/prototype-it` answers one question with a throwaway thing and files the verdict as a note. `/park-it` pauses into a dated note that `/atlas` resumes from.
+Open questions: none.
+Decisions: none yet.
 Plan: none yet.
 
 ## Packaging
 
 **Status:** sketched
 Flat `skills/<name>/` folders, a Claude plugin manifest, a skills.sh listing, a README that doubles as the docs page, and the blog post.
-Open questions: skill name collisions when installed flat next to other sets (suffix scheme under review).
+Open questions: none.
 Decisions: none yet.
 Plan: none yet.

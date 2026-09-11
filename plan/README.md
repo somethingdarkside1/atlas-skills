@@ -1,6 +1,8 @@
 # Plan
 
-One folder per part of the map. Each folder holds `brief.md` and numbered task files.
+Tracker: files
+
+The line above is set once by `/atlas` and read by `/plan-it`, `/build-it`, and `/review-it`. `files` means one folder per part below, holding `brief.md` and numbered tasks. `github owner/name` means the brief is a parent issue labelled `atlas:part`, each task is a sub-issue labelled `atlas:task`, blockers are native dependencies, and status is the issue state plus the Project's Status field. Nothing else in the project changes between the two.
 
 ```
 plan/
@@ -38,7 +40,6 @@ What this part deliberately leaves alone.
 **Delivers:** the complete slice this task makes true, from the user's point of view.
 **Blocked by:** none, or the tasks that gate this one: `02` in this part, `<part>/02` in another.
 **Status:** todo | doing | done
-**Issue:** empty until /publish fills it in with the GitHub issue number. When set, /build reads that issue's comments before starting.
 
 - [ ] Acceptance criterion, each one checkable by looking, running, or asking
 - [ ] Acceptance criterion
@@ -50,13 +51,4 @@ Filled in by /build: what was made, where it lives, what was verified.
 
 ## Review
 Filled in by /review: findings on each axis, or "clean".
-```
-
-## GitHub mirror
-
-Filled in by `/publish` the first time it runs. Everything else in this folder works without it.
-
-```md
-Repo: owner/name
-Project: the Project number, or none
 ```

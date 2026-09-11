@@ -44,8 +44,12 @@ One box on the map. A part has a status, a purpose, open questions, and links to
 _Avoid_: box, component, module, container, area
 
 **Plan**:
-The folder of work. One subfolder per part, holding a brief and its tasks.
-_Avoid_: backlog, tracker, issues, .scratch
+The home of the work: one folder per part holding a brief and its tasks, or the repo's GitHub issues when the project chose that at scaffold time.
+_Avoid_: backlog, tracker, .scratch
+
+**Home**:
+One of the five things: the single place a kind of truth lives. If it is true today it is in a home; if it was true on a date it is a note.
+_Avoid_: doc, artifact
 
 **Brief**:
 The written account of what a part must do and why, produced when the part is decided.
@@ -53,7 +57,7 @@ _Avoid_: spec, PRD, requirements
 
 **Task**:
 One file in a part's plan: a complete slice of work sized for one session, declaring which tasks block it.
-_Avoid_: ticket, issue (use only for the GitHub mirror), story
+_Avoid_: ticket, story (issue is the same thing in GitHub mode)
 
 **Ready**:
 The state of a task whose blocking tasks are all done. Ready tasks are what `/build` picks from.
