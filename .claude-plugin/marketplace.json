@@ -1,0 +1,7 @@
+{
+  "name": "atlas-skills",
+  "owner": { "name": "Vitali Liouti", "url": "https://github.com/somethingdarkside1" },
+  "plugins": [
+    { "name": "atlas-skills", "source": "./", "description": "Atlas: map it before you build it." }
+  ]
+}

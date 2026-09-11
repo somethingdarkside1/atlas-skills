@@ -43,8 +43,8 @@ Plan: none yet.
 ## Atlas skill
 
 **Status:** sketched
-`/atlas` reads the five things and says what to run next. On a fresh project it scaffolds them from templates and writes an eight-line block into `CLAUDE.md` or `AGENTS.md`.
-Open questions: final name for the scaffold-and-route skill (`/atlas` folds setup and next). Whether it asks one question when there is no README.
+`/atlas` reads the five things and prints five lines: parts by status, ready tasks, newest note, the next command. On a fresh project it scaffolds the five things from `skills/atlas/templates/`, writes the versioned block into `CLAUDE.md` or `AGENTS.md`, asks the tracker question when a GitHub remote exists, offers `git init` when there is no repo, and recommends `Merge: human` when the repo has more than one collaborator. Every later run is a status check: it never re-scaffolds, never re-asks, and reports a missing repo in one word.
+Open questions: whether it asks for a one-sentence purpose when there is no README. What it checks beyond status (decisions with no map link, tasks blocked by missing tasks).
 Decisions: none yet.
 Plan: none yet.
 

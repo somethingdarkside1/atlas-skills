@@ -1,0 +1,9 @@
+{
+  "name": "atlas-skills",
+  "version": "0.1.0",
+  "description": "Atlas: map it before you build it. Eight skills and five plain-Markdown files that take an idea from fuzzy to finished, in any domain.",
+  "author": { "name": "Vitali Liouti", "url": "https://github.com/somethingdarkside1" },
+  "repository": "https://github.com/somethingdarkside1/atlas-skills",
+  "license": "MIT",
+  "keywords": ["skills", "planning", "domain-modeling", "architecture", "interview", "mermaid"]
+}
