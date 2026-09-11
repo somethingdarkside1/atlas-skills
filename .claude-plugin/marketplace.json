@@ -1,7 +1,17 @@
 {
   "name": "atlas-skills",
-  "owner": { "name": "Vitali Liouti", "url": "https://github.com/somethingdarkside1" },
+  "owner": {
+    "name": "Vitali Liouti",
+    "url": "https://github.com/somethingdarkside1"
+  },
+  "metadata": {
+    "description": "Atlas: map it before you build it. Eight agent skills and five plain-Markdown files for any domain."
+  },
   "plugins": [
-    { "name": "atlas-skills", "source": "./", "description": "Atlas: map it before you build it." }
+    {
+      "name": "atlas-skills",
+      "source": "./",
+      "description": "Atlas: map it before you build it."
+    }
   ]
 }
