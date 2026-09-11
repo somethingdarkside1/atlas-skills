@@ -20,13 +20,13 @@ flowchart TB
   classDef done fill:#dcfce7,stroke:#16a34a,color:#14532d
 
   five-things["Five things"]:::decided
-  atlas-skill["Atlas skill"]:::sketched
-  interview-skill["Interview skill"]:::decided
-  map-skill["Map skill"]:::decided
-  plan-skill["Plan skill"]:::sketched
-  build-skill["Build skill"]:::sketched
-  review-skill["Review skill"]:::sketched
-  side-skills["Side skills"]:::sketched
+  atlas-skill["Atlas skill"]:::building
+  interview-skill["Interview skill"]:::building
+  map-skill["Map skill"]:::building
+  plan-skill["Plan skill"]:::building
+  build-skill["Build skill"]:::building
+  review-skill["Review skill"]:::building
+  side-skills["Side skills"]:::building
   packaging["Packaging"]:::sketched
 
   five-things --> interview-skill
@@ -51,16 +51,16 @@ Plan: none yet.
 
 ## Atlas skill
 
-**Status:** sketched
+**Status:** building
 `/atlas` reads the five things and prints five lines: parts by status, ready tasks, newest note, the next command. On a fresh project it creates the five things from `skills/atlas/templates/`, writes the versioned block into `CLAUDE.md` or `AGENTS.md`, asks the tracker question when a GitHub remote exists, offers `git init` when there is no repo, and recommends `Merge: human` when the repo has more than one collaborator. Every later run is a status check: it never re-creates, never re-asks, and reports a missing repo in one word. `/atlas go` runs the next skill and keeps going while no human is needed.
 Needs: review-skill, side-skills.
-Open questions: whether it asks for a one-sentence purpose when there is no README. What it checks beyond status (decisions with no map link, tasks blocked by missing tasks). Where `go` stops.
+Open questions: none.
 Decisions: none yet.
 Plan: none yet.
 
 ## Interview skill
 
-**Status:** decided
+**Status:** building
 `/interview-me` runs rounds of numbered questions with recommended answers, writing terms, map changes, and decisions as they land. On the whole project it drafts the map from what exists and questions the draft; on one part it asks until the open questions are gone, writes the brief, and moves the part to decided. A decided or building part can be re-interviewed; its status stays and its brief changes.
 Needs: five-things.
 Open questions: none.
@@ -69,7 +69,7 @@ Plan: none yet.
 
 ## Map skill
 
-**Status:** decided
+**Status:** building
 `/map-it` changes the shape only. Bare, it regenerates the map and glossary diagrams from their sections and reports drift; with a part id it splits that part into `map/<part>.md`. New parts come from `/interview-me`; statuses are moved by the skill that causes the change, and a split part's status is recomputed by `/atlas`.
 Needs: five-things.
 Open questions: none.
@@ -78,7 +78,7 @@ Plan: none yet.
 
 ## Plan skill
 
-**Status:** decided
+**Status:** building
 `/plan-it` turns a decided part's brief into tasks with blocking edges, in one pass, then runs one sizing round with the human. Files in `plan/<part>/`, or sub-issues under the part's parent issue when the project tracks in GitHub. On a re-run it touches todo tasks only.
 Needs: interview-skill.
 Open questions: none.
@@ -87,7 +87,7 @@ Plan: none yet.
 
 ## Build skill
 
-**Status:** decided
+**Status:** building
 `/build-it` works one ready task, one per run, in the medium its Delivers line names and in the way the project already makes that kind of thing, then records what it made, where, and what it verified under Delivered. It moves the task to doing and the part to building. With a `github` tracker it works on a branch and opens a PR; otherwise it works in place and commits when the folder is a git repo. A wrong brief stops it with `Next: /interview-me`.
 Needs: plan-skill.
 Open questions: none.
@@ -96,7 +96,7 @@ Plan: none yet.
 
 ## Review skill
 
-**Status:** decided
+**Status:** building
 `/review-it` runs two checks on a task's result, in a fresh context when the harness has one: does it match the brief, and does it follow the project's conventions (the glossary, the decisions, and how existing things of that kind are made). Findings go on the task, one dated pass per run; boxes only a person can check are listed for the human. A clean review moves the task to done, merges or hands over per the merge line, and moves the part to done when it was the last task.
 Needs: build-skill.
 Open questions: none.
@@ -105,10 +105,10 @@ Plan: none yet.
 
 ## Side skills
 
-**Status:** sketched
+**Status:** building
 `/prototype-it` makes the smallest thing that answers one part's open question, under `prototypes/<part>-<slug>/`, reports what it shows, takes the human's verdict, files it as a note, and writes the answer back onto the part's open question. `/park-it` pauses into a dated note that `/atlas` resumes from and commits everything in the five things, not only the note.
 Needs: interview-skill.
-Open questions: what the handoff note must contain, and how `/atlas` tells an unread handoff from a read one.
+Open questions: none.
 Decisions: none yet.
 Plan: none yet.
 

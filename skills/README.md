@@ -1,8 +1,6 @@
 # Skills
 
-One folder per skill, flat. Each is written after its own interview session (see the newest handoff in `notes/`) and marked on `MAP.md`.
-
-Planned: `atlas`, `interview-me`, `map-it`, `plan-it`, `build-it`, `review-it`, `prototype-it`, `park-it`.
+One folder per skill, flat. All eight were written in one interview session (see the newest handoff in `notes/`) and are marked on `MAP.md`: `atlas`, `interview-me`, `map-it`, `plan-it`, `build-it`, `review-it`, `prototype-it`, `park-it`.
 
 ## Skeleton
 
@@ -49,8 +47,9 @@ policy:
 
 ## Checklist before a skill is marked done
 
-- Under about 120 lines, positive instructions only, one job.
+- As short as the job allows, positive instructions only, one job.
+- Step 1 stops with `Run /atlas first.` when a file it needs is missing; every failure is one line naming the fix; the last line is `Next: /command <id>`.
 - No format restated: the skill points at the file's own format comment or folder README.
 - Reads the tracker and merge lines from `plan/README.md` when it touches the plan.
-- Works in all three environments: no git, git with files, git with GitHub.
-- Run once against `examples/brand/` (copied to a scratch folder) and once against a real project; both results recorded as a note.
+- Works in both modes: `Tracker: files` (in place, commit when the folder is a git repo) and `Tracker: github` (branch and PR from `/build-it` only).
+- Run once against `examples/brand/` (copied to a scratch folder) and once against a real project; both results recorded as a note. Pending for all eight as of 2026-09-11.

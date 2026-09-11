@@ -17,7 +17,7 @@ The Atlas skill set plus the files that describe it, written with its own method
 
 ## Writing a skill
 
-- One job per skill, under about 120 lines, numbered steps, each ending with a "done when" line.
+- One job per skill, as short as the job allows, numbered steps, each ending with a "done when" line. Step 1 stops with `Run /atlas first.` when a file it needs is missing; the last line is `Next: /command <id>`; every skill commits only what it wrote when the folder is a git repo.
 - Positive instructions only. Say what to do, not what to avoid.
 - Formats are never restated in a skill. They live in the five things themselves (hidden comments and folder READMEs) and in `skills/atlas/templates/`.
 - Every skill starts by reading the five things it will touch, including the hidden format comment.
