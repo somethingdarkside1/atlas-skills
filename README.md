@@ -107,7 +107,7 @@ flowchart TB
 
 | Skill | What it does | Why it exists |
 |---|---|---|
-| `/atlas` | Reads the five things and says what to run next. On a fresh project it creates them and asks one question: track the plan in files or in GitHub issues. | You should never have to remember the method |
+| `/atlas` | Prints five lines (parts by status, ready tasks, newest note, the next command) and says what to run. On a fresh project it creates the five things and asks one question: track the plan in files or in GitHub issues. | You should never have to remember the method |
 | `/interview-me` | Asks until a part is settled, writing terms, map changes, and decisions as they land | Sharp thinking before any building |
 | `/map-it` | Draws or redraws the map, zooms into one part, moves statuses | The shape stays visible as it fills in |
 | `/plan-it` | Turns a decided part into a brief and numbered tasks with blocking edges | Work that fits one session each |
@@ -115,6 +115,10 @@ flowchart TB
 | `/review-it` | Checks a task's result against its brief and the project's own conventions | Catches drift before it compounds |
 | `/prototype-it` | Makes a throwaway thing that answers one question, files the verdict as a note | Some questions need a runnable answer |
 | `/park-it` | Pauses the session into a dated note the next session resumes from | Nothing gets lost in a temp folder |
+
+## A worked example
+
+[`examples/brand/`](examples/brand/) is a small brand project after two sessions: two parts on the map, one decided, three tasks, one decision, one note. Copy its shape, not its content.
 
 ## Credits
 

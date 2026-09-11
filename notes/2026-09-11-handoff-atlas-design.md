@@ -1,8 +1,10 @@
-# Handoff: Atlas design session
+---
+date: 2026-09-11
+kind: handoff
+part: project
+---
 
-**Date:** 2026-09-11
-**Kind:** handoff
-**Part:** project
+# Handoff: Atlas design session
 
 ## Summary
 A full analysis of Matt Pocock's skills (v1.2.3) led to Atlas: nine skills and a five-file layout that work for any domain. The layout, vocabulary, and diagram medium are decided; every skill is still sketched and will be interviewed one at a time.

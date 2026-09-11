@@ -1,7 +1,10 @@
-# The plan has one home per project: files or GitHub issues
+---
+part: plan-skill
+date: 2026-09-11
+status: accepted
+---
 
-**Part:** plan-skill
-**Date:** 2026-09-11
+# The plan has one home per project: files or GitHub issues
 
 Matt Pocock's set makes the tracker configurable, so every skill carries GitHub, GitLab, and local-file branches and a setup skill must run first. Atlas asks once, at scaffold time, whether the plan lives in `plan/` as files or in the repo's GitHub issues, and records the answer on one line in `plan/README.md`. The glossary, map, decisions, and notes stay in the repo either way; only work items move. A mirror was considered and rejected because two copies of a plan drift, and the drift policy it needed was a sign of the wrong design.
 

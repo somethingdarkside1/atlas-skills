@@ -1,34 +1,24 @@
 # Decisions
 
-One short file per choice that is hard to reverse, would surprise a future reader, and came from a real trade-off. If any of the three is missing, it is not a decision, it is a note or a line in the brief.
+One short file per choice that is hard to reverse, would surprise a future reader, and came from a real trade-off. If any of the three is missing, it is not a decision; it is a note or a line in the brief.
 
-File name: `NNNN-<slug>.md`, numbered globally, never renumbered. Find the next number by looking at the highest one here.
+File name: `NNNN-<slug>.md`, numbered globally, never renumbered. The next number is one more than the highest here. The map's part sections link every decision that belongs to them, so browse by part there; `grep '^part:'` finds them by part here.
 
 ## Template
 
 ```md
-# <What was decided, as a full sentence>
+---
+part: wordmark
+date: 2026-09-14
+status: accepted
+---
 
-**Part:** the map part this belongs to, or "project"
-**Date:** YYYY-MM-DD
+# One mark, not a family
 
-One to three sentences: the situation, the choice, and why.
+The studio wanted a logo family (mark, monogram, pattern) and a launch in six weeks. One wordmark done well covers every surface listed in the brief, and a family would spend the six weeks on variants nobody asked for. We ship one mark and revisit when a second surface needs a symbol.
 
-Considered: the alternatives worth remembering, one line each. Omit when there were none.
-Revisit when: the one change that would reopen this. Omit when nothing plausible would.
+Considered: a full family (rejected for time); a symbol only (rejected because the name is unknown).
+Revisit when: an app icon or a social avatar is needed, where a wordmark fails.
 ```
 
-Add `status: superseded by 0012` as frontmatter when a later decision replaces this one. Leave the file in place; history is the point.
-
-## Index
-
-Kept current by `/interview` and `/map`. The map's part sections link the same files, so browse by part there and by number here.
-
-| No. | Decision | Part | Status |
-|---|---|---|---|
-| 0001 | Local files are the truth; GitHub is a mirror | side-skills | accepted |
-| 0002 | The five things live at the project root | five-things | accepted |
-| 0003 | Diagrams are Mermaid inside the Markdown | map-skill | accepted |
-| 0004 | Each home carries its own format | five-things | accepted |
-| 0005 | One interview skill covers both levels | interview-skill | proposed |
-| 0006 | Plain words over engineering jargon | five-things | accepted |
+`status` is `proposed`, `accepted`, or `superseded`; a superseded decision adds `superseded_by: NNNN` and stays in place. The title is a full sentence saying what was decided. Keep the body to one to three sentences; Considered and Revisit when are one line each and may be omitted.

@@ -1,6 +1,12 @@
 # Atlas
 
-This repo is the Atlas skill set plus the files that describe it. It uses its own method: `GLOSSARY.md` holds the words, `MAP.md` the shape, `plan/` the work, `decisions/` the why, `notes/` the dated record. Read `GLOSSARY.md` and `MAP.md` before changing anything; use their words.
+## Atlas (atlas: 1)
+
+This project uses Atlas. `GLOSSARY.md` holds the words, `MAP.md` the shape, `plan/` the work, `decisions/` the why, `notes/` the dated record. Read `GLOSSARY.md` and `MAP.md` before working and use their words. Each file starts with its own format; follow it. Write hard-to-reverse choices to `decisions/`. Run `/atlas` to see what is next.
+
+## This repo
+
+The Atlas skill set plus the files that describe it, written with its own method. The block above is the one `/atlas` writes into every project.
 
 ## Layout
 
