@@ -21,10 +21,10 @@ flowchart TB
 
   five-things["The five things"]:::decided
   packaging["Packaging and install"]:::sketched
-  side-skills["/prototype /handoff /publish"]:::sketched
+  side-skills["/prototype-it /park-it /publish-it"]:::sketched
   subgraph core[Core loop]
     direction LR
-    atlas-skill["/atlas"]:::sketched --> interview-skill["/interview"]:::sketched --> map-skill["/map"]:::sketched --> plan-skill["/plan"]:::sketched --> build-skill["/build"]:::sketched --> review-skill["/review"]:::sketched
+    atlas-skill["/atlas"]:::sketched --> interview-skill["/interview-me"]:::sketched --> map-skill["/map-it"]:::sketched --> plan-skill["/plan-it"]:::sketched --> build-skill["/build-it"]:::sketched --> review-skill["/review-it"]:::sketched
   end
 
   five-things --> core
@@ -51,7 +51,7 @@ Plan: none yet.
 ## Interview skill
 
 **Status:** sketched
-`/interview` runs rounds of numbered questions with recommended answers, writing terms, map changes, and decisions as they land. Scope is the whole project or one part.
+`/interview-me` runs rounds of numbered questions with recommended answers, writing terms, map changes, and decisions as they land. Scope is the whole project or one part.
 Open questions: whether one skill handles both the foggy multi-session effort (Matt's wayfinder) and the single-session sharpening. Proposed yes, via the map's zoom.
 Decisions: [0005 (proposed)](decisions/0005-one-interview-for-both-levels.md).
 Plan: none yet.
@@ -59,7 +59,7 @@ Plan: none yet.
 ## Map skill
 
 **Status:** sketched
-`/map` draws or redraws the diagram from the sections, zooms into one part, moves statuses, and splits a grown part into `map/<part>.md`.
+`/map-it` draws or redraws the diagram from the sections, zooms into one part, moves statuses, and splits a grown part into `map/<part>.md`.
 Open questions: layout rules to bake in (direction, node limit, status classes). Whether it can run without an interview first.
 Decisions: [0003](decisions/0003-mermaid-in-markdown.md).
 Plan: none yet.
@@ -67,7 +67,7 @@ Plan: none yet.
 ## Plan skill
 
 **Status:** sketched
-`/plan` turns a decided part into `plan/<part>/brief.md` and numbered task files with blocking edges, in one pass, then quizzes the human on granularity.
+`/plan-it` turns a decided part into `plan/<part>/brief.md` and numbered task files with blocking edges, in one pass, then quizzes the human on granularity.
 Open questions: task file fields. Whether the brief needs user stories for non-software projects.
 Decisions: [0001](decisions/0001-local-files-are-the-truth.md).
 Plan: none yet.
@@ -75,7 +75,7 @@ Plan: none yet.
 ## Build skill
 
 **Status:** sketched
-`/build` works one ready task in whatever medium it needs, reading the brief, glossary, and decisions first, then records what it delivered on the task.
+`/build-it` works one ready task in whatever medium it needs, reading the brief, glossary, and decisions first, then records what it delivered on the task.
 Open questions: how it detects the medium (code, copy, configuration, assets). Whether it commits.
 Decisions: none yet.
 Plan: none yet.
@@ -83,7 +83,7 @@ Plan: none yet.
 ## Review skill
 
 **Status:** sketched
-`/review` checks a task's result on two axes: does it match the brief, and does it follow the project's conventions and vocabulary.
+`/review-it` checks a task's result on two axes: does it match the brief, and does it follow the project's conventions and vocabulary.
 Open questions: what "conventions" means for a non-code project. Whether findings go to the task file or a note.
 Decisions: none yet.
 Plan: none yet.
@@ -91,8 +91,8 @@ Plan: none yet.
 ## Side skills
 
 **Status:** sketched
-`/prototype` answers one question with a throwaway thing and files the verdict as a note. `/handoff` pauses into a dated note. `/publish` mirrors the plan to GitHub issues, one way, writing issue numbers back.
-Open questions: how `/publish` maps tasks to issues, dependencies, and a Project. Whether PR conventions belong in `/build` or `/publish`.
+`/prototype-it` answers one question with a throwaway thing and files the verdict as a note. `/park-it` pauses into a dated note. `/publish-it` mirrors the plan to GitHub issues, one way, writing issue numbers back.
+Open questions: how `/publish-it` maps tasks to issues, dependencies, and a Project. Whether PR conventions belong in `/build-it` or `/publish-it`.
 Decisions: [0001](decisions/0001-local-files-are-the-truth.md).
 Plan: none yet.
 

@@ -33,15 +33,17 @@ What this part deliberately leaves alone.
 ## Task template
 
 ```md
-# 01: <Task title>
+# 01: <Imperative title: what to make, starting with a verb>
 
 **Delivers:** the complete slice this task makes true, from the user's point of view.
 **Blocked by:** none, or the tasks that gate this one: `02` in this part, `<part>/02` in another.
 **Status:** todo | doing | done
 **Issue:** empty until /publish fills it in with the GitHub issue number. When set, /build reads that issue's comments before starting.
 
+- [ ] Acceptance criterion, each one checkable by looking, running, or asking
 - [ ] Acceptance criterion
-- [ ] Acceptance criterion
+
+**Verify by:** the command, URL, or look that shows this task is done.
 
 ## Delivered
 Filled in by /build: what was made, where it lives, what was verified.

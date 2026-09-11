@@ -12,10 +12,10 @@ Settled: see `decisions/0001` to `0004` and `0006`, plus `GLOSSARY.md` and `MAP.
 
 Still open (proposed answers in brackets):
 - Skill naming and collisions with other installed sets (`/atlas` for the router, plain verbs for the rest, prefix nothing).
-- Fold wayfinder into `/interview` (yes, via the map's zoom; decision 0005 is proposed).
-- How `/publish` maps tasks to GitHub issues, native dependencies, a Project, and whether PR conventions live in `/build` (issues and dependencies yes, Project status yes, wiki no).
+- Fold wayfinder into `/interview-me` (yes, via the map's zoom; decision 0005 is proposed).
+- How `/publish-it` maps tasks to GitHub issues, native dependencies, a Project, and whether PR conventions live in `/build-it` (issues and dependencies yes, Project status yes, wiki no).
 
-Next: interview the `/interview` skill first, then `/map`, `/plan`, `/build`, `/review`, `/atlas`, `/prototype`, `/handoff`, `/publish`. Pilot on the `brand` project.
+Next: interview the `/interview-me` skill first, then `/map-it`, `/plan-it`, `/build-it`, `/review-it`, `/atlas`, `/prototype-it`, `/park-it`, `/publish-it`. Pilot on the `brand` project.
 
 ## Copied into
 GLOSSARY.md, MAP.md, decisions/0001 to 0006.

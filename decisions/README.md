@@ -7,13 +7,15 @@ File name: `NNNN-<slug>.md`, numbered globally, never renumbered. Find the next 
 ## Template
 
 ```md
-# <What was decided, as a sentence>
+# <What was decided, as a full sentence>
 
 **Part:** the map part this belongs to, or "project"
+**Date:** YYYY-MM-DD
 
 One to three sentences: the situation, the choice, and why.
 
 Considered: the alternatives worth remembering, one line each. Omit when there were none.
+Revisit when: the one change that would reopen this. Omit when nothing plausible would.
 ```
 
 Add `status: superseded by 0012` as frontmatter when a later decision replaces this one. Leave the file in place; history is the point.

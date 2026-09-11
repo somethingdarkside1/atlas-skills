@@ -32,19 +32,39 @@ Run `/atlas` in any project folder and it creates these, each starting with its 
 
 If it is true today it lives in one of the first four. If it was true on a date, it is a note.
 
+A project after a few sessions:
+
+```
+my-project/
+  GLOSSARY.md               the words, with a diagram of how they relate
+  MAP.md                    the shape: one diagram, one section per part, a status on each
+  plan/
+    README.md               where the plan is tracked, and the brief and task templates
+    logo-system/
+      brief.md
+      01-choose-the-mark.md
+      02-build-the-lockups.md
+  decisions/
+    README.md               the format and a numbered index
+    0001-one-mark-not-a-family.md
+  notes/
+    README.md               the note template
+    2026-09-14-prototype-mark-in-three-weights.md
+```
+
 ## How the skills fit together
 
 ```mermaid
 flowchart LR
   atlas["/atlas<br/>what is next?"]
-  interview["/interview<br/>ask until settled"]
-  map["/map<br/>draw and zoom"]
-  plan["/plan<br/>brief and tasks"]
-  build["/build<br/>one task"]
-  review["/review<br/>brief and conventions"]
-  prototype["/prototype<br/>answer one question"]
-  handoff["/handoff<br/>pause to a note"]
-  publish["/publish<br/>mirror to GitHub"]
+  interview["/interview-me<br/>ask until settled"]
+  map["/map-it<br/>draw and zoom"]
+  plan["/plan-it<br/>brief and tasks"]
+  build["/build-it<br/>one task"]
+  review["/review-it<br/>brief and conventions"]
+  prototype["/prototype-it<br/>answer one question"]
+  handoff["/park-it<br/>pause to a note"]
+  publish["/publish-it<br/>mirror to GitHub"]
 
   atlas --> interview --> map --> plan --> build --> review --> atlas
   interview -. hard question .-> prototype -.-> interview
@@ -93,18 +113,18 @@ flowchart TB
 | Skill | What it does | Why it exists |
 |---|---|---|
 | `/atlas` | Reads the five things and says what to run next. On a fresh project it creates them. | You should never have to remember the method |
-| `/interview` | Asks until a part is settled, writing terms, map changes, and decisions as they land | Sharp thinking before any building |
-| `/map` | Draws or redraws the map, zooms into one part, moves statuses | The shape stays visible as it fills in |
-| `/plan` | Turns a decided part into a brief and numbered tasks with blocking edges | Work that fits one session each |
-| `/build` | Works one task in whatever medium it needs, then records what it delivered | The doing |
-| `/review` | Checks a task's result against its brief and the project's own conventions | Catches drift before it compounds |
-| `/prototype` | Makes a throwaway thing that answers one question, files the verdict as a note | Some questions need a runnable answer |
-| `/handoff` | Pauses the session into a dated note the next session resumes from | Nothing gets lost in a temp folder |
-| `/publish` | Mirrors the plan to GitHub issues with native blocking links. Optional. | The only skill that knows GitHub exists |
+| `/interview-me` | Asks until a part is settled, writing terms, map changes, and decisions as they land | Sharp thinking before any building |
+| `/map-it` | Draws or redraws the map, zooms into one part, moves statuses | The shape stays visible as it fills in |
+| `/plan-it` | Turns a decided part into a brief and numbered tasks with blocking edges | Work that fits one session each |
+| `/build-it` | Works one task in whatever medium it needs, then records what it delivered | The doing |
+| `/review-it` | Checks a task's result against its brief and the project's own conventions | Catches drift before it compounds |
+| `/prototype-it` | Makes a throwaway thing that answers one question, files the verdict as a note | Some questions need a runnable answer |
+| `/park-it` | Pauses the session into a dated note the next session resumes from | Nothing gets lost in a temp folder |
+| `/publish-it` | Mirrors the plan to GitHub issues with native blocking links. Optional. | The only skill that knows GitHub exists |
 
 ## Credits
 
-Reshaped from Matt Pocock's [skills](https://github.com/mattpocock/skills), MIT.
+Inspired by Matt Pocock's [skills](https://github.com/mattpocock/skills), MIT.
 
 ## License
 
