@@ -5,7 +5,7 @@ FORMAT. Agents: read this before editing. It is not rendered.
 - Pick one word per concept. The others go under Avoid.
 - No implementation detail. This file is a glossary and nothing else.
 - Group entries under ### headings when clusters emerge. When the file outgrows a screen, move each cluster to glossary/<cluster>.md and keep this file as the index with the diagram.
-- The diagram shows how terms relate. Regenerate it after editing entries.
+- The diagram shows how terms relate: an edge points from a term to a term its definition names, and a term is a node only when it has an edge. Redraw it after editing entries.
 -->
 
 # Atlas
@@ -14,17 +14,23 @@ The vocabulary of the Atlas method and the skills that run it.
 
 ```mermaid
 flowchart TB
+  Home --> Glossary
+  Home --> Map
+  Home --> Plan
+  Home --> Decision
   Map --> Part
   Part --> Plan
+  Part --> Decision
   Plan --> Brief
   Plan --> Task
-  Task -->|no open blockers| Ready
-  Part --> Decision
-  Interview --> Glossary
-  Interview --> Map
+  Task --> Ready
+  Interview --> Round
+  Interview --> Brief
   Interview --> Decision
-  Note -. copied into .-> Glossary
-  Note -. copied into .-> Map
+  Prototype --> Note
+  Handoff --> Note
+  Note --> Glossary
+  Note --> Map
 ```
 
 ## Language
@@ -44,7 +50,7 @@ One box on the map. A part has a status, a purpose, open questions, and links to
 _Avoid_: box, component, module, container, area
 
 **Plan**:
-The home of the work: one folder per part holding a brief and its tasks, or the repo's GitHub issues when the project chose that at scaffold time.
+The home of the work: one folder per part holding a brief and its tasks, or the repo's GitHub issues when the project chose that when the five things were created.
 _Avoid_: backlog, tracker, .scratch
 
 **Home**:
@@ -52,7 +58,7 @@ One of the five things: the single place a kind of truth lives. If it is true to
 _Avoid_: doc, artifact
 
 **Brief**:
-The written account of what a part must do and why, produced when the part is decided.
+The written account of what a part must do and why, including its settled choices, written when the part is decided.
 _Avoid_: spec, PRD, requirements
 
 **Task**:
@@ -60,7 +66,7 @@ One file in a part's plan: a complete slice of work sized for one session, decla
 _Avoid_: ticket, story (issue is the same thing in GitHub mode)
 
 **Ready**:
-The state of a task whose blocking tasks are all done. Ready tasks are what `/build` picks from.
+The state of a task whose blocking tasks are all done. Ready tasks are what `/build-it` picks from.
 _Avoid_: frontier, unblocked
 
 **Decision**:
@@ -100,3 +106,11 @@ _Avoid_: grilling, grill
 
 **Handoff**:
 A note that pauses a session so a fresh one can resume it.
+
+**Round**:
+One batch of numbered questions in an interview, each with a recommended answer, answered by the human before the next batch is asked.
+_Avoid_: batch, turn, pass
+
+**Prototype**:
+The smallest made thing that answers one question a part's interview could not, kept under `prototypes/` and pointed to by its note. Tasks may copy from it and never link to it.
+_Avoid_: spike, POC, experiment

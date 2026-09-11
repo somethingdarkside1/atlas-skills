@@ -50,6 +50,8 @@ my-project/
   notes/
     README.md               the note template
     2026-09-14-prototype-mark-in-three-weights.md
+  prototypes/               only if /prototype-it ran: one folder per answered question
+    wordmark-three-weights/
 ```
 
 ## How the skills fit together

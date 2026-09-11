@@ -10,7 +10,7 @@ Planned: `atlas`, `interview-me`, `map-it`, `plan-it`, `build-it`, `review-it`, 
 skills/<name>/
   SKILL.md
   agents/openai.yaml
-  templates/            only if the skill scaffolds files
+  templates/            only if the skill creates files from templates
 ```
 
 `SKILL.md`:
