@@ -99,6 +99,6 @@ Plan: none yet.
 
 **Status:** sketched
 Flat `skills/<name>/` folders, a Claude plugin manifest, a skills.sh listing, a README that doubles as the docs page, and the blog post.
-Open questions: skill name collisions when installed flat next to other sets. Whether to keep Matt's copy vendored in `reference/` on the public repo.
+Open questions: skill name collisions when installed flat next to other sets (suffix scheme under review).
 Decisions: none yet.
 Plan: none yet.

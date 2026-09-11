@@ -14,7 +14,6 @@ Still open (proposed answers in brackets):
 - Skill naming and collisions with other installed sets (`/atlas` for the router, plain verbs for the rest, prefix nothing).
 - Fold wayfinder into `/interview` (yes, via the map's zoom; decision 0005 is proposed).
 - How `/publish` maps tasks to GitHub issues, native dependencies, a Project, and whether PR conventions live in `/build` (issues and dependencies yes, Project status yes, wiki no).
-- Whether to keep Matt's copy vendored in `reference/` on the public repo (keep, MIT, credited).
 
 Next: interview the `/interview` skill first, then `/map`, `/plan`, `/build`, `/review`, `/atlas`, `/prototype`, `/handoff`, `/publish`. Pilot on the `brand` project.
 

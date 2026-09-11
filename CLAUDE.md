@@ -5,7 +5,7 @@ This repo is the Atlas skill set plus the files that describe it. It uses its ow
 ## Layout
 
 - `skills/<name>/SKILL.md`: one folder per skill, flat, no buckets. Templates a skill scaffolds live beside it in `templates/`.
-- `reference/mattpocock-skills/`: an unchanged MIT copy of the set Atlas was reshaped from. Read it for comparison; never edit it.
+- `reference/` is gitignored. A local, unchanged copy of Matt Pocock's set can sit there for comparison; it is never committed.
 - `README.md` is the docs page and the install page.
 
 ## Writing a skill

@@ -1,6 +1,6 @@
 # Atlas
 
-**Map it before you build it.** A small set of agent skills that take an idea from fuzzy to finished: interview it, map it, plan it, build it, review it. Works for a website, a CRM rollout, a brand system, or a codebase, because the method is the same and the files are plain Markdown.
+**Map it before you build it.** By [Vitali Liouti](https://github.com/somethingdarkside1). A small set of agent skills that take an idea from fuzzy to finished: interview it, map it, plan it, build it, review it. Works for a website, a CRM rollout, a brand system, or a codebase, because the method is the same and the files are plain Markdown.
 
 Inspired by [Matt Pocock's skills](https://www.aihero.dev/skills), reshaped around one idea: everything the agent learns lands in five places you can read, diff, and draw.
 
@@ -9,13 +9,13 @@ Inspired by [Matt Pocock's skills](https://www.aihero.dev/skills), reshaped arou
 ## Install
 
 ```bash
-npx skills add somethingdarkside1/atlas
+npx skills add somethingdarkside1/atlas-skills
 ```
 
 Claude Code users can also add it as a plugin:
 
 ```bash
-claude plugin marketplace add somethingdarkside1/atlas
+claude plugin marketplace add somethingdarkside1/atlas-skills
 ```
 
 ## The five things
@@ -104,7 +104,7 @@ flowchart TB
 
 ## Credits
 
-Matt Pocock's [skills](https://github.com/mattpocock/skills) (MIT) are the starting point. A copy of the version this was reshaped from sits in [`reference/`](reference/README.md).
+Reshaped from Matt Pocock's [skills](https://github.com/mattpocock/skills), MIT.
 
 ## License
 
