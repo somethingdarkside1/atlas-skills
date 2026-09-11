@@ -4,7 +4,7 @@ FORMAT. Agents: read this before editing. It is not rendered.
 - Entry shape: **Term**: one or two sentences saying what it IS. Then `_Avoid_: the synonyms`.
 - Pick one word per concept. The others go under Avoid.
 - No implementation detail. This file is a glossary and nothing else.
-- Group entries under ### headings when clusters emerge.
+- Group entries under ### headings when clusters emerge. When the file outgrows a screen, move each cluster to glossary/<cluster>.md and keep this file as the index with the diagram.
 - The diagram shows how terms relate. Regenerate it after editing entries.
 -->
 
