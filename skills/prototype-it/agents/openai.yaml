@@ -1,0 +1,5 @@
+interface:
+  display_name: "Prototype it"
+  short_description: "Make the smallest thing that answers one open question, and file the verdict"
+policy:
+  allow_implicit_invocation: false

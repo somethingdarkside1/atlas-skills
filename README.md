@@ -4,7 +4,7 @@
 
 Inspired by [Matt Pocock's skills](https://www.aihero.dev/skills), reshaped around one idea: everything the agent learns lands in five places you can read, diff, and draw.
 
-> Status: work in progress. The structure is settled; the skills are being written one at a time.
+> Status: work in progress. The structure and all eight skills are written; the end-to-end test on a real project is next. Run one Atlas session per checkout at a time; parallel work is what GitHub mode is for.
 
 ## Install
 
@@ -50,6 +50,8 @@ my-project/
   notes/
     README.md               the note template
     2026-09-14-prototype-mark-in-three-weights.md
+  prototypes/               only if /prototype-it ran: one folder per answered question
+    wordmark-three-weights/
 ```
 
 ## How the skills fit together
@@ -66,7 +68,7 @@ flowchart LR
   handoff["/park-it<br/>pause to a note"]
 
   atlas --> interview --> map --> plan --> build --> review --> atlas
-  interview -. hard question .-> prototype -.-> interview
+  interview -. needs a made answer .-> prototype -.-> interview
   handoff -. any time .-> atlas
 ```
 
@@ -93,12 +95,12 @@ flowchart TB
     D[decisions/]
     N[notes/]
   end
-  interview --> G & M & D
-  map --> M
+  interview --> G & M & D & P
+  map --> M & G
   plan --> P
-  build --> P
-  review --> P & N
-  prototype --> N
+  build --> P & M
+  review --> P & M
+  prototype --> N & M
   handoff --> N
   atlas -. reads all five .-> things
 ```
@@ -107,13 +109,13 @@ flowchart TB
 
 | Skill | What it does | Why it exists |
 |---|---|---|
-| `/atlas` | Prints five lines (parts by status, ready tasks, newest note, the next command) and says what to run. On a fresh project it creates the five things and asks one question: track the plan in files or in GitHub issues. | You should never have to remember the method |
-| `/interview-me` | Asks until a part is settled, writing terms, map changes, and decisions as they land | Sharp thinking before any building |
-| `/map-it` | Draws or redraws the map, zooms into one part, moves statuses | The shape stays visible as it fills in |
-| `/plan-it` | Turns a decided part into a brief and numbered tasks with blocking edges | Work that fits one session each |
+| `/atlas` | Prints five lines (parts by status, ready tasks, newest note, problems, the next command). On a fresh project it creates the five things and asks one question: track the plan in files or in GitHub issues. `/atlas go` keeps building and reviewing until a human is needed. | You should never have to remember the method |
+| `/interview-me` | Asks in rounds until a part is settled, writing terms, map changes, and decisions as they land, then writes the brief. On a whole project it drafts the map first and questions the draft | Sharp thinking before any building |
+| `/map-it` | Redraws the map and glossary diagrams from their sections, reports drift, splits a grown part into its own file | The shape stays visible as it fills in |
+| `/plan-it` | Turns a decided part's brief into numbered tasks with blocking edges, after one sizing round | Work that fits one session each |
 | `/build-it` | Works one task in whatever medium it needs, then records what it delivered | The doing |
-| `/review-it` | Checks a task's result against its brief and the project's own conventions | Catches drift before it compounds |
-| `/prototype-it` | Makes a throwaway thing that answers one question, files the verdict as a note | Some questions need a runnable answer |
+| `/review-it` | Checks a task's result against its brief and the project's own conventions, in a fresh context, and merges or hands over when clean | Catches drift before it compounds |
+| `/prototype-it` | Makes the smallest thing that answers one open question, takes your verdict, writes it back to the map and a note | Some questions need a made answer |
 | `/park-it` | Pauses the session into a dated note the next session resumes from | Nothing gets lost in a temp folder |
 
 ## A worked example

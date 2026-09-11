@@ -1,0 +1,5 @@
+interface:
+  display_name: "Review it"
+  short_description: "Check a task's result against its brief and the project's conventions"
+policy:
+  allow_implicit_invocation: false

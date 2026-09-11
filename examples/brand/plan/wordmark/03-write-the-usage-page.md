@@ -8,10 +8,10 @@ blocked_by: [02]
 ## Delivers
 One page showing each lockup, its clear space, and the two things never to do with it.
 
-## Verify by
+## Check by
 Open `wordmark/usage.html`; a stranger can place the wordmark correctly from the page alone.
 
-## Acceptance
+## Done when
 - [ ] Every lockup shown with its clear space drawn
 - [ ] Minimum size stated for print and screen
 - [ ] Two misuses shown, each crossed out

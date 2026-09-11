@@ -1,0 +1,5 @@
+interface:
+  display_name: "Plan it"
+  short_description: "Turn a decided part's brief into numbered tasks with blocking edges"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Park it"
+  short_description: "Pause the session into a handoff note the next /atlas resumes from"
+policy:
+  allow_implicit_invocation: false
