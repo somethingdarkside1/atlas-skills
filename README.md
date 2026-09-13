@@ -4,7 +4,7 @@
 
 Inspired by [Matt Pocock's skills](https://www.aihero.dev/skills), reshaped around one idea: everything the agent learns lands in five places you can read, diff, and draw.
 
-> Status: work in progress. The structure and all eight skills are written; the end-to-end test on a real project is next. Run one Atlas session per checkout at a time; parallel work is what GitHub mode is for.
+> Status: work in progress. The structure and all eight skills are written and have had a second pass for conflicting rules; the end-to-end test on a real project is next. Run one Atlas session per checkout at a time; parallel work is what the GitHub tracker is for.
 
 ## Install
 
@@ -67,8 +67,9 @@ flowchart LR
   prototype["/prototype-it<br/>answer one question"]
   handoff["/park-it<br/>pause to a note"]
 
-  atlas --> interview --> map --> plan --> build --> review --> atlas
+  atlas --> interview --> plan --> build --> review --> atlas
   interview -. needs a made answer .-> prototype -.-> interview
+  atlas -. drift, or a part outgrew its page .-> map -.-> atlas
   handoff -. any time .-> atlas
 ```
 
@@ -97,11 +98,12 @@ flowchart TB
   end
   interview --> G & M & D & P
   map --> M & G
-  plan --> P
-  build --> P & M
+  plan --> P & M
+  build --> P & M & G & D
   review --> P & M
   prototype --> N & M
   handoff --> N
+  atlas --> M
   atlas -. reads all five .-> things
 ```
 
@@ -109,14 +111,26 @@ flowchart TB
 
 | Skill | What it does | Why it exists |
 |---|---|---|
-| `/atlas` | Prints five lines (parts by status, ready tasks, newest note, problems, the next command). On a fresh project it creates the five things and asks one question: track the plan in files or in GitHub issues. `/atlas go` keeps building and reviewing until a human is needed. | You should never have to remember the method |
+| `/atlas` | Prints five lines (parts by status, ready tasks, newest note, problems, the next command). On a fresh project it creates the five things and, when the repo is on GitHub, asks where the plan lives and who merges. `/atlas go` keeps building and reviewing until a human is needed. | You should never have to remember the method |
 | `/interview-me` | Asks in rounds until a part is settled, writing terms, map changes, and decisions as they land, then writes the brief. On a whole project it drafts the map first and questions the draft | Sharp thinking before any building |
 | `/map-it` | Redraws the map and glossary diagrams from their sections, reports drift, splits a grown part into its own file | The shape stays visible as it fills in |
 | `/plan-it` | Turns a decided part's brief into numbered tasks with blocking edges, after one sizing round | Work that fits one session each |
-| `/build-it` | Works one task in whatever medium it needs, then records what it delivered | The doing |
-| `/review-it` | Checks a task's result against its brief and the project's own conventions, in a fresh context, and merges or hands over when clean | Catches drift before it compounds |
+| `/build-it` | Works one task in whatever medium it needs, records what it delivered, and puts the task up for review. A brief that is silent sends the question to the map | The doing |
+| `/review-it` | Checks a task's result against its brief and the project's own conventions, in a fresh context; findings send the task back, boxes only you can check wait in the file, clean merges or hands over | Catches drift before it compounds |
 | `/prototype-it` | Makes the smallest thing that answers one open question, takes your verdict, writes it back to the map and a note | Some questions need a made answer |
 | `/park-it` | Pauses the session into a dated note the next session resumes from | Nothing gets lost in a temp folder |
+
+## Git, GitHub, and no git at all
+
+Atlas runs in three environments, and the whole difference between them is written once, in the Git section of `plan/README.md`.
+
+| Environment | What skills do |
+|---|---|
+| No repo | Write files, commit nothing. `/atlas` offers `git init` |
+| A repo | Each skill commits what it wrote on the current branch as `<skill> <id>: <what>`. Nothing is pushed; you push |
+| A repo with `Tracker: github` | Tasks are issues, `/build-it` works on a branch and opens a PR, `/review-it` merges it or leaves it ready for you (`Merge:`), and every skill returns to the default branch |
+
+Every rule in the method has one home: formats live in the five things, git and tracker rules in `plan/README.md`, the shapes skills share in `skills/README.md`. When a skill and a home disagree, the home wins.
 
 ## A worked example
 

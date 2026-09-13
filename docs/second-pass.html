@@ -1,0 +1,279 @@
+<title>Atlas Second Pass</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#F7F8F6; --ink:#1B1F1C; --muted:#5B615C; --rule:#D9DDD8; --soft:#EEF0EC;
+  --accent:#2563EB; --accent-ink:#1E3A8A;
+  --sk-bg:#F1F2F0; --sk-fg:#6B6B6B; --de-bg:#DBEAFE; --de-fg:#1E3A8A;
+  --bu-bg:#FEF3C7; --bu-fg:#78350F; --do-bg:#DCFCE7; --do-fg:#14532D;
+  --code-bg:#ECEFEA;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141715; --ink:#E8EBE7; --muted:#9AA09B; --rule:#2A2F2B; --soft:#1C201D;
+    --accent:#7FA7F5; --accent-ink:#BFD3FB;
+    --sk-bg:#23272A; --sk-fg:#B9BEBA; --de-bg:#1E3A8A; --de-fg:#DBEAFE;
+    --bu-bg:#78350F; --bu-fg:#FEF3C7; --do-bg:#14532D; --do-fg:#DCFCE7;
+    --code-bg:#1F2421;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141715; --ink:#E8EBE7; --muted:#9AA09B; --rule:#2A2F2B; --soft:#1C201D;
+  --accent:#7FA7F5; --accent-ink:#BFD3FB;
+  --sk-bg:#23272A; --sk-fg:#B9BEBA; --de-bg:#1E3A8A; --de-fg:#DBEAFE;
+  --bu-bg:#78350F; --bu-fg:#FEF3C7; --do-bg:#14532D; --do-fg:#DCFCE7;
+  --code-bg:#1F2421;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-ink);text-decoration-color:var(--rule);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+code,pre{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em}
+code{background:var(--code-bg);padding:.08em .35em;border-radius:3px}
+pre{background:var(--code-bg);padding:14px 16px;border-radius:4px;overflow-x:auto;line-height:1.5}
+pre code{background:none;padding:0}
+h1,h2,h3{font-family:"Familjen Grotesk","IBM Plex Sans",system-ui,sans-serif;text-wrap:balance;margin:0}
+h1{font-size:2.6rem;font-weight:700;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:1.55rem;font-weight:600;line-height:1.2;margin-top:.2rem}
+h3{font-size:1.1rem;font-weight:600;line-height:1.3}
+p{margin:0}
+.page{max-width:1120px;margin:0 auto;padding:40px 24px 80px}
+header.masthead{display:grid;gap:14px;padding-bottom:28px;border-bottom:1px solid var(--rule);margin-bottom:36px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.lede{font-size:1.15rem;max-width:66ch;color:var(--ink)}
+.meta{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:.85rem;color:var(--muted)}
+.meta span b{color:var(--ink);font-weight:500}
+.layout{display:grid;grid-template-columns:200px minmax(0,1fr);gap:48px;align-items:start}
+nav.rail{position:sticky;top:24px;display:grid;gap:6px;font-size:.86rem}
+nav.rail a{color:var(--muted);text-decoration:none;padding:3px 0 3px 10px;border-left:2px solid var(--rule)}
+nav.rail a:hover{color:var(--ink);border-color:var(--accent)}
+main{display:grid;gap:56px;min-width:0}
+section{display:grid;gap:18px;scroll-margin-top:20px}
+section > p, section li{max-width:68ch}
+ul,ol{margin:0;padding-left:1.25rem;display:grid;gap:8px}
+li b{font-weight:600}
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:4px}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--rule)}
+th{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--soft)}
+tr:last-child td{border-bottom:0}
+td code{white-space:nowrap}
+.chip{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.04em;padding:2px 8px;border-radius:999px;line-height:1.5;white-space:nowrap}
+.chip.sk{background:var(--sk-bg);color:var(--sk-fg)} .chip.de{background:var(--de-bg);color:var(--de-fg)}
+.chip.bu{background:var(--bu-bg);color:var(--bu-fg)} .chip.do{background:var(--do-bg);color:var(--do-fg)}
+.skills{display:grid;gap:0;border-top:1px solid var(--rule)}
+.skill{display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.skill .name{font-family:"IBM Plex Mono",monospace;font-size:.95rem;font-weight:500}
+.skill .name small{display:block;font-family:"IBM Plex Sans",sans-serif;font-size:.8rem;color:var(--muted);font-weight:400;margin-top:4px}
+.skill ul{gap:5px;font-size:.95rem}
+.callout{border-left:3px solid var(--accent);padding:6px 0 6px 16px;max-width:68ch;color:var(--ink)}
+.callout .eyebrow{margin-bottom:4px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.tile{border:1px solid var(--rule);border-radius:4px;padding:14px 16px;display:grid;gap:8px;background:var(--soft)}
+.tile h3{font-size:1rem}
+.tile p{font-size:.93rem;color:var(--ink)}
+.mermaid{background:transparent;padding:0;overflow-x:auto}
+.statuses{display:flex;flex-wrap:wrap;gap:8px}
+@media (max-width:820px){.layout{grid-template-columns:1fr}nav.rail{position:static;grid-template-columns:repeat(2,1fr)}.skill{grid-template-columns:1fr;gap:8px}h1{font-size:2.1rem}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+
+<div class="page">
+<header class="masthead">
+  <div class="eyebrow">Atlas · second pass · 2026-09-13</div>
+  <h1>Atlas Second Pass</h1>
+  <p class="lede">Eight skills, five homes, and the rules that used to live in three places at once. This page records what was found on the second read, what changed, where every rule now lives, and what still stands between the set and its first end-to-end run.</p>
+  <div class="meta">
+    <span><b>Branch</b> claude/skill-list-analysis-d40ccf</span>
+    <span><b>Decisions written</b> 0009, 0010, 0011</span>
+    <span><b>Block version</b> atlas: 2</span>
+    <span><b>Files touched</b> 33</span>
+  </div>
+</header>
+
+<div class="layout">
+<nav class="rail" aria-label="Contents">
+  <a href="#why">Why a second pass</a>
+  <a href="#homes">Where every rule lives</a>
+  <a href="#confusion">Keeping the agent unconfused</a>
+  <a href="#git">Git, GitHub, no git</a>
+  <a href="#loop">The loop as it runs now</a>
+  <a href="#skills">Skill by skill</a>
+  <a href="#findings">Found on the second read</a>
+  <a href="#next">What else is needed</a>
+</nav>
+
+<main>
+
+<section id="why">
+  <div class="eyebrow">01</div>
+  <h2>Why a second pass, and what it was for</h2>
+  <p>The first pass listed nineteen seams: rules stated twice with small differences, states one skill wrote and another could not read, and words the glossary bans that the skills then used. The second pass asked a different question of each seam: not "which text is right" but "why were there two texts at all". Three answers covered nearly everything.</p>
+  <div class="two">
+    <div class="tile"><h3>A rule had no home</h3><p>"Which task is next" and "what is a task called" were never written anywhere as rules, so each skill that needed one improvised, and improvised differently. Now each has one home and skills point at it.</p></div>
+    <div class="tile"><h3>A wait lived in chat</h3><p>Review waited for the human's word, build looped when it needed an answer, and nothing on disk said a task was waiting. A parked session or <code>/atlas go</code> could not tell. Waits now leave a state on disk.</p></div>
+    <div class="tile"><h3>Git was told in five places</h3><p>The tracker paragraph, decision 0007, each skill's commit step, and the branch rule in build-it each described part of the same story. It is now one section, read by every skill through one sentence.</p></div>
+  </div>
+  <div class="callout"><div class="eyebrow">The rule under the rules</div>Every rule has exactly one home, a skill points at the home instead of quoting it, and when a skill and a home disagree the home wins. This is decision 0011, and it is now in the block <code>/atlas</code> writes into every project's <code>CLAUDE.md</code>.</div>
+</section>
+
+<section id="homes">
+  <div class="eyebrow">02</div>
+  <h2>Where every rule lives now</h2>
+  <p>This table is the deliverable of the pass. If a future edit puts one of these rules somewhere else, that is the drift to catch.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Rule</th><th>Home</th><th>Was previously in</th></tr></thead>
+    <tbody>
+      <tr><td>A task's id (<code>part/NN</code>, or the issue number)</td><td><code>plan/README.md</code> · Ids and statuses</td><td>Nowhere; implied differently by four skills</td></tr>
+      <tr><td>The four task statuses and their GitHub equivalents</td><td><code>plan/README.md</code> · status table</td><td>Tracker paragraph (three statuses) and review-it's date comparison</td></tr>
+      <tr><td>Which ready task is next</td><td><code>plan/README.md</code> · Which task is next</td><td>plan README, build-it, plan-it, and atlas, all different</td></tr>
+      <tr><td>What "a part has a plan" means (it has a task)</td><td><code>plan/README.md</code></td><td>The <code>Plan:</code> line on the map, which interview-me had already set</td></tr>
+      <tr><td>Where <code>(you)</code> goes (on a Done when box)</td><td><code>plan/README.md</code> · task template</td><td>Defined on Check by, used on boxes</td></tr>
+      <tr><td>No repo, a repo, a repo with GitHub: commits, branches, PRs, pushes, returning to the default branch</td><td><code>plan/README.md</code> · Git</td><td>Five places</td></tr>
+      <tr><td>The open-questions shape and its two markers</td><td><code>MAP.md</code> format comment</td><td>interview-me and prototype-it, restating a format</td></tr>
+      <tr><td>Statuses read off what exists (brief, a task past todo, all done)</td><td><code>GLOSSARY.md</code> · Statuses</td><td>Glossary definitions that disagreed with decision 0008 and interview-me step 7</td></tr>
+      <tr><td>When a handoff is live</td><td><code>notes/README.md</code></td><td>Nowhere; atlas would resume the same handoff forever</td></tr>
+      <tr><td>Step 1, the <code>Next:</code> line, the commit sentence, waits on disk, precedence, how <code>go</code> runs a sibling skill</td><td><code>skills/README.md</code> · Shapes every skill shares</td><td>CLAUDE.md and each skill, in slightly different words</td></tr>
+      <tr><td>The round shape</td><td><code>/interview-me</code> step 4</td><td>Same, with two partial restatements elsewhere (kept as one-phrase pointers)</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="confusion">
+  <div class="eyebrow">03</div>
+  <h2>How the agent stays unconfused</h2>
+  <p>An agent reading two texts that disagree does one of three things: picks the first, picks the most specific, or averages them. All three are wrong some of the time. The set now removes the choice rather than guiding it.</p>
+  <ul>
+    <li><b>One home, and a tie-break.</b> The block in every project's <code>CLAUDE.md</code> says the format wins over the skill. An agent that finds a conflict has an instruction for that case, and the instruction also names what to fix.</li>
+    <li><b>The same sentence in the same place.</b> Every skill opens with the identical step 1, commits with the identical sentence, and ends with an identical last-line shape. When eight skills say one thing eight ways, the agent infers eight rules. When they say it one way, it infers one.</li>
+    <li><b>Status is derived, never asserted.</b> Sketched means no brief. Decided means a brief and every task still todo. Building means at least one task past todo and not all done. Done means all tasks done. A skill and a person reading the same folder reach the same status without trusting a line that may be stale; <code>/atlas</code> repairs the line to match.</li>
+    <li><b>Waits are visible.</b> A task in <code>review</code> with an unticked <code>(you)</code> box, an open question on the map written by <code>/build-it</code>, a live handoff: each is a file state the next run reads. Only rounds and the prototype verdict wait in chat, and the skills README says so, so an agent knows those are the exceptions rather than a pattern to copy.</li>
+    <li><b>Negatives only as boundaries.</b> The old rule "positive instructions only" was broken in every skill, which taught the agent the rule was soft. The new rule is honest: positive by default, one boundary per step where a positive cannot draw it. Most old negatives became positives ("leave the brief, the other tasks, and the rest of the map as they are").</li>
+    <li><b>Formats are pointed at, not paraphrased.</b> <code>/map-it</code> no longer restates the diagram spec; it says "exactly as the format comment says". A paraphrase is a second copy that drifts.</li>
+    <li><b>The glossary's Avoid lists are enforced on the skills themselves.</b> Four banned words (frontier, batch, pass, turn) were in the skills. Two were reworded, one became a real term (<code>Pass</code>), and a grep now shows none.</li>
+  </ul>
+</section>
+
+<section id="git">
+  <div class="eyebrow">04</div>
+  <h2>Git, GitHub, and no git at all</h2>
+  <p>Three environments. The whole difference is written once, in the Git section of <code>plan/README.md</code>, and every skill's commit step is the one sentence "Commit as plan/README.md says". Decision 0007 (branches only with GitHub) stands and now has one place to be true.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Environment</th><th>Commits</th><th>Branches and PRs</th><th>Who pushes</th></tr></thead>
+    <tbody>
+      <tr><td><b>No repo</b></td><td>None. Skills write files. <code>/atlas</code> offers <code>git init</code> and reports <code>no repo</code> on line four until then.</td><td>None</td><td>Nobody</td></tr>
+      <tr><td><b>A repo</b> (<code>Tracker: files</code>)</td><td>Each skill commits what it wrote, on the branch that is checked out, as <code>&lt;skill&gt; &lt;id&gt;: &lt;what&gt;</code>. A rejected hook prints one line and stops. <code>/park-it</code> commits the five things and <code>prototypes/</code> wholesale.</td><td>None. Work happens in place.</td><td>You. Skills push nothing.</td></tr>
+      <tr><td><b>A repo with</b> <code>Tracker: github</code></td><td>As above for every skill except <code>/build-it</code>, which commits on its task branch.</td><td><code>/build-it</code>: clean tree, branch <code>part/NN-slug</code> from the default branch, push, PR with <code>Closes #NN</code>, then back to the default branch. <code>/review-it</code>: squash-merge and delete (<code>Merge: review-it</code>) or mark ready (<code>Merge: human</code>), then pull the default branch.</td><td>Skills push only the PR branch. You push the default branch.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Two things this fixes that would have bitten on the first GitHub run: nobody returned to the default branch after opening a PR, so the next interview would have committed onto a task branch that review-it then deleted; and <code>/build-it</code> committed the task file but not the map it had just edited, so <code>/atlas</code> reported its own work as a problem.</p>
+  <p>Two things left as they were, on purpose: the <code>Merge:</code> line stays in the file even with <code>files</code>, where it is ignored, so the format is one shape everywhere; and <code>/atlas</code> asks the tracker and merge questions together in one round only when a GitHub remote exists, so a plain folder gets no question at all.</p>
+</section>
+
+<section id="loop">
+  <div class="eyebrow">05</div>
+  <h2>The loop as it runs now</h2>
+  <p>Task statuses drive the loop. Every arrow is a status change owned by exactly one skill, and <code>/atlas</code> reads the statuses to choose the next command.</p>
+  <div class="statuses">
+    <span class="chip sk">sketched · no brief</span>
+    <span class="chip de">decided · brief, every task todo</span>
+    <span class="chip bu">building · a task past todo, not all done</span>
+    <span class="chip do">done · every task done</span>
+  </div>
+<pre class="mermaid">
+flowchart LR
+  todo -- "build-it picks it" --> doing
+  doing -- "Delivered written" --> review
+  review -- "findings" --> doing
+  review -- "clean (and merged)" --> done
+  doing -- "brief silent: question to the map" --> interview["interview-me"]
+  interview -- "brief rewritten" --> doing
+</pre>
+  <p>Where <code>/atlas go</code> stops, by design: at any command other than build or review, at a task with three passes carrying findings, and at a review that lists boxes only a person can tick. Each stop is a state on disk plus a <code>Next:</code> line, so the next session starts where this one ended.</p>
+</section>
+
+<section id="skills">
+  <div class="eyebrow">06</div>
+  <h2>Skill by skill</h2>
+  <div class="skills">
+    <div class="skill"><div class="name">/atlas<small>status, create, repair, go</small></div><ul>
+      <li>Asks tracker and merge in one round, only with a GitHub remote; sets nothing silently from the author count.</li>
+      <li>Line three prints <code>date kind slug</code> from the filename and marks a handoff <code>live</code> by the notes rule; line five resumes only a live one.</li>
+      <li>Line five honours <code>Needs:</code> when picking a sketched part, checks for tasks rather than a <code>Plan:</code> line, and puts a building part with an open question before a ready task.</li>
+      <li><code>go</code> opens the sibling <code>build-it</code> or <code>review-it</code> <code>SKILL.md</code> and follows it, so the invocation flag stays on every skill. It also stops at a review waiting on <code>(you)</code> boxes.</li>
+    </ul></div>
+    <div class="skill"><div class="name">/interview-me<small>decide a part, or draft the map</small></div><ul>
+      <li>Stops when a part's <code>Needs:</code> are not decided and names the part to interview first.</li>
+      <li>Decision files, superseding files, and <code>(answered)</code> clean-up are part scope only; project scope writes terms, parts, needs, and questions, as decision 0005 intended.</li>
+      <li>Sets <code>Plan:</code> to the brief; <code>/plan-it</code> points it at the folder once tasks exist.</li>
+      <li>Asks about a part's <code>proposed</code> decisions first on a re-interview, so "for now" choices get resolved.</li>
+      <li>"Frontier" and "batch" are gone; "settled" is kept for questions and choices, "decided" for parts.</li>
+    </ul></div>
+    <div class="skill"><div class="name">/map-it<small>regenerate, report drift, split</small></div><ul>
+      <li>Points at the two format comments instead of restating the diagram spec.</li>
+      <li>Says plainly that a split part reads sketched until its sub-parts are interviewed, and to split early.</li>
+      <li>The drift check and the format comment agree on "at most nine".</li>
+    </ul></div>
+    <div class="skill"><div class="name">/plan-it<small>brief to tasks</small></div><ul>
+      <li>Picks "the decided part with no task yet" and prints a proper two-line stop for a sketched part.</li>
+      <li><code>(you)</code> goes on Done when boxes; re-plans leave review tasks alone too.</li>
+      <li>Sets the part's <code>Plan:</code> line and commits the map with the folder.</li>
+    </ul></div>
+    <div class="skill"><div class="name">/build-it<small>one task, proven</small></div><ul>
+      <li>Picks by the one rule in the plan README.</li>
+      <li>A silent or wrong brief writes the question on the map and hands to <code>/interview-me</code>; the old <code>Next: /build-it</code> loop is gone.</li>
+      <li>Moves the task to <code>review</code> when Delivered is written.</li>
+      <li>Commits the map and any decision or term it wrote; on GitHub, returns to the default branch after the PR.</li>
+      <li>Step 4's negatives became one positive boundary.</li>
+    </ul></div>
+    <div class="skill"><div class="name">/review-it<small>brief and conventions</small></div><ul>
+      <li>Finds tasks by <code>status: review</code> instead of comparing dates that did not exist.</li>
+      <li>The sub-agent gets existing things of the same kind, which check two needs.</li>
+      <li>A ticked <code>(you)</code> box is confirmation; unticked ones are listed under <code>For you to check:</code> and the task stays in review with a <code>Next:</code> line. No chat wait.</li>
+      <li>Findings move the task back to doing; clean moves it to done; the GitHub case says the merge closes the issue.</li>
+    </ul></div>
+    <div class="skill"><div class="name">/prototype-it<small>a made answer</small></div><ul>
+      <li>Two-line stops with a <code>Next:</code>; the markers point at the map's format instead of restating it.</li>
+      <li>Named as the one skill that waits in chat for a verdict, on purpose.</li>
+    </ul></div>
+    <div class="skill"><div class="name">/park-it<small>pause to a note</small></div><ul>
+      <li>Step 1 checks <code>MAP.md</code> like every other skill; the last two lines follow the shared shape.</li>
+      <li>Reads what makes a handoff live, and records a task in review as such.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="findings">
+  <div class="eyebrow">07</div>
+  <h2>Found on the second read, not the first</h2>
+  <ul>
+    <li><b>The invocation flag and <code>go</code>.</b> Every skill carries <code>disable-model-invocation: true</code>, so <code>/atlas go</code> could never invoke build-it as a skill. Both install paths (skills.sh, the plugin, the link script) place skills as sibling folders, so following <code>../build-it/SKILL.md</code> as a file is portable and keeps the flag.</li>
+    <li><b>Project-scope interviews were writing decisions.</b> Step 6 applied to both scopes while step 4 and decision 0005 said the project scope decides nothing. Now scoped.</li>
+    <li><b>The <code>Plan:</code> line had two owners.</b> Interview set it, plan-it and atlas tested it as "no plan yet". Now interview sets it to the brief, plan-it to the folder, and "has a plan" means "has a task".</li>
+    <li><b>Splitting a decided part lost its status.</b> Sub-parts start sketched, so the derived status fell back. Documented, with the advice to split early.</li>
+    <li><b>Nothing removed an <code>(answered)</code> question.</b> Interview-me now copies the verdict into a decision or the brief and removes the line, so the part can reach <code>none</code>.</li>
+    <li><b>Proposed decisions were never revisited.</b> A re-interview now asks about them first.</li>
+    <li><b>Two note kinds had no writer.</b> The notes README now says research and review notes are written by hand or by whatever agent did the work.</li>
+    <li><b>The example broke decision 0004.</b> Its three folder READMEs were stubs pointing at the Atlas README. They now carry the formats, task 01's pass is dated, <code>(you)</code> boxes are marked, and Palette's questions are a list.</li>
+    <li><b>"Seven to nine parts" read as a floor.</b> The example has two. Now "at most nine".</li>
+  </ul>
+</section>
+
+<section id="next">
+  <div class="eyebrow">08</div>
+  <h2>What else is needed</h2>
+  <p>In order, because each step tells you whether the next is worth taking.</p>
+  <ol>
+    <li><b>The end-to-end test in files mode.</b> Copy <code>examples/brand/</code> to a scratch folder, <code>git init</code>, then <code>/atlas</code>, <code>/interview-me palette</code>, <code>/plan-it palette</code>, <code>/build-it</code>, <code>/review-it</code>, <code>/atlas go</code>, <code>/park-it</code>, <code>/atlas</code>, then <code>/prototype-it</code> on a <code>(prototype)</code> question and <code>/map-it palette</code> for a split. Record what broke as one review note and fix the skill.</li>
+    <li><b>The same in GitHub mode on a real repo.</b> This is also the check that <code>gh</code> 2.100 can create sub-issues and blocked-by dependencies from the command line; if it cannot, the tracker paragraph needs a fallback (labels and a "blocked by #n" line in the body) and that is a decision.</li>
+    <li><b>A mechanical checker.</b> A small <code>scripts/check.sh</code> that tests unique part ids, blockers that exist, headings that match diagram nodes, and node classes that match status lines. <code>/atlas</code> line four then rests on a script's output rather than a read, and a pre-commit hook can run it.</li>
+    <li><b>Packaging.</b> <code>scripts/link-skills.sh</code>, <code>claude plugin validate . --strict</code>, and a check that skills.sh installs the eight as siblings (the <code>go</code> rule depends on it). Then the README's install section, the blog post, and the push.</li>
+    <li><b>Two small decisions to take while testing.</b> Whether a task branch is deleted by the human under <code>Merge: human</code> or by a GitHub setting; and whether <code>/review-it</code> under <code>Merge: human</code> should pull the default branch after the person merges, or leave that to the next <code>/atlas</code>.</li>
+    <li><b>Open for the reviewer.</b> When <code>/build-it</code> stops on a silent brief under a GitHub tracker, it is on the task branch, so the open question it writes to the map lands there. Either commit that map edit on the default branch or accept it riding the PR; the handoff note asks for a call.</li>
+    <li><b>The map's own statuses.</b> All seven skill parts on <code>MAP.md</code> read building until the test passes. That is honest; move each to done as its run comes back clean.</li>
+  </ol>
+</section>
+
+</main>
+</div>
+</div>

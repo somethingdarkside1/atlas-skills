@@ -14,16 +14,20 @@ The vocabulary of the Atlas method and the skills that run it.
 
 ```mermaid
 flowchart TB
-  Home --> Glossary
-  Home --> Map
-  Home --> Plan
-  Home --> Decision
+  Home --> FiveThings["Five things"]
+  FiveThings --> Glossary
+  FiveThings --> Map
+  FiveThings --> Plan
+  FiveThings --> Decision
+  FiveThings --> Note
   Map --> Part
   Part --> Plan
   Part --> Decision
   Plan --> Brief
   Plan --> Task
+  Plan --> Tracker
   Task --> Ready
+  Task --> Pass
   Interview --> Round
   Interview --> Brief
   Interview --> Decision
@@ -37,9 +41,13 @@ flowchart TB
 
 ### The five things
 
+**Five things**:
+`GLOSSARY.md`, `MAP.md`, `plan/`, `decisions/`, and `notes/`: the five homes at the root of every Atlas project, each carrying its own format.
+_Avoid_: the docs, the layout, the files
+
 **Glossary**:
 The file holding the words a project owns, one entry per concept, with the synonyms to avoid.
-_Avoid_: context, ubiquitous language, CONTEXT.md (accepted as a legacy filename only)
+_Avoid_: context, ubiquitous language, CONTEXT.md (migrated into the glossary by `/atlas`)
 
 **Map**:
 The file holding the shape of the thing being built: one diagram and one section per part, each with a status.
@@ -50,24 +58,33 @@ One box on the map. A part has a status, a purpose, open questions, and links to
 _Avoid_: box, component, module, container, area
 
 **Plan**:
-The home of the work: one folder per part holding a brief and its tasks, or the repo's GitHub issues when the project chose that when the five things were created.
-_Avoid_: backlog, tracker, .scratch
+The home of the work: one folder per part holding a brief and its tasks, or the repo's GitHub issues when the tracker says so.
+_Avoid_: backlog, tracker (that word is the line that says where the plan lives), .scratch
+
+**Tracker**:
+The one line in the plan saying where tasks live: as files in `plan/`, or as the repo's GitHub issues.
+_Avoid_: mode, backend, issue tracker
 
 **Home**:
 One of the five things: the single place a kind of truth lives. If it is true today it is in a home; if it was true on a date it is a note.
 _Avoid_: doc, artifact
 
 **Brief**:
-The written account of what a part must do and why, including its settled choices, written when the part is decided.
+The written account of what a part must do and why, including its settled choices. A part is decided when its brief exists.
 _Avoid_: spec, PRD, requirements
 
 **Task**:
-One file in a part's plan: a complete slice of work sized for one session, declaring which tasks block it.
+One item in a part's plan: a complete slice of work sized for one session, named by its part and number, declaring which tasks block it.
 _Avoid_: ticket, story (issue is the same thing in GitHub mode)
 
 **Ready**:
-The state of a task whose blocking tasks are all done. Ready tasks are what `/build-it` picks from.
+The state of a task that is todo and whose blocking tasks are all done. Ready tasks are what `/build-it` picks from.
 _Avoid_: frontier, unblocked
+
+**Pass**:
+One dated run of `/review-it` on a task, recorded under the task's Review with its findings or `clean`.
+_Avoid_: iteration, review round
+_Not_: a round, which is questions put to the human.
 
 **Decision**:
 A short file recording a choice that is hard to reverse and would surprise a future reader.
@@ -79,18 +96,20 @@ _Avoid_: evidence, scratch, handoff doc
 
 ### Statuses
 
+Each status is read off what exists, so any skill and any person arrives at the same one.
+
 **Sketched**:
-A part that exists on the map but has not been interviewed.
+A part with no brief.
 _Avoid_: fog, open, todo
 
 **Decided**:
-A part whose open questions are answered and whose decisions are written.
+A part with a brief whose tasks, if it has any, are all todo.
 
 **Building**:
-A part with at least one task in progress.
+A part with at least one task past todo and not every task done.
 
 **Done**:
-A part whose tasks are all done and reviewed.
+A part whose tasks are all done and, with a GitHub tracker, merged.
 
 ### The method
 
@@ -105,11 +124,12 @@ The relentless questioning that settles a part: rounds of numbered questions, ea
 _Avoid_: grilling, grill
 
 **Handoff**:
-A note that pauses a session so a fresh one can resume it.
+A note that pauses a session so a fresh one can resume it. Live while no commit to the five things is newer than it; spent after.
+_Avoid_: handoff doc, context dump
 
 **Round**:
-One batch of numbered questions in an interview, each with a recommended answer, answered by the human before the next batch is asked.
-_Avoid_: batch, turn, pass
+One batch of numbered questions in an interview, each with a recommended answer, answered by the human before the next is asked.
+_Avoid_: batch, turn
 
 **Prototype**:
 The smallest made thing that answers one question a part's interview could not, kept under `prototypes/` and pointed to by its note. Tasks may copy from it and never link to it.

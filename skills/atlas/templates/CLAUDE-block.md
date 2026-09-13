@@ -1,3 +1,4 @@
-## Atlas (atlas: 1)
+## Atlas (atlas: 2)
 
-This project uses Atlas. `GLOSSARY.md` holds the words, `MAP.md` the shape, `plan/` the work, `decisions/` the why, `notes/` the dated record. Read `GLOSSARY.md` and `MAP.md` before working and use their words. Each file starts with its own format; follow it. Write hard-to-reverse choices to `decisions/`. Run `/atlas` to see what is next.
+This project uses Atlas. `GLOSSARY.md` holds the words, `MAP.md` the shape, `plan/` the work, `decisions/` the why, `notes/` the dated record. Read `GLOSSARY.md` and `MAP.md` before working and use their words. Each file starts with its own format; follow it, and when a skill and a format disagree, the format wins. Write hard-to-reverse choices to `decisions/`. Run `/atlas` to see what is next.
+

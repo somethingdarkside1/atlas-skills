@@ -20,4 +20,6 @@ Open `notes/2026-09-14-prototype-wordmark-in-three-weights.md` and confirm one d
 Three directions drawn in `wordmark/candidates.svg`. The condensed grotesque was chosen because it alone stays legible at 16 pixels. Verified by viewing at 16, 64, and 400 pixels.
 
 ## Review
-Clean. Matches the brief; uses the glossary's words.
+### 2026-09-14
+Brief: clean.
+Conventions: clean.

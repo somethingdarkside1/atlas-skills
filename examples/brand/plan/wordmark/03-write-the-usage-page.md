@@ -14,7 +14,7 @@ Open `wordmark/usage.html`; a stranger can place the wordmark correctly from the
 ## Done when
 - [ ] Every lockup shown with its clear space drawn
 - [ ] Minimum size stated for print and screen
-- [ ] Two misuses shown, each crossed out
+- [ ] (you) Two misuses shown, each crossed out
 
 ## Delivered
 
