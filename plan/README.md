@@ -19,7 +19,7 @@ plan/
     02-<slug>.md
 ```
 
-A task is ready when every task in its `blocked_by` list is done, and a blocker may only name a task that exists. `/build-it` picks the lowest-numbered ready task. Task numbers are never reused or reordered; a re-plan edits, removes, or adds todo tasks only. Part folders stay flat and are named by the part id, which is unique across the whole map.
+A task is ready when every task in its `blocked_by` list is done, and a blocker may only name a task that exists. `/build-it` picks the lowest-numbered ready task or the highest-impact blocker. Task numbers are never reused or reordered; a re-plan edits, removes, or adds todo tasks only. Part folders stay flat and are named by the part id, which is unique across the whole map.
 
 ## Brief
 

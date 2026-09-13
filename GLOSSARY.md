@@ -39,10 +39,10 @@ flowchart TB
 
 **Glossary**:
 The file holding the words a project owns, one entry per concept, with the synonyms to avoid.
-_Avoid_: context, ubiquitous language, CONTEXT.md (accepted as a legacy filename only)
+_Avoid_: context, ubiquitous language
 
 **Map**:
-The file holding the shape of the thing being built: one diagram and one section per part, each with a status.
+The file holding the shape of the thing being built: one diagram and one section per part, each with a status and its target state.
 _Avoid_: architecture doc, overview, system design
 
 **Part**:
@@ -70,7 +70,7 @@ The state of a task whose blocking tasks are all done. Ready tasks are what `/bu
 _Avoid_: frontier, unblocked
 
 **Decision**:
-A short file recording a choice that is hard to reverse and would surprise a future reader.
+A short file recording a choice that is hard to reverse, material in impact, or could surprise a future reader.
 _Avoid_: ADR, architecture decision record
 
 **Note**:
