@@ -1,55 +1,53 @@
-# Skills
+# Skill authoring
 
-One folder per skill, flat. All eight were written in one interview session (see the newest handoff in `notes/`) and are marked on `MAP.md`: `atlas`, `interview-me`, `map-it`, `plan-it`, `build-it`, `review-it`, `prototype-it`, `park-it`.
+The eight existing skill folders are the earlier draft. The [work skills package](../plan/work-skills/brief.md) defines the migration; the [shared methods package](../plan/shared-methods/brief.md) defines reusable reasoning. The first public revision targets a separate `setup-atlas` operation alongside the eight familiar operations. That new skill and shared method bundles are planned, not yet installed here.
 
-## Skeleton
+## Contract before prose
 
-```
-skills/<name>/
-  SKILL.md
-  agents/openai.yaml
-  templates/            only if the skill creates files from templates
-```
+Every operation declares these in its brief before implementation:
 
-`SKILL.md`:
+| Contract field | Meaning |
+|---|---|
+| Reads | Required inputs, conditional inputs, and where to expand scope |
+| Changes | Owned artifacts and allowed state transitions |
+| Finished | Observable evidence that this operation has completed its job |
+| Recovery | A durable waiting/failure record and the exact resumable target |
 
-```md
----
-name: <name>
-description: <one line, human-facing, what it does>
-disable-model-invocation: true
----
+The operation follows applicable project instructions and preserves unrelated work. Project instructions own commits, branches, worktrees, pushes, PRs, and merges. A successful review is an acceptance result; integration follows the project's separately authorized workflow.
 
-# <Name>
+## Source layout
 
-<One sentence: the job.>
+Keep one flat `skills/<name>/` folder per installable skill. Its `SKILL.md` holds the operation; `agents/openai.yaml` holds supported invocation metadata; its conditional references and templates live beside it. Author shared methods once when the shared-methods package creates their canonical source. Package generated copies inside the skills that need them and validate their source hashes so selective installation has every required reference.
 
-## Read first
-<Which of the five things to read, and which parts of them. State, not bodies, where possible.>
+An index or label is a pointer, not a method body. Load a method only for the branch that requires it. An independently invocable method earns a public skill only when a real use case and invocation test justify that interface.
 
-## Steps
-1. <Step.> Done when <observable condition>.
-2. ...
+## Procedure shape
 
-## Output
-<What changed on disk or on GitHub when this skill finishes, as a list.>
-```
+1. Resolve the target and read the relevant current formats and project instructions. Done when the target and prerequisites are known.
+2. Perform the operation using the selected shared method where needed. Done when its declared output and evidence exist.
+3. Record the resulting state or the unresolved action and return a usable next step. Done when a fresh session can verify completion or resume.
 
-`agents/openai.yaml`:
+Adapt the number of steps to the operation. Each step has an observable completion condition. Initialization identifies missing homes and restores them; another operation points to setup when its required state is absent. Report enough detail to recover from a failure. Use positive instructions with explicit ownership and prerequisites.
+
+## Invocation and packaging
+
+Public state-changing operations remain explicitly invoked for the first revision. The router recommends their actual installed names. Automatic continuation is deferred until the harness policy and bounded progress tests support it; a pointer to a disabled skill does not bypass that restriction. Shared plain references can be read as method guidance by their owning operation.
+
+Keep metadata consistent with supported hosts and validate the file contents rather than their line count. The current five-line `openai.yaml` shape is valid:
 
 ```yaml
 interface:
-  display_name: "<Name>"
-  short_description: "<what it does>"
+  display_name: "Operation name"
+  short_description: "One concrete job"
 policy:
   allow_implicit_invocation: false
 ```
 
-## Checklist before a skill is marked done
+## Completion checklist
 
-- As short as the job allows, positive instructions only, one job.
-- Step 1 stops with `Run /atlas first.` when a file it needs is missing; every failure is one line naming the fix; the last line is `Next: /command <id>`.
-- No format restated: the skill points at the file's own format comment or folder README.
-- Reads the tracker and merge lines from `plan/README.md` when it touches the plan.
-- Works in both modes: `Tracker: files` (in place, commit when the folder is a git repo) and `Tracker: github` (branch and PR from `/build-it` only).
-- Run once against `examples/brand/` (copied to a scratch folder) and once against a real project; both results recorded as a note. Pending for all eight as of 2026-09-11.
+- The operation and each shared method have one source for their rules.
+- Reads, owned writes, completion, and failure handling match the adopted format and decisions.
+- Project delivery policy stays in project instructions and is honored by the run.
+- Selective installation contains every required reference with a valid source version.
+- Applicable structural checks pass, and the package's behavioral cases have recorded results.
+- Human documentation describes demonstrated behavior and links remaining work.
