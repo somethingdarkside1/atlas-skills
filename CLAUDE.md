@@ -1,29 +1,35 @@
-# Atlas
+# Atlas project instructions
 
-## Atlas (atlas: 1)
+## Read by scope
 
-This project uses Atlas.
-`GLOSSARY.md` holds the words, `MAP.md` the shape, `plan/` the work, `decisions/` the why, `notes/` the dated record. Read `GLOSSARY.md` and `MAP.md` before working and use their words. Each file starts with its own format; follow it. Write hard-to-reverse choices to `decisions/`. Run `/atlas` to see what is next.
+Read [INDEX.md](INDEX.md) to select a part, then its brief, the chosen task, and relevant terms in [GLOSSARY.md](GLOSSARY.md). [MAP.md](MAP.md) owns the shape; [plan/README.md](plan/README.md) owns the current work format. Read the format of each home you change and the decisions it cites. Expand through affected dependencies and applicable nested instructions.
 
-## This repo
+## This repository
 
-The Atlas skill set plus the files that describe it, written with its own method. The block above is the one `/atlas` writes into every project.
+Atlas is by Vitali Liouti. The active plan prepares the next public release. `skills/` contains the earlier executable draft; the work packages specify its replacement contracts. Execute draft skills against scratch fixtures during validation. Use the package start prompts for work on this repository.
 
-## Layout
+- `INDEX.md` routes reads; the five things own project state.
+- `skills/<name>/` remains flat. Follow [skills/README.md](skills/README.md) when editing skills.
+- `examples/` holds teaching fixtures; copy them before a run.
+- `notes/archive/` preserves superseded planning evidence. [plan/MIGRATION.md](plan/MIGRATION.md) maps it to current work.
+- `reference/` is an ignored comparison copy. Retain source attribution for any adapted material.
+- Keep `AGENTS.md` and `CLAUDE.md` resolving to these same instructions.
 
-- `skills/<name>/SKILL.md`: one folder per skill, flat, no buckets. The skeleton and the done-checklist are in `skills/README.md`. Templates a skill creates files from live beside it in `templates/`; `/atlas` owns the five things' templates.
-- `examples/brand/`: a small finished project to run skills against. Copy it to a scratch folder first.
-- `reference/` is gitignored. A local, unchanged copy of Matt Pocock's set can sit there for comparison; it is never committed.
-- `README.md` is the docs page and the install page.
+## Delivery policy for this repository
 
-## Writing a skill
+This section is project policy, separate from Atlas's method. Applicable user instructions and existing authorization determine the permitted actions.
 
-- One job per skill, as short as the job allows, numbered steps, each ending with a "done when" line. Step 1 stops with `Run /atlas first.` when a file it needs is missing; the last line is `Next: /command <id>`; every skill commits only what it wrote when the folder is a git repo.
-- Positive instructions only. Say what to do, not what to avoid.
-- Formats are never restated in a skill. They live in the five things themselves (hidden comments and folder READMEs) and in `skills/atlas/templates/`.
-- Every skill starts by reading the five things it will touch, including the hidden format comment.
-- User-invoked skills carry `disable-model-invocation: true` and a three-line `agents/openai.yaml` with `policy.allow_implicit_invocation: false`.
+1. Inspect the branch, worktree, merge state, staged diff, and existing changes before editing. Preserve unrelated work and its staging state.
+2. Use a `codex/<work-name>` branch from current `main` for a coherent work package. Resume its existing branch when appropriate. Use a separate worktree when another session owns the checkout or an isolated run needs it.
+3. Validate the chosen work with the checks named by its task. Review the actual staged diff. Commit the coherent owned changes with a message describing the result; retain incomplete work with an accurate handoff when a check fails.
+4. Push and open a PR when the user's request or an explicit project delegation covers those actions. A PR names the work, evidence, and remaining limits. Reuse its existing PR when continuing the same work.
+5. Merge when authorized and the current PR revision satisfies its acceptance and applicable required checks. Use a merge commit for this repository's architecture and work-package changes so source history remains traceable. Fetch the result and confirm local `main` matches it. Record a blocker if account permissions or remote policy prevent completion.
+6. A review report records acceptance and findings. Run delivery actions as a separate project step. Preserve the reviewed revision if integration changes it, and rerun affected checks before claiming the integrated result is accepted.
 
-## Prose
+For this planning task, the user's instruction explicitly authorizes the push and merge. Public source publication is separate from tagging a validated skill release; the latter has its own task in the public-release package.
 
-Plain words. No em dashes: use a comma, a colon, a period, or parentheses.
+## Writing and verification
+
+Use plain words and sentences with commas, colons, periods, or parentheses. Each rule has one authoritative home. Read [skills/README.md](skills/README.md) for procedure shape and method packaging. Put consequential proposed choices in `decisions/` with their actual status. Preserve historical notes; write a new dated note for later conclusions.
+
+Run `python3 scripts/check-project.py` for project links, active task dependencies, package coverage, and metadata. Run any additional checks required by the selected task. A structural pass is evidence about documents and packaging; behavior is established by the validation work package.

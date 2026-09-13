@@ -1,28 +1,15 @@
 # Notes
 
-Dated, write-once files. A note records what was true on a date: a handoff, a prototype verdict, research findings, a review. Never edit a note after the day it was written. Anything that stays true gets copied into the glossary, the map, the plan, or a decision.
+A note records what was observed or decided in a session. Current terms, work, shape, and accepted choices belong in their appropriate homes; the note links to those results. Read a relevant evidence note when a task, question, decision, or handoff points to it.
 
-File name: `YYYY-MM-DD-<kind>-<slug>.md`. Only `/atlas` reads notes, and only the newest handoff.
+## Format
 
-## Template
+Use `YYYY-MM-DD-<kind>-<slug>.md`, adding a time or unique suffix for repeated sessions. Frontmatter has `date`, `kind: handoff | prototype | research | review`, and `part: <current-part-id> | project`. Summary is at most three sentences. Detail contains the evidence, source pointers, uncertainty, or session context. Copied into links the homes that received durable results, or says nothing durable.
 
-```md
----
-date: 2026-09-14
-kind: prototype
-part: wordmark
----
+Preserve a finalized note. Record later corrections in a new note that identifies what changed. A handoff names an exact resumable target and is checked against current state before following it. A newer unrelated note does not make that handoff undiscoverable.
 
-# Wordmark in three weights
+## Archives and current work
 
-## Summary
-Three sentences at most.
+`archive/YYYY-MM-DD-<slug>/` holds frozen supporting material for a dated review or migration. Its README names the original revision, any link rebasing, and the current replacement. Archived task states are historical; active selection uses `plan/` only. This keeps one active plan while retaining source evidence.
 
-## Detail
-Whatever the reader needs. Link the five things instead of repeating them.
-
-## Copied into
-Which home received the durable result, or "nothing durable".
-```
-
-`kind` is `handoff`, `prototype`, `research`, or `review`. `part` is a part id or `project`.
+Start with the [methods and project-policy review](2026-09-13-review-methods-and-project-policy.md) for the current direction. The [initial review](2026-09-13-review-atlas-framework.md) records the original 28 finding groups, and the [plan migration](../plan/MIGRATION.md) accounts for their work.
