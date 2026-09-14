@@ -11,9 +11,9 @@ The [architecture review](../../notes/2026-09-13-review-methods-and-project-poli
 Use a small directory of meaningful pointers to load the relevant part and method while retaining the ability to expand across affected boundaries.
 
 ## Decisions
-[0016](../../decisions/0016-pointers-before-label-taxonomy.md): proposed release direction.
+[0016](../../decisions/0016-pointers-before-label-taxonomy.md): accepted release direction.
 
-The package is ready to discuss from this brief. The core-model decision task adopts the recommended boundaries before dependent implementation. Proposed defaults guide the interview; they are not a record of answers the user has not given.
+The release boundaries were adopted through [core-model/01](../core-model/01-settle-boundaries.md) on 2026-09-15. Use the linked accepted decisions as settled input; the package-specific choices below remain with their named tasks, and implementation still requires accepted, accessible blocker outputs.
 
 ### Start prompt
 
@@ -21,7 +21,7 @@ The package is ready to discuss from this brief. The core-model decision task ad
 
 ### Choices to settle
 
-Choose whether existing part ids suffice; thresholds for splitting; what evidence triggers scope expansion. Measure rather than assume token savings.
+Use existing part ids and pointers under decision 0016. Choose thresholds for splitting and concrete scope-expansion signals; measure retrieval completeness as well as context cost before proposing another classification.
 
 ### Reads, changes, and finish
 

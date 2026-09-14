@@ -18,7 +18,7 @@ Use [PROMPTS.md](PROMPTS.md) for standalone package and continuation prompts. [C
 | [Validation](validation/brief.md) | [01](validation/01-check-structural-contracts.md) | Demonstrate structural and behavioral correctness |
 | [Public release](public-release/brief.md) | [01](public-release/01-write-public-guide-and-credit.md) | Document, install, and publish a verified release |
 
-Task blockers are the execution order. The table is a directory, not a claim that every first task is ready. Start with `core-model/01`. Later, method tasks and some policy/documentation tasks can run independently once their blockers are done. Each package brief contains an interview start prompt, read scope, ownership, completion criterion, and unresolved choices.
+Task blockers are the execution order. The table is a directory, not a claim that every first task is ready. The adopted boundaries are in `core-model/01`; task 02 is the next core-model task once 01 has accepted evidence accessible to the attempt. Method tasks and some policy/documentation tasks can run independently once their blockers are done. Each package brief contains an interview start prompt, read scope, ownership, completion criterion, and unresolved choices.
 
 Use the current project instructions and package prompts for work on this repository. The source Atlas skills are being migrated and are exercised in scratch fixtures; their older tracker and Git rules do not redefine this active plan.
 
@@ -36,7 +36,7 @@ A task file is `plan/<part>/NN-<slug>.md`. Its frontmatter has `status`, `kind`,
 | done | Required evidence and judgments support acceptance of the named output |
 | canceled | Work was removed with its reason and incoming dependencies accounted for |
 
-Read full task bodies when editing their meaning. A canceled blocker does not satisfy a dependency; resolve or replace that dependency explicitly. A repeated operation finds the existing task and output. A changed artifact or brief requires affected acceptance to be reassessed. Record the concrete workspace/branch and pending action in Delivered when work is interrupted. Review names the examined output and scope revision, checks, findings or acceptance, and outstanding human judgments.
+Read full task bodies when editing their meaning. Apply the [accepted evidence and dependency principles](../decisions/0019-acceptance-follows-output-and-scope.md) when canceling work or changing an artifact or brief. A repeated operation finds the existing task and output. Record the concrete workspace/branch and pending action in Delivered when work is interrupted. Review names the examined output and scope revision, checks, findings or acceptance, and outstanding human judgments.
 
 The core-model package defines the distributable task contract and its migration. These repository planning conventions support doing that work; they are not a claim that the earlier source templates already implement it.
 

@@ -11,9 +11,11 @@ The [architecture review](../../notes/2026-09-13-review-methods-and-project-poli
 Provide reusable interviewing, diagnosis, verification, and prototype methods with precise triggers and useful outputs, authored once and packaged for their consumers.
 
 ## Decisions
-[0014](../../decisions/0014-shared-methods-travel-with-consumers.md): proposed release direction.
+[0014](../../decisions/0014-shared-methods-travel-with-consumers.md): accepted release direction.
 
-The package is ready to discuss from this brief. The core-model decision task adopts the recommended boundaries before dependent implementation. Proposed defaults guide the interview; they are not a record of answers the user has not given.
+The release boundaries were adopted through [core-model/01](../core-model/01-settle-boundaries.md) on 2026-09-15. Use the linked accepted decisions as settled input; the package-specific choices below remain with their named tasks, and implementation still requires accepted, accessible blocker outputs.
+
+[0020](../../decisions/0020-decide-only-the-selected-scope.md) bounds interviews to the selected outcome. Preserve the short route for already-settled work, load methods conditionally, and choose checks that can change the judgment; existing required project checks still apply. [0018](../../decisions/0018-one-method-modular-skills.md) defines the integrated product, while this package retains ownership of method generation and dependency checks.
 
 ### Start prompt
 

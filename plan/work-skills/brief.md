@@ -11,10 +11,12 @@ The [architecture review](../../notes/2026-09-13-review-methods-and-project-poli
 Give all eight Atlas operations explicit reads, owned changes, completion evidence, and recovery, with local canonical work and project-owned delivery.
 
 ## Decisions
-[0012](../../decisions/0012-atlas-owns-work-projects-own-delivery.md): proposed release direction.
-[0013](../../decisions/0013-local-tasks-first.md): proposed release direction.
+[0012](../../decisions/0012-atlas-owns-work-projects-own-delivery.md): accepted release direction.
+[0013](../../decisions/0013-local-tasks-first.md): accepted release direction.
 
-The package is ready to discuss from this brief. The core-model decision task adopts the recommended boundaries before dependent implementation. Proposed defaults guide the interview; they are not a record of answers the user has not given.
+The release boundaries were adopted through [core-model/01](../core-model/01-settle-boundaries.md) on 2026-09-15. Use the linked accepted decisions as settled input; the package-specific choices below remain with their named tasks, and implementation still requires accepted, accessible blocker outputs.
+
+[0019](../../decisions/0019-acceptance-follows-output-and-scope.md) and [0020](../../decisions/0020-decide-only-the-selected-scope.md) settle acceptance and interview boundaries. Keep the direct one-task route for clear work, reuse applicable evidence after impact assessment, and update only homes whose facts change. [0018](../../decisions/0018-one-method-modular-skills.md) makes these operations parts of one product without authorizing unattended orchestration.
 
 ### Start prompt
 

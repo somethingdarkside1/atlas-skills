@@ -11,10 +11,12 @@ The [architecture review](../../notes/2026-09-13-review-methods-and-project-poli
 Publish a clearly attributed, installable, verified Atlas release under Vitali Liouti, with accurate documentation and a maintainable contribution path.
 
 ## Decisions
-[0013](../../decisions/0013-local-tasks-first.md): proposed release direction.
-[0017](../../decisions/0017-evidence-before-release.md): proposed release direction.
+[0013](../../decisions/0013-local-tasks-first.md): accepted release direction.
+[0017](../../decisions/0017-evidence-before-release.md): accepted release direction.
 
-The package is ready to discuss from this brief. The core-model decision task adopts the recommended boundaries before dependent implementation. Proposed defaults guide the interview; they are not a record of answers the user has not given.
+The release boundaries were adopted through [core-model/01](../core-model/01-settle-boundaries.md) on 2026-09-15. Use the linked accepted decisions as settled input; the package-specific choices below remain with their named tasks, and implementation still requires accepted, accessible blocker outputs.
+
+[0018](../../decisions/0018-one-method-modular-skills.md) sets the product direction: one integrated project method with a full-package default and modular entry points. Describe GitHub source, PRs, and coordination separately from the deferred hosted task adapter; advertise selective installation only for paths supported by the installation evidence.
 
 ### Start prompt
 

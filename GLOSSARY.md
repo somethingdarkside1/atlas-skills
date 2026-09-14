@@ -4,12 +4,12 @@ FORMAT. This file indexes the authoritative term clusters under glossary/. Read 
 
 # Atlas vocabulary
 
-These terms describe the current release plan and proposed architecture. The older skill sources and templates are being migrated by the work packages.
+These terms describe the adopted release boundaries. The older skill sources and templates are being migrated by the work packages.
 
 | Cluster | Read for | Definitions |
 |---|---|---|
 | Homes | Project knowledge and ownership | [Home, Glossary, Map, Plan, Decision, Note, Part](glossary/homes.md) |
-| Work | Scope, progress, evidence, and resumption | [Work package, Brief, Task, Delivery, Acceptance, Integration, and statuses](glossary/work.md) |
+| Work | Scope, progress, evidence, and resumption | [Work package, Brief, Task, Delivery, Acceptance, Integration, Project authorization, Cancellation, and statuses](glossary/work.md) |
 | Methods | Reusable reasoning and operation boundaries | [Atlas, Skill, Operation, Method, Interview, Prototype, Context pointer, Project workflow](glossary/methods.md) |
 
 ```mermaid
@@ -32,4 +32,4 @@ flowchart LR
   Skill --> Method
 ```
 
-A task's acceptance and a project's integration are separate facts. A method supplies reasoning; an operation owns the resulting changes to the work record. [Decision 0012](decisions/0012-atlas-owns-work-projects-own-delivery.md) proposes the boundary, and [core-model/01](plan/core-model/01-settle-boundaries.md) records its adoption.
+A task's acceptance and a project's integration are separate facts. A method supplies reasoning; an operation owns the resulting changes to the work record. [Decision 0012](decisions/0012-atlas-owns-work-projects-own-delivery.md) establishes the boundary, and [core-model/01](plan/core-model/01-settle-boundaries.md) records its adoption.

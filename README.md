@@ -1,6 +1,6 @@
 # Atlas
 
-**Map it before you build it.** Atlas is a project method by **[Vitali Liouti](https://github.com/somethingdarkside1)**. Five plain-Markdown homes keep the words, shape, work, reasons, and dated record of a project understandable across agent sessions.
+**Keep the project understandable across sessions.** Atlas is an integrated project method by **[Vitali Liouti](https://github.com/somethingdarkside1)**, implemented through modular skills. Five plain-Markdown homes keep the words, shape, work, reasons, and dated record together.
 
 **Public development status:** the repository contains eight draft skills and the plan for their next revision. The revised operations, separate setup, and reusable method bundles are work in progress. This public source is a development plan; a validated tagged release has separate acceptance gates.
 
@@ -8,7 +8,9 @@
 
 Atlas operations create and assess work. Shared interviewing, diagnosis, verification, and prototype methods supply the reasoning. Project instructions own commits, branches, worktrees, pushes, PRs, and merges.
 
-The proposed first revision keeps briefs and tasks in local files. A project can still use GitHub for source and PRs. Native GitHub task tracking and automatic cross-skill continuation are deferred while the local lifecycle is established and tested.
+The adopted first-revision direction keeps briefs and tasks in local files. A project can use GitHub for source, PRs, and issue links for coordination under its own delivery policy. Native GitHub task tracking and automatic cross-skill continuation are deferred while the local lifecycle is established and tested.
+
+The product direction is a coherent full-package experience with modular operations and methods loaded when needed. Clear small work can use one task under an existing brief; installation claims, including selective installation, depend on the release checks. See the [product decision](decisions/0018-one-method-modular-skills.md).
 
 | Home | Purpose |
 |---|---|
@@ -32,7 +34,7 @@ Start at **[INDEX.md](INDEX.md)**. It routes a focus to the appropriate brief an
 6. **Validation:** prove normal and failure paths with real artifacts and fresh contexts.
 7. **Public release:** document, package, install, and publish the verified revision.
 
-Begin with [core-model/01](plan/core-model/01-settle-boundaries.md). Copy its starter from [the agent prompts](plan/PROMPTS.md) and use [the package issues](plan/COORDINATION.md) to coordinate PRs. Each package includes a concrete interview start prompt, unresolved choices, owned files, dependencies, and acceptance criteria. The earlier plan is [preserved and mapped](plan/MIGRATION.md), including the deferred GitHub work.
+Read the adopted boundaries in [core-model/01](plan/core-model/01-settle-boundaries.md), then select eligible work from the local task states. Copy a package starter from [the agent prompts](plan/PROMPTS.md) and use [the package issues](plan/COORDINATION.md) to coordinate PRs. Each package includes a concrete interview start prompt, unresolved choices, owned files, dependencies, and acceptance criteria. The earlier plan is [preserved and mapped](plan/MIGRATION.md), including the deferred GitHub work.
 
 ## Read the analysis
 

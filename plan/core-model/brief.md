@@ -11,19 +11,24 @@ The [architecture review](../../notes/2026-09-13-review-methods-and-project-poli
 Define the boundary between Atlas work, reusable methods, project delivery, and evidence so every consumer can make the same state decision.
 
 ## Decisions
-[0012](../../decisions/0012-atlas-owns-work-projects-own-delivery.md): proposed release direction.
-[0013](../../decisions/0013-local-tasks-first.md): proposed release direction.
-[0017](../../decisions/0017-evidence-before-release.md): proposed release direction.
+[0012](../../decisions/0012-atlas-owns-work-projects-own-delivery.md): accepted release direction.
+[0013](../../decisions/0013-local-tasks-first.md): accepted release direction.
+[0017](../../decisions/0017-evidence-before-release.md): accepted release direction.
+[0018](../../decisions/0018-one-method-modular-skills.md): integrated product with modular operations.
+[0019](../../decisions/0019-acceptance-follows-output-and-scope.md): exact evidence and affected acceptance.
+[0020](../../decisions/0020-decide-only-the-selected-scope.md): bounded interviews and explicit adoption.
 
-The package is ready to discuss from this brief. The core-model decision task adopts the recommended boundaries before dependent implementation. Proposed defaults guide the interview; they are not a record of answers the user has not given.
+The release boundaries were adopted through [core-model/01](../core-model/01-settle-boundaries.md) on 2026-09-15. Use the linked accepted decisions as settled input; the package-specific choices below remain with their named tasks, and implementation still requires accepted, accessible blocker outputs.
 
 ### Start prompt
 
 > Read INDEX.md, plan/README.md, plan/core-model/brief.md, and the first eligible task. Use concrete scenarios to challenge the unresolved choices, find accessible facts yourself, and reuse prior accepted answers. Record the chosen decisions and acceptance checks before implementing the selected task. Complete its evidence and follow the project delivery policy.
 
-### Choices to settle
+### Adopted scope and remaining work
 
-Choose delivery identity with and without Git; how canceled blockers are handled; when a changed brief invalidates accepted work.
+The [adoption record](../../notes/2026-09-15-review-core-model-adoption.md) records the user authorization, rationale, decision dispositions, and code PR, document, and non-Git prototype walkthroughs. Decisions 0019 and 0020 settle evidence identity, cancellation, changed scope, and the interview boundary. Task 02 defines the minimal versioned fields and transitions; task 03 defines and exercises legacy migration while preserving ids, historical evidence, and project customizations.
+
+GitHub remains available for source, PRs, and coordination under project policy. A hosted task adapter is deferred; issue state and PR state are not substitutes for the local acceptance record. The public product is one method under 0018, with modular skills and evidence-based installation support.
 
 ### Reads, changes, and finish
 

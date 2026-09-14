@@ -5,7 +5,7 @@ FORMAT. One project term per entry. Define what it is in one or two sentences; u
 # Methods
 
 **Atlas**:
-The five-home project method and the skills that operate on it.
+The integrated five-home project method, implemented through modular skills that share the work record.
 _Avoid_: framework as a synonym for a runtime service
 
 **Skill**:
@@ -13,7 +13,7 @@ An installable entry point that exposes an operation or a demonstrated independe
 _Avoid_: command folder
 
 **Operation**:
-An Atlas action with explicit reads, owned changes, completion evidence, and recovery behavior.
+An Atlas action with explicit reads, owned changes, completion evidence, and recovery behavior. Operation completion means its declared job finished; a completed review may report findings while the task remains unaccepted.
 _Avoid_: method
 _Not_: Method, reasoning guidance that the operation uses.
 
@@ -23,7 +23,7 @@ _Avoid_: operation
 _Not_: Operation, the action that changes the work record.
 
 **Interview**:
-The method that resolves scoped uncertainty through discovered facts, concrete cases, and the person's remaining decisions.
+The method that resolves uncertainty for a selected outcome through discovered facts, concrete cases, delegated choices, and the person's remaining decisions. Later questions retain an explicit owner instead of extending every interview to the whole project.
 _Avoid_: grill as the only name for this method
 
 **Prototype**:
@@ -31,7 +31,7 @@ A bounded experiment that produces observations and limits to inform one questio
 _Avoid_: production draft
 
 **Context pointer**:
-A short trigger and resolvable reference that identifies when to read relevant material.
+A short trigger and resolvable reference that identifies when to read relevant material. It locates authority in a home and requires expansion when affected boundaries bring other evidence into scope.
 _Avoid_: label as a substitute for a pointer
 
 **Project workflow**:

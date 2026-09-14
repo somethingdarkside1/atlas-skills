@@ -1,7 +1,8 @@
 ---
 part: interview-skill
 date: 2026-09-11
-status: accepted
+status: superseded
+superseded_by: 0020-decide-only-the-selected-scope.md
 ---
 
 # The interview writes the brief, and the plan holds only tasks

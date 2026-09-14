@@ -14,7 +14,7 @@ flowchart LR
   classDef building fill:#fef3c7,stroke:#d97706,color:#78350f
   classDef done fill:#dcfce7,stroke:#16a34a,color:#14532d
 
-  core-model["Core model"]:::sketched
+  core-model["Core model"]:::decided
   shared-methods["Shared methods"]:::sketched
   project-setup["Project setup"]:::sketched
   work-skills["Work skills"]:::sketched
@@ -34,11 +34,11 @@ flowchart LR
 
 ## Core model
 
-**Status:** sketched
+**Status:** decided
 Define the boundary between Atlas work, reusable methods, project delivery, and evidence so every consumer can make the same state decision.
 Needs: none.
-Open questions: Choose delivery identity with and without Git; how canceled blockers are handled; when a changed brief invalidates accepted work.
-Decisions: [0012](decisions/0012-atlas-owns-work-projects-own-delivery.md), [0013](decisions/0013-local-tasks-first.md).
+Open questions: Task 02 defines the evidence fields and transitions; task 03 defines and tests migration. The boundary choices are adopted in core-model/01.
+Decisions: [0012](decisions/0012-atlas-owns-work-projects-own-delivery.md), [0013](decisions/0013-local-tasks-first.md), [0018](decisions/0018-one-method-modular-skills.md), [0019](decisions/0019-acceptance-follows-output-and-scope.md), [0020](decisions/0020-decide-only-the-selected-scope.md).
 Plan: [plan/core-model/](plan/core-model/).
 
 ## Shared methods
@@ -73,7 +73,7 @@ Plan: [plan/work-skills/](plan/work-skills/).
 **Status:** sketched
 Use a small directory of meaningful pointers to load the relevant part and method while retaining the ability to expand across affected boundaries.
 Needs: core-model.
-Open questions: Choose whether existing part ids suffice; thresholds for splitting; what evidence triggers scope expansion. Measure rather than assume token savings.
+Open questions: Choose splitting thresholds and concrete scope-expansion signals using the adopted existing part ids and pointers. Measure rather than assume context savings.
 Decisions: [0016](decisions/0016-pointers-before-label-taxonomy.md).
 Plan: [plan/context-routing/](plan/context-routing/).
 

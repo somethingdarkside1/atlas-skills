@@ -1,7 +1,8 @@
 ---
 part: interview-skill
 date: 2026-09-11
-status: accepted
+status: superseded
+superseded_by: 0020-decide-only-the-selected-scope.md
 ---
 
 # One interview skill covers both the foggy effort and the single part

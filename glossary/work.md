@@ -17,16 +17,16 @@ One independently verifiable piece of work in the plan, with stable identity, ex
 _Avoid_: ticket, story
 
 **Ready**:
-A task that can start because its required blockers are accepted and their needed outputs are accessible.
+A task that can start because its required blockers are accepted and their exact needed outputs are accessible in a project-permitted workspace. Integration is required only when the dependency's outcome or project policy requires it.
 _Avoid_: unblocked
 
 **Delivery**:
-The identified output of a task together with the verification that was actually performed.
+The retrievable, revision-identified output of a task together with the verification that was actually performed. The identity accounts for the actual examined content with or without Git.
 _Avoid_: build result
 _Not_: Integration, where that output enters the project workflow.
 
 **Acceptance**:
-A recorded judgment that a specific delivery satisfies the applicable brief and task criteria.
+A recorded judgment that a specific delivery satisfies the identified applicable brief and task criteria. Changes to content or scope require an impact assessment and renewal of affected acceptance while preserving prior evidence.
 _Avoid_: approval
 _Not_: Integration, moving the output through the project workflow.
 
@@ -34,6 +34,12 @@ _Not_: Integration, moving the output through the project workflow.
 The project action that places an identified output into its required shared destination.
 _Avoid_: merge as a synonym for done
 _Not_: Acceptance, whether the output meets its criteria.
+
+**Project authorization**:
+Permission under applicable instructions and user direction to perform a project action. Acceptance or a navigation pointer cannot grant it; existing authorization continues to apply within its scope.
+
+**Cancellation**:
+Removal of planned work with its identity and reason retained. Incoming dependencies require explicit replacement or removal with a scope rationale, since canceled work supplies no accepted output.
 
 **Finding**:
 An evidenced mismatch between a delivery and an applicable requirement, with its impact and a usable correction target.
