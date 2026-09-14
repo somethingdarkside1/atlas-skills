@@ -25,6 +25,8 @@ The release boundaries were adopted through [core-model/01](../core-model/01-set
 
 Choose the minimum method output; where domain modeling joins interviewing; whether a method has a demonstrated standalone invocation use.
 
+For [task 02](02-diagnose-with-evidence.md), the minimum diagnosis output retains the reproduction or limit, observations, tested explanations, uncertainty, and next justified action. [The canonical method](../../methods/diagnosis.md) owns that procedure; [its consumer declaration](../../methods/README.md) supplies conditional triggers for later bundling. Tasks 01, 03, 04, and 05 retain their remaining choices. These reversible source and output choices implement the adopted boundary without introducing a standalone skill.
+
 ### Reads, changes, and finish
 
 - Read scope: Core contract; comparison research; relevant Matt reference methods; the consuming skill for the selected method.
