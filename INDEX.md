@@ -21,6 +21,8 @@ Follow a task's blockers, changed interfaces, accepted decisions, and applicable
 
 ## Start a work package
 
+Use [the copy-and-paste prompts](plan/PROMPTS.md) to start, resume, or review work. [Package issues](plan/COORDINATION.md) coordinate GitHub discussion and PRs while local tasks own progress.
+
 Open its brief and first eligible task. Use the brief's start prompt to settle its unresolved choices through concrete examples. Record decisions and update task acceptance before implementation when the package calls for an interview. Existing user answers and accepted decisions count; ask only about remaining material uncertainty.
 
 The installed skill sources are still the earlier draft. Work on this repository from its current project instructions and package briefs, and exercise evolving Atlas skills in scratch fixtures until their contracts pass validation.
