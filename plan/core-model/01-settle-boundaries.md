@@ -1,5 +1,5 @@
 ---
-status: review
+status: done
 kind: decision
 blocked_by: []
 ---
@@ -27,7 +27,18 @@ The user authorized proceeding after the recommendations and GitHub/product ques
 
 `python3 scripts/check-project.py` passed with 7 parts, 24 tasks, 109 documents, 637 local links, and no errors before final review; `git diff --check` passed. These are structural checks, and the scenarios are design walkthroughs rather than executed agent behavior. The historical interview handoff and comparison note remain preserved. Task 02's detailed contract, task 03's migration, and other packages' implementations are outside this delivery.
 
-Pending project action: commit the identified output, review it against the unchanged task criteria and adopted brief, then record acceptance, push, and open a focused PR with `Refs #2`. Merge and release require separate session authorization.
+Decision output revision: `208b19750d7926369cc0b60a8ff421a4c346c066`. Acceptance is recorded below. Project delivery: the task branch was pushed and [PR #10](https://github.com/somethingdarkside1/atlas-skills/pull/10) was opened with `Refs #2`. The remaining project action is PR review; merge and release require separate session authorization. The next eligible core-model task is 02 for a workspace with access to this accepted output, and it has not been started.
 
 ## Review
-Output delivered for review against the four unchanged criteria above and the adopted [brief](brief.md). The user's instruction to proceed supplies adoption of the assistant-recommended choices; it is not represented as individual answers the user did not give. Final review will identify the committed output and scope revision, check historical preservation and the worked cases, and record acceptance or findings before project delivery.
+Accepted on 2026-09-15 against output `208b19750d7926369cc0b60a8ff421a4c346c066`, compared with starting revision `f3e9e7ceb5942ae69ca9efd1f04927f62dca61a5`. Scope is `plan/core-model/brief.md` and this task's Delivers, Check by, and Done when at output revision `208b19750d7926369cc0b60a8ff421a4c346c066`; the original four criteria were retained. The user's instruction to proceed authorized adoption of the assistant-recommended choices, as explicitly recorded in the adoption note.
+
+| Criterion | Examined evidence and result |
+|---|---|
+| Three media | Adoption note's worked cases cover a reviewed and an integrated code fix, PDF preparation and receipt, and non-Git prototype observations. Pass as design walkthroughs. |
+| Decision dispositions | Decisions 0012 through 0017 explicitly accepted with scope clarifications, 0018 through 0020 record the additional choices, and historical supersessions retain their bodies and ids. Pass. |
+| Four material distinctions | Decisions and work/method glossary separate work, project delivery, acceptance, integration, operation completion, readiness, authorization, methods, and pointers. Pass. |
+| Current homes | All seven affected briefs consume adopted boundaries while retaining later choices; core map direction is decided, with implementation still pending. Pass. |
+
+Primary-agent review and a separate read-only agent review of the committed output found no actionable content findings. `python3 scripts/check-project.py` passed at that output with 7 parts, 24 tasks, 109 documents, 637 local links, and no errors. A temporary scope check compared the candidate with the starting revision and confirmed all 23 other task files and the selected task's criteria were unchanged, historical decision bodies were retained, skills/examples/archive were unchanged, and supersession targets resolved. The actual staged diff passed `git diff --cached --check` and matched the examined content before commit.
+
+Limits: this accepts the decision delivery, not the replacement skills, behavior, installation, efficiency, complete core-model package, or integration. No human judgment remains pending within this selected decision scope. The follow-up acceptance commit changes only this task's status and delivery/review receipt; the accepted decision artifacts and scope remain at the named output revision. Project delivery is separate and must be reported from its actual result.
