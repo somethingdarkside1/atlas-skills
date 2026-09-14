@@ -15,7 +15,7 @@ flowchart LR
   classDef done fill:#dcfce7,stroke:#16a34a,color:#14532d
 
   core-model["Core model"]:::decided
-  shared-methods["Shared methods"]:::sketched
+  shared-methods["Shared methods"]:::building
   project-setup["Project setup"]:::sketched
   work-skills["Work skills"]:::sketched
   context-routing["Context routing"]:::sketched
@@ -43,10 +43,10 @@ Plan: [plan/core-model/](plan/core-model/).
 
 ## Shared methods
 
-**Status:** sketched
+**Status:** building
 Provide reusable interviewing, diagnosis, verification, and prototype methods with precise triggers and useful outputs, authored once and packaged for their consumers.
 Needs: core-model.
-Open questions: Choose the minimum method output; where domain modeling joins interviewing; whether a method has a demonstrated standalone invocation use.
+Open questions: Tasks 01, 03, and 04 retain their method-specific choices; task 05 owns bundling and any demonstrated standalone invocation. Task 02 defines diagnosis's minimum output and records its bounded demonstrations.
 Decisions: [0014](decisions/0014-shared-methods-travel-with-consumers.md).
 Plan: [plan/shared-methods/](plan/shared-methods/).
 
