@@ -32,7 +32,7 @@ Start at **[INDEX.md](INDEX.md)**. It routes a focus to the appropriate brief an
 6. **Validation:** prove normal and failure paths with real artifacts and fresh contexts.
 7. **Public release:** document, package, install, and publish the verified revision.
 
-Begin with [core-model/01](plan/core-model/01-settle-boundaries.md). Each package includes a concrete interview start prompt, unresolved choices, owned files, dependencies, and acceptance criteria. The earlier plan is [preserved and mapped](plan/MIGRATION.md), including the deferred GitHub work.
+Begin with [core-model/01](plan/core-model/01-settle-boundaries.md). Copy its starter from [the agent prompts](plan/PROMPTS.md) and use [the package issues](plan/COORDINATION.md) to coordinate PRs. Each package includes a concrete interview start prompt, unresolved choices, owned files, dependencies, and acceptance criteria. The earlier plan is [preserved and mapped](plan/MIGRATION.md), including the deferred GitHub work.
 
 ## Read the analysis
 

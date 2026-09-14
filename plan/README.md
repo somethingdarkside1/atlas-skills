@@ -6,6 +6,8 @@ This is the active plan for the first public Atlas revision. Seven work packages
 
 ## Pick work
 
+Use [PROMPTS.md](PROMPTS.md) for standalone package and continuation prompts. [COORDINATION.md](COORDINATION.md) links the GitHub package issues; they point to this plan and do not replace local task state. Reference a package issue from task PRs with `Refs`; close it only when the adopted package outcome is demonstrated.
+
 | Package | First task | Result |
 |---|---|---|
 | [Core model](core-model/brief.md) | [01](core-model/01-settle-boundaries.md) | Adopt boundaries, evidence and migration |
