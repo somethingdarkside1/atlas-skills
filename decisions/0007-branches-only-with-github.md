@@ -1,7 +1,8 @@
 ---
 part: build-skill
 date: 2026-09-11
-status: accepted
+status: superseded
+superseded_by: 0012-atlas-owns-work-projects-own-delivery.md
 ---
 
 # Branches and merges exist only with a GitHub tracker

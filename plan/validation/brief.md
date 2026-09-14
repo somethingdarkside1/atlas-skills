@@ -11,9 +11,9 @@ The [architecture review](../../notes/2026-09-13-review-methods-and-project-poli
 Establish repeatable structural and behavioral evidence for the method, failure recovery, installation, and claims of lower context cost.
 
 ## Decisions
-[0017](../../decisions/0017-evidence-before-release.md): proposed release direction.
+[0017](../../decisions/0017-evidence-before-release.md): accepted release direction.
 
-The package is ready to discuss from this brief. The core-model decision task adopts the recommended boundaries before dependent implementation. Proposed defaults guide the interview; they are not a record of answers the user has not given.
+The release boundaries were adopted through [core-model/01](../core-model/01-settle-boundaries.md) on 2026-09-15. Use the linked accepted decisions as settled input; the package-specific choices below remain with their named tasks, and implementation still requires accepted, accessible blocker outputs.
 
 ### Start prompt
 

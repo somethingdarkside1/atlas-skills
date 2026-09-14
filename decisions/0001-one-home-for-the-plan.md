@@ -1,7 +1,8 @@
 ---
 part: plan-skill
 date: 2026-09-11
-status: accepted
+status: superseded
+superseded_by: 0013-local-tasks-first.md
 ---
 
 # The plan has one home per project: files or GitHub issues
