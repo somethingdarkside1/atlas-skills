@@ -46,7 +46,7 @@ Plan: [plan/core-model/](plan/core-model/).
 **Status:** building
 Provide reusable interviewing, diagnosis, verification, and prototype methods with precise triggers and useful outputs, authored once and packaged for their consumers.
 Needs: core-model.
-Open questions: Task 01 still settles the interviewing method. Task 05 settles bundling and whether any method is used on its own. Tasks 02, 03, and 04 chose their minimum outputs; 03 and 04 await review.
+Open questions: Task 01 still settles the interviewing method. Task 05 settles bundling and whether any method is used on its own. Tasks 02, 03, and 04 are done.
 Decisions: [0014](decisions/0014-shared-methods-travel-with-consumers.md).
 Plan: [plan/shared-methods/](plan/shared-methods/).
 

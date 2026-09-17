@@ -1,5 +1,5 @@
 ---
-status: review
+status: done
 kind: build
 blocked_by: ["core-model/01"]
 ---
@@ -44,4 +44,18 @@ Files, in byte order from the repository root: `methods/README.md`, `methods/ver
 Version: e7fa9b5c70c7 (12 files)
 
 ## Review
-Pending. Record the reviewed output and brief revision, findings or acceptance, and any unresolved human judgment.
+### 2026-09-18
+Reviewed: `e7fa9b5c70c7` (12 files), reproduced on the first try from the file list above. An agent that did not build the work reviewed it in its own context, in two passes.
+
+First pass, on `9f7d0bc`: both 2026-09-17 Version lines and every fixture claim reproduced. Findings: the checksum depended on locale sort order and path spelling, so a reviewer could get a different value for unchanged files; the consumer triggers fired on every build and review; the brief still said tasks 03 and 04 kept their choices; the method used Avoid words (approval, spec); `check_page.py` passed a day listed twice and crashed on `background-color`; the note grouped files under the wrong case; the entry named a temporary worktree.
+
+Second pass, on `aa3fa53`: all fixed. Reran the page check on the delivered page, a doubled Saturday, `background-color`, and a three-digit color; each behaved as the 2026-09-18 entry says.
+
+Brief: clean. Each Done when box is met by the method text and the code and page cases.
+Conventions: clean. No Avoid word, no dash, one home per rule, attribution matches the upstream files.
+
+Accepted. Left open, not blocking:
+- How identity is recorded without Git belongs to decision 0022 (PR #12, unmerged) and core-model/02. The method says to record it "the way the caller records identity"; reconcile once 0022 lands, including whether non-Git content must stay retrievable under 0019.
+- `scripts/check-project.py` does not scan `methods/` or `tests/`, and the method's link to its note will break when task 05 copies it into a skill. Both stay with task 05.
+- The 2026-09-17 note was corrected in place before merge, so the 2026-09-17 Version line reproduces only at `9f7d0bc`.
+- No person has run the method, and the evidence is synthetic and author-run.

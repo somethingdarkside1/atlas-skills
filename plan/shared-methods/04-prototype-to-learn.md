@@ -1,5 +1,5 @@
 ---
-status: review
+status: done
 kind: build
 blocked_by: ["core-model/01"]
 ---
@@ -44,4 +44,14 @@ Files, in byte order from the repository root: `methods/README.md`, `methods/pro
 Version: d1a9555aa1c1 (8 files)
 
 ## Review
-Pending. Record the reviewed output and brief revision, findings or acceptance, and any unresolved human judgment.
+### 2026-09-18
+Reviewed: `d1a9555aa1c1` (8 files), reproduced on the first try from the file list above. An agent that did not build the work reviewed it in its own context, in two passes (see [task 03](03-verify-by-medium.md) for the shared first-pass findings).
+
+First pass, on `9f7d0bc`, for this task: the attribution claimed as new what upstream already had (saved data when needed, three to five UI variants, rewriting before production); the opening required that a made thing could change the choice while step 1 allowed evidence out of reach, and the subject-line fixture stated its verdict before anything ran; the verdict `the chosen option` is not in the 0.2 draft `prototype-it` list, which the work-skills migration should add.
+
+Second pass, on `aa3fa53`: fixed. Reran `holds.py` and `holds.py pass-on`: 228 sequences to `hold Ben, return, hold Ana, cancel Ben`, none in 1472, both exit 0.
+
+Brief: clean. Each Done when box is met; the copied-material rule is shown in the method text only, since nothing was copied.
+Conventions: clean.
+
+Accepted. Left open, not blocking: adding `the chosen option` to `prototype-it` (work-skills/04), the note corrected in place before merge, and the bundling and checker limits named on task 03. No person has given a verdict on the form or subject-line options.
