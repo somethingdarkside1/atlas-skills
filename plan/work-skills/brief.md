@@ -26,7 +26,9 @@ The release boundaries were adopted through [core-model/01](../core-model/01-set
 
 ### Choices to settle
 
-Choose the smallest useful read scope and retry receipt per operation; decide how to report integration pending without redefining review.
+Settled in the work-skills interview on 2026-09-17: [0022](../../decisions/0022-one-version-line-per-delivery.md) one version line per delivery; [0023](../../decisions/0023-no-glossary-diagram.md) no glossary diagram; [0024](../../decisions/0024-rounds-follow-the-answers.md) interview rounds follow the answers. The first full run on a scratch brand copy is done twice: an agent answering from the example's own decisions once the patch is committed, to catch stoppers, then Vitali in a fresh session as the release check.
+
+Still open on the [map](../../MAP.md#work-skills): what finished means for tasks 01 to 05, whether review starts on its own after a build, the Outcome check on a part's last task, and whether the version line narrows 0019. Choose the smallest useful read scope and retry receipt per operation.
 
 ### Reads, changes, and finish
 
