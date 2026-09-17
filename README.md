@@ -22,7 +22,7 @@ If it is true today it lives in one of the first four. If it was true on a date,
 
 ```
 my-project/
-  GLOSSARY.md               the words, with a diagram of how they relate
+  GLOSSARY.md               the words, one entry per concept
   MAP.md                    the shape: one diagram, one section per part, a status on each
   plan/
     README.md               ids, statuses, and the brief and task templates
@@ -88,7 +88,7 @@ flowchart TB
   end
   setup --> G & M & P & D & N
   interview --> G & M & D & P
-  map --> M & G
+  map --> M
   plan --> P
   build --> P & M
   build -. when the work needs one .-> D & G
@@ -111,7 +111,7 @@ flowchart TB
 | `/review-it` | Checks a task's result against its brief and the project's own conventions, in a fresh context, and marks it done when clean | Catches drift before it compounds |
 | `/prototype-it` | Makes the smallest thing that answers one open question, takes your verdict, writes it back to the map and a note | Some questions need a made answer |
 | `/park-it` | Pauses the session into a dated note the next `/atlas` resumes from | Nothing gets lost between sessions |
-| `/map-it` | Checks the map, redraws the map and glossary diagrams from their sections, sets derived statuses, reports drift, and splits a sketched part into its own file | The shape stays visible as it fills in |
+| `/map-it` | Checks the map, redraws the map diagrams from their sections, sets derived statuses, reports drift, and splits a sketched part into its own file | The shape stays visible as it fills in |
 
 Two ladders carry the state. A part goes sketched, decided, building, done: `/interview-me` decides it, `/build-it` starts it, `/review-it` finishes it. A task goes todo, doing, review, done, or canceled, and the table in every project's `plan/README.md` says which skill makes each move.
 
