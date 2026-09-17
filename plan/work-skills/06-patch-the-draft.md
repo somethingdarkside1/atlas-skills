@@ -57,6 +57,8 @@ Checked:
 
 Not checked: the `(you)` run. No skill has been invoked. Semicolons remain as list separators, as in the first draft and across this repository.
 
+Project delivery: output commit `d0427af` on `codex/skills-patch-0-2`, pushed, with [PR #13](https://github.com/somethingdarkside1/atlas-skills/pull/13) opened with `Refs #5`. Merge waits for the `(you)` run below.
+
 ## Review
 ### 2026-09-17
 Examined the staged output above against this task's Delivers and Done when at base `f66c6f1`, in two passes by separate agents with no stake in the text, each walking scenarios through the skills rather than reading them one by one.
