@@ -1,7 +1,7 @@
 ---
 status: todo
 kind: release
-blocked_by: ["02", "validation/03"]
+blocked_by: ["02", "validation/03", "core-model/03"]
 ---
 
 # 03: Publish the verified Atlas release

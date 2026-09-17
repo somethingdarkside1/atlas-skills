@@ -17,7 +17,7 @@ flowchart LR
   core-model["Core model"]:::decided
   shared-methods["Shared methods"]:::building
   project-setup["Project setup"]:::sketched
-  work-skills["Work skills"]:::sketched
+  work-skills["Work skills"]:::building
   context-routing["Context routing"]:::sketched
   validation["Validation"]:::sketched
   public-release["Public release"]:::sketched
@@ -61,11 +61,11 @@ Plan: [plan/project-setup/](plan/project-setup/).
 
 ## Work skills
 
-**Status:** sketched
+**Status:** building
 Give all eight Atlas operations explicit reads, owned changes, completion evidence, and recovery, with local canonical work and project-owned delivery.
 Needs: core-model, shared-methods, project-setup.
-Open questions: Choose the smallest useful read scope and retry receipt per operation; decide how to report integration pending without redefining review.
-Decisions: [0012](decisions/0012-atlas-owns-work-projects-own-delivery.md), [0013](decisions/0013-local-tasks-first.md).
+Open questions: Task 06 patches the draft first. Tasks 01 to 05 still choose the smallest useful read scope and retry receipt per operation, and how to report integration pending without redefining review.
+Decisions: [0012](decisions/0012-atlas-owns-work-projects-own-delivery.md), [0013](decisions/0013-local-tasks-first.md), [0021](decisions/0021-patch-the-draft-first.md).
 Plan: [plan/work-skills/](plan/work-skills/).
 
 ## Context routing

@@ -28,6 +28,8 @@ The release boundaries were adopted through [core-model/01](../core-model/01-set
 
 The [adoption record](../../notes/2026-09-15-review-core-model-adoption.md) records the user authorization, rationale, decision dispositions, and code PR, document, and non-Git prototype walkthroughs. Decisions 0019 and 0020 settle evidence identity, cancellation, changed scope, and the interview boundary. Task 02 defines the minimal versioned fields and transitions; task 03 defines and exercises legacy migration while preserving ids, historical evidence, and project customizations.
 
+[0021](../../decisions/0021-patch-the-draft-first.md) moves task 03 behind the skills: it no longer blocks skill work and runs once work-skills/05 has settled the formats.
+
 GitHub remains available for source, PRs, and coordination under project policy. A hosted task adapter is deferred; issue state and PR state are not substitutes for the local acceptance record. The public product is one method under 0018, with modular skills and evidence-based installation support.
 
 ### Reads, changes, and finish

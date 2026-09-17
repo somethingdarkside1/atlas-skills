@@ -18,6 +18,8 @@ The release boundaries were adopted through [core-model/01](../core-model/01-set
 
 [0013](../../decisions/0013-local-tasks-first.md) settles local task authority for the first release. Discover existing project delivery policy and preserve legacy tracker authority until an explicit migration; the remaining setup choices concern safe adoption, not a fresh GitHub-versus-files preference.
 
+[0021](../../decisions/0021-patch-the-draft-first.md): [work-skills/06](../work-skills/06-patch-the-draft.md) splits a small `setup-atlas` out of `/atlas` (create what is missing, ask first, leave existing content alone). Task 02 extends that skill to populated, partial, legacy, and linked-instruction projects; it does not start again.
+
 ### Start prompt
 
 > Read INDEX.md, plan/README.md, plan/project-setup/brief.md, and the first eligible task. Use concrete scenarios to challenge the unresolved choices, find accessible facts yourself, and reuse prior accepted answers. Record the chosen decisions and acceptance checks before implementing the selected task. Complete its evidence and follow the project delivery policy.

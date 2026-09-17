@@ -1,7 +1,7 @@
 ---
 status: todo
 kind: build
-blocked_by: ["01", "core-model/03"]
+blocked_by: ["01", "core-model/02", "work-skills/06"]
 ---
 
 # 02: Implement setup-atlas adoption
