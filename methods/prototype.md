@@ -1,14 +1,14 @@
 # Prototype
 
-Use when a choice depends on a question that reading or discussion cannot settle, and a small made thing could produce an observation that changes the choice. When an accessible fact answers the question, look it up instead. A prototype is not production work; what it teaches is the result.
+Use when a choice depends on a question that reading or discussion cannot settle, and a small made thing could help answer it. When an accessible fact answers the question, look it up instead. When the deciding evidence is out of reach, such as how real customers respond, still draft the contrasting options and return `not clear yet` with the next experiment and what it needs. A prototype is not production work; what it teaches is the result.
 
 ## Inputs
 
-Identify the question in one sentence, the decision it informs, who judges the answer, and a bound (one sitting unless the person said otherwise). Gather the real context the answer depends on, such as the module, page, data, or audience.
+Identify the question in one sentence, the decision it informs, who judges the answer, and a bound (one sitting unless the person said otherwise). Gather the real material the answer depends on, such as the module, page, data, or audience.
 
 ## Process
 
-1. Frame the experiment. Write the question and the observation that would support each likely answer. Name its kind: a behavior the agent can measure, a preference a person decides, or a question whose deciding evidence is out of reach, such as how real customers respond. Put these and the bound at the top of the prototype. Done when a reader can tell what would count as an answer.
+1. Frame the experiment. Write the question and the observation that would support each likely answer. Name its kind: a behavior the agent can measure, a preference a person decides, or a question whose deciding evidence is out of reach. Put these and the bound at the top of the prototype. Done when a reader can tell what would count as an answer.
 2. Make the smallest thing that can show that observation, in the medium of the question, marked as a prototype where it lives. By kind:
    - Logic behavior: keep the rules in one small part that does no display, apart from the page or printout around it. Drive it through the cases that are hard to reason about on paper: the normal path, the awkward edge, and an action that should be refused. Show the full state after each step.
    - UI preference: make two to five options that differ in structure (layout, order of information, main action), not only in color or wording, with realistic content.
@@ -36,7 +36,7 @@ The caller selects the durable home, keeps or discards the prototype, and owns t
 
 ## Attribution
 
-Adapted from Matt Pocock's [prototype](https://github.com/mattpocock/skills/blob/main/skills/engineering/prototype/SKILL.md) with its logic and UI references, inspected from the local reference labeled 1.2.3. It inspired one-question throwaway work, logic kept apart from its page, structurally different UI variants, and visible state. Atlas adds non-code media, tests or saved data when needed, labeled results including `not clear yet`, and normal verification for copied material. The URL is a locator, not a pinned revision; the [task evidence](../notes/2026-09-17-review-verification-and-prototype-methods.md) identifies the inspected files.
+Adapted from Matt Pocock's [prototype](https://github.com/mattpocock/skills/blob/main/skills/engineering/prototype/SKILL.md) with its logic and UI references, inspected from the local reference labeled 1.2.3. It inspired one-question throwaway work, logic kept apart from its page, structurally different UI variants (three by default, at most five), visible state, saved data only when the question needs it, and rewriting prototype code before it reaches production. Atlas adds tests and error handling when needed, non-code media, and labeled results including `not clear yet`. The URL is a locator, not a pinned revision; the [task evidence](../notes/2026-09-17-review-verification-and-prototype-methods.md) identifies the inspected files.
 
 MIT License
 

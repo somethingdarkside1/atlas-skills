@@ -22,7 +22,7 @@ Run the scenarios below against a scratch copy or the exact candidate revision a
 
 ## Delivered
 ### 2026-09-17
-Branch `codex/shared-methods-03-04` from `origin/main` at `24b24ef`, in the worktree `.claude/worktrees/agent-a933746b554247f62`.
+Branch `codex/shared-methods-03-04` from `origin/main` at `24b24ef`.
 
 Made: [the verification method](../../methods/verification.md); `build-it` and `review-it` rows in [the method consumers](../../methods/README.md); [replayable fixtures](../../tests/fixtures/verification/README.md) with a late fee function carrying one seeded defect and an opening hours page with one false time; and [the evidence note](../../notes/2026-09-17-review-verification-and-prototype-methods.md), shared with task 04. The method returns the identity (revision or checksum line), each check with what was seen and its limit, open items, and any platform status quoted as reported.
 
@@ -31,6 +31,17 @@ Checked in scratch copies, following the method as a reviewer: a builder check t
 Not checked: rendering in a browser, a reviewer in a separate context, a real CI run, and loading from an installed consumer (task 05 and the work-skills migration). The author seeded the defects and ran every case in the same context.
 
 Version: 735fe842c7c0 (12 files)
+
+### 2026-09-18
+Applied the review findings on `9f7d0bc`, same branch. The method now asks for an identity with its file list, paths from the project root in byte order, instead of a fixed command. It no longer uses the glossary's Avoid words, and its consumer triggers load only when the planned or delivered checks could pass for a wrong result, cannot be rerun, or rest on a platform status. The brief and map record the chosen minimum outputs. `check_page.py` now fails a day listed twice and reports a missing or unreadable notice color as a failed check instead of stopping.
+
+Checked: every case was rerun in a fresh scratch copy that kept the repository paths. The late fee and page results were unchanged: contract check exit 1, then 0 after the scratch fix; mirror check 0, then 1; page check exit 1 on Saturday; contrast 6.57, break 2.99. A page listing Saturday twice, which passed before, now fails with exit 1; `background-color`, which crashed before, is read as 6.57; `#fff` fails as unreadable. Fixture identities in the evidence note were recomputed from repository paths. `python3 scripts/check-project.py` passed with 7 parts, 24 tasks, 111 documents, 666 local links, and no errors; `git diff --check` passed.
+
+Not checked: the same limits as on 2026-09-17.
+
+Files, in byte order from the repository root: `methods/README.md`, `methods/verification.md`, `notes/2026-09-17-review-verification-and-prototype-methods.md`, and the 9 files in `tests/fixtures/verification/`.
+
+Version: e7fa9b5c70c7 (12 files)
 
 ## Review
 Pending. Record the reviewed output and brief revision, findings or acceptance, and any unresolved human judgment.

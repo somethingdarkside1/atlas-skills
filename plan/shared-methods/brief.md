@@ -25,7 +25,7 @@ The release boundaries were adopted through [core-model/01](../core-model/01-set
 
 Choose the minimum method output; where domain modeling joins interviewing; whether a method has a demonstrated standalone invocation use.
 
-For [task 02](02-diagnose-with-evidence.md), the minimum diagnosis output retains the reproduction or limit, observations, tested explanations, uncertainty, and next justified action. [The canonical method](../../methods/diagnosis.md) owns that procedure; [its consumer declaration](../../methods/README.md) supplies conditional triggers for later bundling. Tasks 01, 03, 04, and 05 retain their remaining choices. These reversible source and output choices implement the adopted boundary without introducing a standalone skill.
+For [task 02](02-diagnose-with-evidence.md), the minimum diagnosis output retains the reproduction or limit, observations, tested explanations, uncertainty, and next justified action. [The canonical method](../../methods/diagnosis.md) owns that procedure; [its consumer declaration](../../methods/README.md) supplies conditional triggers for later bundling. [Task 03](03-verify-by-medium.md) and [task 04](04-prototype-to-learn.md) chose their minimum outputs: verification returns the examined identity with its file list, each check with what was seen and its limit, and what was not run or is left to a person; a prototype returns its question and bound, results labeled measured fact, preference, or not clear yet, and a verdict or next experiment. Tasks 01 and 05 retain their remaining choices. These reversible source and output choices implement the adopted boundary without introducing a standalone skill.
 
 ### Reads, changes, and finish
 

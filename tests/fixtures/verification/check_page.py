@@ -56,11 +56,14 @@ failures = 0
 
 with open("hours.csv", newline="") as source:
     expected = {row["day"]: [row["opens"], row["closes"]] for row in csv.DictReader(source)}
-shown = {row[0]: row[1:] for row in page.rows}
+shown = {}
+for row in page.rows:
+    shown.setdefault(row[0], []).append(row[1:])
 for day in expected:
-    passed = shown.get(day) == expected[day]
+    # Exactly one row per day, so a repeated day fails even if one copy is right.
+    passed = shown.get(day) == [expected[day]]
     failures += not passed
-    print(f"criterion 1: {day} source={expected[day]} page={shown.get(day)} {'pass' if passed else 'fail'}")
+    print(f"criterion 1: {day} source={expected[day]} page rows={shown.get(day, [])} {'pass' if passed else 'fail'}")
 extra = sorted(set(shown) - set(expected))
 failures += bool(extra)
 print(f"criterion 1: days on page but not in source={extra} {'fail' if extra else 'pass'}")
@@ -69,13 +72,18 @@ passed = "notice" in page.order and "table" in page.order and page.order.index("
 failures += not passed
 print(f"criterion 2: source order={page.order} {'pass' if passed else 'fail'}")
 
-rule = re.search(r"\.notice\s*\{([^}]*)\}", page.style)[1]
-foreground = re.search(r"(?<![-\w])color:\s*(#[0-9a-fA-F]{6})", rule)[1]
-background = re.search(r"background:\s*(#[0-9a-fA-F]{6})", rule)[1]
-light, dark = sorted([luminance(foreground), luminance(background)], reverse=True)
-ratio = (light + 0.05) / (dark + 0.05)
-passed = ratio >= 4.5
+rule = re.search(r"\.notice\s*\{([^}]*)\}", page.style)
+rule = rule[1] if rule else ""
+foreground = re.search(r"(?<![-\w])color:\s*(#[0-9a-fA-F]{6})\b", rule)
+background = re.search(r"(?<![-\w])background(?:-color)?:\s*(#[0-9a-fA-F]{6})\b", rule)
+if foreground and background:
+    light, dark = sorted([luminance(foreground[1]), luminance(background[1])], reverse=True)
+    ratio = (light + 0.05) / (dark + 0.05)
+    passed = ratio >= 4.5
+    print(f"criterion 3: declared {foreground[1]} on {background[1]} ratio={ratio:.2f} {'pass' if passed else 'fail'}")
+else:
+    passed = False
+    print(f"criterion 3: notice colors missing or unreadable in the .notice rule: {rule.strip() or 'no rule'} fail")
 failures += not passed
-print(f"criterion 3: declared {foreground} on {background} ratio={ratio:.2f} {'pass' if passed else 'fail'}")
 
 sys.exit(1 if failures else 0)

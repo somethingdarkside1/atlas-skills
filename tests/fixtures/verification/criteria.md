@@ -1,6 +1,6 @@
 # Fixture criteria
 
-Synthetic acceptance criteria for two deliveries. They are the source of truth for the checks.
+Synthetic acceptance criteria for two deliveries. Checks take their expected values from here.
 
 ## Late fee (code)
 

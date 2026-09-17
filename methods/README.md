@@ -9,8 +9,8 @@ The table declares consumers for implemented sources. It is input to [task 05](.
 | [Diagnosis](diagnosis.md) | `build-it` | An observed failure needs explanation before choosing a correction. |
 | [Diagnosis](diagnosis.md) | `review-it` | An unexplained regression prevents a justified finding or acceptance judgment. |
 | [Diagnosis](diagnosis.md) | `interview-me` | A reported constraint may be an existing failure, and that distinction changes the scoped choice. |
-| [Verification](verification.md) | `build-it` | A made output needs checks before its delivery is recorded. |
-| [Verification](verification.md) | `review-it` | A delivery needs checks against its criteria before a finding or acceptance judgment. |
+| [Verification](verification.md) | `build-it` | Check by names no check that could fail for a wrong result in this medium (such as for a visual, factual, or data claim), or names only a check that restates the work. |
+| [Verification](verification.md) | `review-it` | The delivered checks cannot be rerun or could pass for a wrong result, or a platform status is offered as the evidence. |
 | [Prototype](prototype.md) | `prototype-it` | An open question needs a small experiment, not a fact lookup, to change the decision. |
 
 No standalone method invocation is declared. The interviewing method source and its mappings remain with task 01.
