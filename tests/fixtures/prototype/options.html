@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Renewal form options</title>
+<style>
+  body { font-family: sans-serif; margin: 16px; max-width: 40rem; }
+  .banner { background: #222222; color: #ffffff; padding: 8px; }
+  section.option { border: 2px dashed #888888; margin: 24px 0; padding: 12px; }
+  label { display: block; margin-top: 8px; }
+  .step { border-top: 1px solid #cccccc; margin-top: 12px; padding-top: 8px; }
+</style>
+</head>
+<body>
+<p class="banner">PROTOTYPE, throw away. Question: should the library card renewal form ask for everything on one screen (A) or in two short steps (B)? Kind: a preference a person decides. Bound: one sitting.</p>
+
+<section class="option" id="option-a">
+<h2>Option A: one screen</h2>
+<form>
+<label for="a-card">Library card number</label><input id="a-card">
+<label for="a-name">Full name</label><input id="a-name">
+<label for="a-email">Email</label><input id="a-email" type="email">
+<label for="a-address">Home address</label><input id="a-address">
+<label for="a-pay">Payment card</label><input id="a-pay">
+<p>Renewal costs 5.00 for one year.</p>
+<button type="button">Renew my card</button>
+</form>
+</section>
+
+<section class="option" id="option-b">
+<h2>Option B: two steps</h2>
+<form>
+<div class="step">
+<h3>Step 1 of 2: find your card</h3>
+<label for="b-card">Library card number</label><input id="b-card">
+<label for="b-email">Email</label><input id="b-email" type="email">
+<button type="button">Continue</button>
+</div>
+<div class="step">
+<h3>Step 2 of 2: confirm and pay</h3>
+<p>We found: Ana Lima, 12 Harbor Road. Renewal costs 5.00 for one year.</p>
+<label for="b-address">Change address (optional)</label><input id="b-address">
+<label for="b-pay">Payment card</label><input id="b-pay">
+<button type="button">Renew my card</button>
+</div>
+</form>
+</section>
+</body>
+</html>
