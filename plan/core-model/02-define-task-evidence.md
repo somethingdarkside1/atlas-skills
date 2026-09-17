@@ -9,7 +9,7 @@ blocked_by: ["01"]
 ## Delivers
 A minimal versioned local task/brief contract with delivery and review evidence, stable ids, waiting, cancellation, and readiness rules.
 
-Source: Original F01, F03-F04, F09, F11, F21; second-pass task-id and review-state proposals. See the [package brief](brief.md) and [architecture review](../../notes/2026-09-13-review-methods-and-project-policy.md).
+Source: Original F01, F03-F04, F09, F11, F21; second-pass task-id and review-state proposals. See the [package brief](brief.md), the [architecture review](../../notes/2026-09-13-review-methods-and-project-policy.md), and the [evidence weight analysis](../../notes/2026-09-17-research-evidence-weight.md), which proposes a light default and asks that the first 0.2 runs be counted before the fields are fixed.
 
 ## Check by
 Run the scenarios below against a scratch copy or the exact candidate revision and record the observed outputs, checks, and limits.
