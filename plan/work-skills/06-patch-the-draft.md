@@ -64,6 +64,8 @@ The agent half of the first full run, on branch `codex/skills-0-2-agent-run` fro
 
 Checked: `python3 scripts/check-project.py`, `claude plugin validate .`, and `git diff --check`. The new checksum command reproduces the run's `725f9307d8a2` under zsh and handles a file name with a space. An agent that did not write the fixes reviewed them, and its findings are fixed. Not checked: a second run on the fixed text, and a real harness loading the skills.
 
+Project delivery: on 2026-09-18 Vitali authorized merging PRs #13, #12, and #15 to `main` before the cold run. The task stays in review, with its `(you)` box open, until that run.
+
 ## Review
 ### 2026-09-17
 Examined the staged output above against this task's Delivers and Done when at base `f66c6f1`, in two passes by separate agents with no stake in the text, each walking scenarios through the skills rather than reading them one by one.
