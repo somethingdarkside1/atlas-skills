@@ -1,7 +1,7 @@
 ---
 status: todo
 kind: build
-blocked_by: ["core-model/03", "shared-methods/04"]
+blocked_by: ["06", "core-model/02", "shared-methods/04"]
 ---
 
 # 04: Refine prototype and handoff operations

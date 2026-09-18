@@ -1,28 +1,30 @@
 ---
 name: atlas
-description: Print where the project stands in five lines and name the next command; on a fresh folder, create the five things.
+description: Print where the project stands in five lines and name the next command; changes nothing.
 disable-model-invocation: true
 ---
 
 # Atlas
 
-Say where things stand and what to run next; on a fresh folder, create the five things.
+Say where things stand and what to run next. Change nothing.
 
 ## Read first
-- Whether `MAP.md`, `GLOSSARY.md`, `plan/README.md`, `decisions/README.md`, and `notes/README.md` exist.
-- `grep -E '^## |^\*\*Status:\*\*|^Needs:|^Plan:' MAP.md map/*.md`.
-- `grep -E '^(Tracker|Merge):' plan/README.md`; task state: `grep -H -E '^(status|blocked_by):' plan/*/*.md`, or `gh issue list --label atlas:task --state all --json number,state,assignees`, and open PRs.
-- `ls notes/` for the newest note by date; read it only when its name says handoff.
-- `grep -h '^part:' decisions/*.md`.
-- The `## Atlas (atlas: N)` block in `CLAUDE.md` and `AGENTS.md`; `git rev-parse --is-inside-work-tree`; `git remote -v`; `git status --short`.
+- Which of `GLOSSARY.md`, `MAP.md`, `plan/README.md`, `decisions/README.md`, and `notes/README.md` exist.
+- Parts: `grep -E '^## |^\*\*Status:\*\*|^Needs:|^Open questions:' MAP.md`, and the same for each file in `map/` when that folder exists. Then the mermaid diagram block in each of those files, to compare with the sections.
+- Tasks: `grep -rH -E '^(status|blocked_by):' plan --include='[0-9]*.md'`, and the Ids and statuses section of `plan/README.md`. For a task in doing or review, also its Done when boxes and its Delivered and Review sections.
+- Handoffs: `ls notes | grep -- '-handoff-' | tail -1` (names sort by date and time), then that file, whole. The rule for a live handoff is in `notes/README.md`.
+- Decisions: `grep -rH '^part:' decisions --include='[0-9]*.md'`.
+- The `## Atlas (atlas: N)` block and the `## Saving work` section in `CLAUDE.md` or `AGENTS.md`; `git status --short`, in a repo.
 
 ## Steps
-1. Fresh folder (no `MAP.md`): create. Copy the templates in `templates/` beside this file to the root; when a `CONTEXT.md` exists, move its entries into `GLOSSARY.md` and delete it. Fill the map's name and paragraph from the README, or ask `What is this, in a sentence?` when there is none. Offer `git init` when there is no repo. Ask the tracker question only when a GitHub remote exists (`files` or `github owner/name`) and write the answer on the `Tracker:` line. Set `Merge: human` when `git shortlog -s` shows more than one author, else `review-it`. Append `templates/CLAUDE-block.md` to `CLAUDE.md` and to `AGENTS.md` where each exists; create both when neither does. Commit as `atlas: create the first five things` when the folder is a git repo. Done when the five things exist and the block is in place; continue at step 3.
-2. Every later run: never re-create, never re-ask. When the block's `atlas:` number is lower than the one in `templates/CLAUDE-block.md`, replace the block. Done when the block is current.
-3. Repair, and name each repair on line four: a split part's status from its sub-parts (done when all are done, building when any is building, decided when all are at least decided, else sketched); a part whose tasks are all done and merged but whose status is not done, moved to done with its node class and its parent issue closed. Commit repairs as `atlas: repairs`. Done when the map agrees with the plan.
-4. Print five lines. One: parts by status, naming the building ones. Two: ready tasks by id (todo with every blocker done), or `none`. Three: the newest note as `date kind title`, or `none`. Four: problems, one per line with the command that fixes each, or `none`: a diagram node, class, or `Needs:` id that disagrees with the sections (`/map-it`); a blocker naming a task that does not exist (`/plan-it <part>`); a decision whose `part:` is not on the map; uncommitted changes in the five things (`/park-it`); no git repo (`no repo`); open PRs under `Merge: human`. Five: `Next: /command <id>`, the first that applies: the newest note is a handoff, its `Next:` line with the note's date beside it; a task awaiting review, `/review-it <id>`; a ready task, `/build-it <id>`; a decided part without a plan, `/plan-it <part>`; a part carrying an `(answered ...)` open question, `/interview-me <part>`; a `(prototype)` question, `/prototype-it "<question>"`; a sketched part, `/interview-me <part>`; an empty map, `/interview-me`; otherwise `/map-it`. Done when five lines are printed and the last starts with `Next:`.
-5. With the argument `go`: after the five lines, run the next command yourself when it is `/build-it` or `/review-it`, then run `/atlas go` again. Stop at any other command, and stop when a task has three review passes with findings, saying which. Done when the loop stops on a human's turn.
+1. A home is missing: print which, then `Next: /setup-atlas`, and stop. Done when every missing home is named.
+2. Print five lines.
+   One: parts by status, in this shape: `<n> sketched, <n> decided, <n> building (<ids>), <n> done`.
+   Two: ready tasks by id, by the rule in `plan/README.md`, or `none`.
+   Three: the newest handoff as `date slug`, followed by `live` when it is, or `none`.
+   Four: problems, one per line, each with the command or the person that fixes it, or `none`: a diagram node, class, or `Needs:` id that disagrees with the sections (`/map-it`); a part that reads building while every one of its tasks is done or canceled, with at least one done, or a split part whose status disagrees with its sub-parts (`/map-it`); a blocker naming a task that does not exist or is canceled (`/plan-it <part>`); a task in doing with nothing under Delivered (`/build-it <id>`); a task in review that is waiting on you, meaning its newest pass has no findings, lists `For you to check:`, and a `(you)` box is still unticked (you: tick the boxes, or tell `/review-it <id>` what is wrong); a decision whose `part:` is not on the map (you); uncommitted changes in the five things (you: save them as `Saving work` says); no Atlas block in the project instructions, one older than `atlas: 2`, or no `Saving work` section (`/setup-atlas`); a `Tracker: github` line in `plan/README.md`, which this version does not read (you: tasks live in `plan/`).
+   Five: `Next: /command <id>`, the first that applies. A task in review that is not waiting on you: `/review-it <id>`. A decided or building part with an open question: marked `(prototype)`, `/prototype-it <part>`; with no marker or marked `(answered ...)`, `/interview-me <part>`; a `(later: ...)` question never routes. A sketched part with a `(prototype)` question: `/prototype-it <part>`. A sketched part with an `(answered ...)` question: `/interview-me <part>`. A live handoff: its `Next:` line, with the note's date beside it. A task in doing: `/build-it <id>`. A ready task: `/build-it <id>`. A decided or building part with no plan: `/plan-it <part>`. The first sketched part in map order none of whose `Needs:` is still sketched: `/interview-me <part>`. An empty map: `/interview-me`. Every part done, or nothing left but your checks: `Next: nothing to run`, with the reason. Otherwise `/map-it`.
+   Done when five lines are printed and the last starts with `Next:`.
 
 ## Output
-- On a fresh folder: the five things, the block in `CLAUDE.md` and `AGENTS.md`, one commit.
-- Five lines in the terminal; on later runs, repairs to `MAP.md` and their commit when any were made.
+- Five lines in the terminal. No file changes.

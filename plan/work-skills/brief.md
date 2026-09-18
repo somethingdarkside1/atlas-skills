@@ -16,6 +16,8 @@ Give all eight Atlas operations explicit reads, owned changes, completion eviden
 
 The release boundaries were adopted through [core-model/01](../core-model/01-settle-boundaries.md) on 2026-09-15. Use the linked accepted decisions as settled input; the package-specific choices below remain with their named tasks, and implementation still requires accepted, accessible blocker outputs.
 
+[0021](../../decisions/0021-patch-the-draft-first.md): the draft is patched first, and migration follows the skills. [Task 06](06-patch-the-draft.md) lands before tasks 01 to 05, which build on the patched skills and wait on the task contract in core-model/02 rather than on migration.
+
 [0019](../../decisions/0019-acceptance-follows-output-and-scope.md) and [0020](../../decisions/0020-decide-only-the-selected-scope.md) settle acceptance and interview boundaries. Keep the direct one-task route for clear work, reuse applicable evidence after impact assessment, and update only homes whose facts change. [0018](../../decisions/0018-one-method-modular-skills.md) makes these operations parts of one product without authorizing unattended orchestration.
 
 ### Start prompt
@@ -40,6 +42,7 @@ Choose the smallest useful read scope and retry receipt per operation; decide ho
 - [03: Refine map maintenance and identity](03-map-and-identity.md)
 - [04: Refine prototype and handoff operations](04-prototype-and-handoff.md)
 - [05: Cut over routing and remove provider coupling](05-cut-over-router-and-contracts.md)
+- [06: Patch the draft so an ordinary run works](06-patch-the-draft.md), first in order
 
 ## Out of scope
 The hosted task adapter and unattended cross-skill orchestration are deferred from the first public revision. This package changes only its declared ownership; another package owns adjacent delivery or method behavior. Source publication of this plan does not count as implementation or release acceptance.

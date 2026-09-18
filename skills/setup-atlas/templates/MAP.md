@@ -22,36 +22,6 @@ FORMAT. Agents: read this before editing. It is not rendered.
     Plan: none yet.
 -->
 
-# Northlight Studio brand
+# {Project name}
 
-A visual identity for a two-person architecture studio. It touches the studio's website, proposals, and a shopfront sign, and it is used by the two partners and one freelance designer.
-
-```mermaid
-flowchart LR
-  classDef sketched fill:#f4f4f4,stroke:#999,color:#333
-  classDef decided fill:#dbeafe,stroke:#2563eb,color:#1e3a8a
-  classDef building fill:#fef3c7,stroke:#d97706,color:#78350f
-  classDef done fill:#dcfce7,stroke:#16a34a,color:#14532d
-
-  wordmark["Wordmark"]:::building
-  palette["Palette"]:::sketched
-  wordmark --> palette
-```
-
-## Wordmark
-
-**Status:** building
-The studio name drawn as its own letterforms, with lockups and clear-space rules for every surface.
-Needs: none.
-Open questions: none.
-Decisions: [0001](decisions/0001-one-mark-not-a-family.md).
-Plan: [plan/wordmark/](plan/wordmark/).
-
-## Palette
-
-**Status:** sketched
-The ink and paper colours, and whether a third colour is ever allowed.
-Needs: wordmark.
-Open questions: does the shopfront sign need a colour that reads at night? Is one accent colour worth the maintenance?
-Decisions: none yet.
-Plan: none yet.
+{One paragraph: what this is, who and what it touches.}

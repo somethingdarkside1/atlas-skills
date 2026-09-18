@@ -1,13 +1,15 @@
 ---
 status: todo
 kind: build
-blocked_by: ["02"]
+blocked_by: ["02", "work-skills/05"]
 ---
 
 # 03: Migrate the current project format
 
 ## Delivers
 An inspectable migration from the current source templates and example to the adopted contract, preserving legacy tasks and project customizations.
+
+Under [decision 0021](../../decisions/0021-patch-the-draft-first.md) this follows the skills. While no project uses an older format it may be as small as a note on what changed.
 
 Source: Original F06-F07, F18; deferred hosted tracker policy. See the [package brief](brief.md) and [architecture review](../../notes/2026-09-13-review-methods-and-project-policy.md).
 

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Set up Atlas"
+  short_description: "Create the five things, or only the missing ones; safe to run again"
+policy:
+  allow_implicit_invocation: false
