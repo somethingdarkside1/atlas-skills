@@ -59,6 +59,13 @@ Not checked: the `(you)` run. No skill has been invoked. Semicolons remain as li
 
 Project delivery: output commit `d0427af` on `codex/skills-patch-0-2`, pushed, with [PR #13](https://github.com/somethingdarkside1/atlas-skills/pull/13) opened with `Refs #5`. Merge waits for the `(you)` run below.
 
+### 2026-09-18
+The agent half of the first full run, on branch `codex/skills-0-2-agent-run` from `62b0ff6` (PR #12's head, so decisions 0022 to 0024 were in the skills that ran). The six steps in Check by were run on scratch folders by sub-agents that read each skill when its command arrived, with a follow-up message playing the human. The [run note](../../notes/2026-09-18-review-first-agent-run-of-0-2.md) records every step, what it wrote, and what broke.
+
+Every step reached its expected end. Fixed from what the run found: the `Version:` recipe now names its files and fixes their spelling and order, and `/review-it` gives the command too; `/build-it` asks an unanswered `Open question:` first and reads `git status` for a crashed session's leftovers; `/review-it` corrects a wrong statement that changes no file and no box instead of sending the task back, and routes a finding that needs the brief changed to `/interview-me`; `/setup-atlas` asks for the project's sentence up front and links `AGENTS.md` to a new `CLAUDE.md`; `/build-it` has an early-stop commit message; code is not checked for Avoid words; `(your call)` covers facts only the human knows; the brand example's `plan/README.md` matches the template.
+
+Checked: `python3 scripts/check-project.py`, `claude plugin validate .`, and `git diff --check`; the new `git status --short` read runs cleanly under zsh on the scratch brand copy. Not checked: a second run on the fixed text, and a real harness loading the skills.
+
 ## Review
 ### 2026-09-17
 Examined the staged output above against this task's Delivers and Done when at base `f66c6f1`, in two passes by separate agents with no stake in the text, each walking scenarios through the skills rather than reading them one by one.
