@@ -59,6 +59,13 @@ Not checked: the `(you)` run. No skill has been invoked. Semicolons remain as li
 
 Project delivery: output commit `d0427af` on `codex/skills-patch-0-2`, pushed, with [PR #13](https://github.com/somethingdarkside1/atlas-skills/pull/13) opened with `Refs #5`. Merge waits for the `(you)` run below.
 
+### 2026-09-18
+The agent half of the first full run, on branch `codex/skills-0-2-agent-run` from `62b0ff6` (PR #12's head, so decisions 0022 to 0024 were in the skills that ran). Sub-agents ran the six steps in Check by on scratch folders, reading each skill when its command arrived, with a follow-up message playing the human. Every step reached its expected end. The [run note](../../notes/2026-09-18-review-first-agent-run-of-0-2.md) records each step, the five faults it found, and the fixes to `/build-it`, `/review-it`, `/setup-atlas`, `/interview-me`, and the task format, which now holds the one checksum command and a `Files:` line.
+
+Checked: `python3 scripts/check-project.py`, `claude plugin validate .`, and `git diff --check`. The new checksum command reproduces the run's `725f9307d8a2` under zsh and handles a file name with a space. An agent that did not write the fixes reviewed them, and its findings are fixed. Not checked: a second run on the fixed text, and a real harness loading the skills.
+
+Project delivery: on 2026-09-18 Vitali authorized merging PRs #13, #12, and #15 to `main` before the cold run. The task stays in review, with its `(you)` box open, until that run.
+
 ## Review
 ### 2026-09-17
 Examined the staged output above against this task's Delivers and Done when at base `f66c6f1`, in two passes by separate agents with no stake in the text, each walking scenarios through the skills rather than reading them one by one.

@@ -77,6 +77,12 @@ Open `brand/wordmark/lockups.html` and check every lockup at 16, 64, and 400 pix
 ## Review
 ```
 
-Delivered and Review start empty. `/build-it` adds one dated entry per delivery (or per stop) under Delivered: what was made, where it lives, what was verified, and a last line `Version: <checksum> (<n> files)` that lets a review see whether the files changed since. `/review-it` adds one dated pass per run under Review: `Reviewed: <version>`, then findings under each check (brief, conventions) with what they cite, or "clean".
+Delivered and Review start empty. `/build-it` adds one dated entry per delivery (or per stop) under Delivered: what was made, where it lives, and what was verified. A delivery ends with two lines. `Files:` lists each delivered file by its path from the project root. `Version: <checksum> (<n> files)` lets a review see whether those files changed since. Run from the project root, the checksum is
+
+```sh
+printf '%s\n' <the Files paths> | LC_ALL=C sort | tr '\n' '\0' | xargs -0 shasum -a 256 | shasum -a 256 | cut -c1-12
+```
+
+A delivery that is not a file (a sent email, a setting in a tool) writes `Version: none, <what to look at>` and no `Files:` line. `/review-it` adds one dated pass per run under Review: `Reviewed: <version>`, then findings under each check (brief, conventions) with what they cite, or "clean".
 
 `status` is one of the five in the table. `blocked_by` lists task numbers in this part, or `<part>/<NN>` for another part. A Done when box starts with `(you)` when only a person can look: `/build-it` leaves it unticked, you tick it yourself, and `/review-it` treats a ticked `(you)` box as confirmed. A canceled task carries one line under its title: `Canceled: <date>, <why>`. Keep the headings exactly as shown, in this order.
