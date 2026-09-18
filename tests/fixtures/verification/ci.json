@@ -1,0 +1,6 @@
+{
+  "note": "Synthetic stand-in for a platform status. No real CI ran.",
+  "workflow": "tests",
+  "command": "python3 check_mirror.py",
+  "state": "success"
+}
