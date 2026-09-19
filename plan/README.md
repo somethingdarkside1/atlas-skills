@@ -2,7 +2,7 @@
 
 Tracker: files
 
-This is the active plan for the first public Atlas revision. Seven work packages own the work, each mapped to a part in [MAP.md](../MAP.md), with one brief and numbered tasks in a flat part folder. Under [decision 0021](../decisions/0021-patch-the-draft-first.md) the draft skills are patched first ([work-skills/06](work-skills/06-patch-the-draft.md)) and migration follows the skills. The prior 23-task plan is [archived](../notes/archive/2026-09-13-initial-review/README.md), and [MIGRATION.md](MIGRATION.md) accounts for every old task.
+This is the active plan for the first public Atlas revision. Seven work packages own the work, each mapped to a part in [MAP.md](../MAP.md), with one brief and numbered tasks in a flat part folder. Under [decision 0021](../decisions/0021-patch-the-draft-first.md) the draft skills are patched first ([work-skills/06](work-skills/06-patch-the-draft.md)) and migration follows the skills. [0025](../decisions/0025-finish-simple-skills-before-the-human-run.md) confirms the full remaining scope, simple skills, and Vitali's cold run after candidate refinement. The prior 23-task plan is [archived](../notes/archive/2026-09-13-initial-review/README.md), and [MIGRATION.md](MIGRATION.md) accounts for every old task.
 
 ## Pick work
 
@@ -13,7 +13,7 @@ Use [PROMPTS.md](PROMPTS.md) for standalone package and continuation prompts. [C
 | [Core model](core-model/brief.md) | [01](core-model/01-settle-boundaries.md) | Adopt boundaries, evidence and migration |
 | [Shared methods](shared-methods/brief.md) | [01](shared-methods/01-interview-and-model.md) | Interview, diagnose, verify, and prototype consistently |
 | [Project setup](project-setup/brief.md) | [01](project-setup/01-settle-adoption-contract.md) | Adopt context and project-owned policy safely |
-| [Work skills](work-skills/brief.md) | [06](work-skills/06-patch-the-draft.md) | Patch the draft, then implement the revised operation contracts |
+| [Work skills](work-skills/brief.md) | [01](work-skills/01-interview-and-plan.md) | Refine the merged draft; task 06's human check follows the candidate |
 | [Context routing](context-routing/brief.md) | [01](context-routing/01-resolve-focus-pointers.md) | Find relevant evidence with bounded, expandable reads |
 | [Validation](validation/brief.md) | [01](validation/01-check-structural-contracts.md) | Demonstrate structural and behavioral correctness |
 | [Public release](public-release/brief.md) | [01](public-release/01-write-public-guide-and-credit.md) | Document, install, and publish a verified release |

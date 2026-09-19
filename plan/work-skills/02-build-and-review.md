@@ -1,7 +1,7 @@
 ---
 status: todo
 kind: build
-blocked_by: ["06", "core-model/02", "shared-methods/02", "shared-methods/03"]
+blocked_by: ["core-model/02", "shared-methods/02", "shared-methods/03"]
 ---
 
 # 02: Refine delivery and review operations
