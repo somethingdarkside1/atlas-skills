@@ -1,7 +1,7 @@
 ---
 status: todo
 kind: build
-blocked_by: ["06", "core-model/02", "shared-methods/01"]
+blocked_by: ["core-model/02", "shared-methods/01"]
 ---
 
 # 01: Refine interview and planning operations

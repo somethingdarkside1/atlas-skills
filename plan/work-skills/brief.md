@@ -16,7 +16,7 @@ Give all eight Atlas operations explicit reads, owned changes, completion eviden
 
 The release boundaries were adopted through [core-model/01](../core-model/01-settle-boundaries.md) on 2026-09-15. Use the linked accepted decisions as settled input; the package-specific choices below remain with their named tasks, and implementation still requires accepted, accessible blocker outputs.
 
-[0021](../../decisions/0021-patch-the-draft-first.md): the draft is patched first, and migration follows the skills. [Task 06](06-patch-the-draft.md) lands before tasks 01 to 05, which build on the patched skills and wait on the task contract in core-model/02 rather than on migration.
+[0021](../../decisions/0021-patch-the-draft-first.md): the draft is patched first, and migration follows the skills. [Task 06](06-patch-the-draft.md) supplied the merged 0.2 draft. Under [0025](../../decisions/0025-finish-simple-skills-before-the-human-run.md), tasks 01 to 05 refine that draft before Vitali's cold run, retaining their contract and method prerequisites. The full release scope remains required, with credit for work the patch already demonstrates.
 
 [0019](../../decisions/0019-acceptance-follows-output-and-scope.md) and [0020](../../decisions/0020-decide-only-the-selected-scope.md) settle acceptance and interview boundaries. Keep the direct one-task route for clear work, reuse applicable evidence after impact assessment, and update only homes whose facts change. [0018](../../decisions/0018-one-method-modular-skills.md) makes these operations parts of one product without authorizing unattended orchestration.
 
@@ -28,7 +28,7 @@ The release boundaries were adopted through [core-model/01](../core-model/01-set
 
 Settled in the work-skills interview on 2026-09-17: [0022](../../decisions/0022-one-version-line-per-delivery.md) one version line per delivery; [0023](../../decisions/0023-no-glossary-diagram.md) no glossary diagram; [0024](../../decisions/0024-rounds-follow-the-answers.md) interview rounds follow the answers. The first full run on a scratch brand copy is done twice: an agent answering from the example's own decisions once the patch is committed, to catch stoppers, then Vitali in a fresh session as the release check.
 
-Still open on the [map](../../MAP.md#work-skills): what finished means for tasks 01 to 05, whether review starts on its own after a build, the Outcome check on a part's last task, and whether the version line narrows 0019. Choose the smallest useful read scope and retry receipt per operation.
+Vitali confirmed the full release scope on 2026-09-19 and wants the skills in a good state before his cold run. [0025](../../decisions/0025-finish-simple-skills-before-the-human-run.md) records that order. The [simplicity assessment](../../notes/2026-09-19-research-matt-simplicity.md) informs the work; [skill authoring](../../skills/README.md) owns its writing standard. Remaining choices concern automatic review, the Outcome check on a part's last task, and reconciliation of 0022 with 0019. Choose the smallest useful read scope and retry receipt per operation.
 
 ### Reads, changes, and finish
 
