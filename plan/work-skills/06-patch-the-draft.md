@@ -14,7 +14,7 @@ Source: [Decision 0021](../../decisions/0021-patch-the-draft-first.md) and the [
 ## Check by
 Run each skill's Read first commands under zsh against a templates-only folder and a scratch copy of `examples/brand/`, and have a separate agent walk the skills against each other for stuck states and loops.
 
-(you) Then one run with the 0.2 skills installed. The 2026-09-11 script names `/atlas go` and GitHub mode, which 0.2 removed, so use this one:
+(you) Run this route on the prepared candidate with the skills installed. Under [0025](../../decisions/0025-finish-simple-skills-before-the-human-run.md), this check follows refinement and remains required by [validation/03](../validation/03-run-cold-context-acceptance.md). The 2026-09-11 script names `/atlas go` and GitHub mode, which 0.2 removed, so use this route, adapting commands only when the candidate's documented interface changes:
 
 1. In an empty scratch folder with `git init`: `/setup-atlas`, then `/atlas`. Expect five homes, a `Saving work` section, and `Next: /interview-me`.
 2. Copy `examples/brand/` to another scratch folder with `git init` and a first commit. `/atlas` should report `wordmark/02` as doing with nothing delivered, and send you to `/build-it wordmark/02`.
@@ -65,6 +65,9 @@ The agent half of the first full run, on branch `codex/skills-0-2-agent-run` fro
 Checked: `python3 scripts/check-project.py`, `claude plugin validate .`, and `git diff --check`. The new checksum command reproduces the run's `725f9307d8a2` under zsh and handles a file name with a space. An agent that did not write the fixes reviewed them, and its findings are fixed. Not checked: a second run on the fixed text, and a real harness loading the skills.
 
 Project delivery: on 2026-09-18 Vitali authorized merging PRs #13, #12, and #15 to `main` before the cold run. The task stays in review, with its `(you)` box open, until that run.
+
+### 2026-09-19
+Vitali confirmed that he has not performed the cold run and wants the skills in a good state first. [0025](../../decisions/0025-finish-simple-skills-before-the-human-run.md) removes this task as a prerequisite of tasks 01 to 04 while retaining the human check in release acceptance. The task remains in review, its human box remains unticked, and the recorded agent run does not substitute for it. Refinement starts from merged `472ca95` on `codex/finalise-atlas`; no further behavioral acceptance is claimed here.
 
 ## Review
 ### 2026-09-17

@@ -1,7 +1,7 @@
 ---
 status: todo
 kind: build
-blocked_by: ["06", "core-model/02", "context-routing/01"]
+blocked_by: ["core-model/02", "context-routing/01"]
 ---
 
 # 03: Refine map maintenance and identity

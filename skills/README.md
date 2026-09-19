@@ -1,6 +1,6 @@
 # Skill authoring
 
-The nine skill folders are the draft at 0.2: the earlier draft patched under [decision 0021](../decisions/0021-patch-the-draft-first.md) so an ordinary run works, with `setup-atlas` split out of `atlas`. It has not been run end to end. The [work skills package](../plan/work-skills/brief.md) defines the rest of the migration; the [shared methods package](../plan/shared-methods/brief.md) defines reusable reasoning. Shared method bundles are planned, not yet installed here.
+The nine skill folders are the draft at 0.2: the earlier draft patched under [decision 0021](../decisions/0021-patch-the-draft-first.md) so an ordinary run works, with `setup-atlas` split out of `atlas`. An [agent run](../notes/2026-09-18-review-first-agent-run-of-0-2.md) exercised scratch fixtures; the installed candidate and human run remain unverified. The [work skills package](../plan/work-skills/brief.md) defines the rest of the migration; the [shared methods package](../plan/shared-methods/brief.md) defines reusable reasoning. Shared method bundles are planned, not yet installed here.
 
 ## Contract before prose
 
@@ -22,6 +22,15 @@ Keep one flat `skills/<name>/` folder per installable skill. Its `SKILL.md` hold
 An index or label is a pointer, not a method body. Load a method only for the branch that requires it. An independently invocable method earns a public skill only when a real use case and invocation test justify that interface.
 
 ## Procedure shape
+
+Keep the skills simple under [0025](../decisions/0025-finish-simple-skills-before-the-human-run.md). The [Matt comparison](../notes/2026-09-19-research-matt-simplicity.md) supplies the rationale and examples for this standard:
+
+- Write the operation's essential sequence in plain steps. Keep a rule when it defines an Atlas boundary or prevents a concrete failure; remove repeated instructions and prose that adds nothing to the agent's normal work.
+- State the required information or result. Prescribe a tool, shell command, exact phrase, or count only when correctness depends on it. Formats still own the fields other operations consume.
+- Keep each rule in one home. A skill points to the project's format instead of retelling it, and to project instructions for saving work.
+- Keep guidance needed on every path visible. Move a substantial conditional branch behind a clear pointer only when other paths can skip it. Count the references read during a run when assessing complexity.
+- Use examples to explain a difficult choice. Keep regression cases in validation fixtures rather than turning every observed incident into another universal instruction.
+- Verify simplifications against the affected success and recovery cases. Word counts can reveal growth, but a shorter file alone does not demonstrate better behavior.
 
 1. Resolve the target and read the relevant current formats and project instructions. Done when the target and prerequisites are known.
 2. Perform the operation using the selected shared method where needed. Done when its declared output and evidence exist.

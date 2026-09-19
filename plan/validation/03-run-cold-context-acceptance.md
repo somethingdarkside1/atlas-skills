@@ -20,6 +20,7 @@ Run the scenarios below against a scratch copy or the exact candidate revision a
 - [ ] Record model/harness, revision, steps, actual outcomes, limits, and unresolved failures.
 - [ ] Compare relevant results against the initial draft or second-pass baseline before claiming improvement over Matt or earlier Atlas.
 - [ ] Required failures are fixed and rechecked before public release is unblocked.
+- [ ] (you) Vitali completes the scratch-brand route from [work-skills/06](../work-skills/06-patch-the-draft.md) on the prepared candidate, with observations recorded and failures resolved. This is the deferred human check under [0025](../../decisions/0025-finish-simple-skills-before-the-human-run.md), not a substitute for independent agent evidence.
 
 ## Delivered
 Pending. Record the selected workspace/branch when work begins, then the output revision and actual check evidence when delivered.
