@@ -19,6 +19,7 @@ Run the scenarios below against a scratch copy or the exact candidate revision a
 - [ ] Separate redrawing a view from changing work decomposition.
 - [ ] Resolve split parts and glossary entries consistently for every consumer.
 - [ ] Recompute parent status only from the adopted nonempty accepted scope and record the owned repair.
+- [ ] Redrawing a map whose tasks are accepted but whose combined Outcome is unmet leaves the part open under [0026](../../decisions/0026-part-completion-checks-the-combined-outcome.md).
 
 ## Delivered
 Pending. Record the selected workspace/branch when work begins, then the output revision and actual check evidence when delivered.

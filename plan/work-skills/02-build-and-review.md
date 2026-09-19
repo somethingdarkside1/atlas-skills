@@ -20,6 +20,8 @@ Run the scenarios below against a scratch copy or the exact candidate revision a
 - [ ] Both procedures record owned changes and actual verification evidence, including unresolved human judgment.
 - [ ] Review findings lead to a new delivery and fresh review; stale approval cannot complete changed work.
 - [ ] Commits, branches, PR approval, and merge decisions are delegated to applicable project policy.
+- [ ] A successful build names the separate review command without starting it automatically, as settled in Q3 on 2026-09-19.
+- [ ] When accepted tasks leave a promised usage guide missing, retain their acceptance, keep the part open, and identify the missing work under [0026](../../decisions/0026-part-completion-checks-the-combined-outcome.md). A complete combined result can close the part.
 
 ## Delivered
 Pending. Record the selected workspace/branch when work begins, then the output revision and actual check evidence when delivered.
