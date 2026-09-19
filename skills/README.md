@@ -1,10 +1,10 @@
 # Skill authoring
 
-The nine skill folders are the draft at 0.2: the earlier draft patched under [decision 0021](../decisions/0021-patch-the-draft-first.md) so an ordinary run works, with `setup-atlas` split out of `atlas`. An [agent run](../notes/2026-09-18-review-first-agent-run-of-0-2.md) exercised scratch fixtures; the installed candidate and human run remain unverified. The [work skills package](../plan/work-skills/brief.md) defines the rest of the migration; the [shared methods package](../plan/shared-methods/brief.md) defines reusable reasoning. Shared method bundles are planned, not yet installed here.
+The nine operations implement the integrated process candidate under [work-skills/07](../plan/work-skills/07-integrated-process-candidate.md) and proposed [0028](../decisions/0028-evaluate-a-small-integrated-process.md). [GUIDE.md](../GUIDE.md) explains the human workflow. Format-3 templates and generated consumer methods are included; candidate checks do not substitute for clean-profile host installation, the deferred human run, or a tagged release. The prior 0.2 behavior remains retrievable in project history.
 
 ## Contract before prose
 
-Every operation declares these in its brief before implementation:
+The candidate contracts below define each operation. The skill body implements its contract; project formats own shared state and evidence rules. Evaluate these fields when changing an operation:
 
 | Contract field | Meaning |
 |---|---|
@@ -17,7 +17,7 @@ The operation follows applicable project instructions and preserves unrelated wo
 
 ## Source layout
 
-Keep one flat `skills/<name>/` folder per installable skill. Its `SKILL.md` holds the operation; `agents/openai.yaml` holds supported invocation metadata; its conditional references and templates live beside it. The project templates live in `skills/setup-atlas/templates/`, and every other skill reads formats from the project's own homes, never from another skill's folder. Author shared methods once when the shared-methods package creates their canonical source. Package generated copies inside the skills that need them and validate their source hashes so selective installation has every required reference.
+Keep one flat `skills/<name>/` folder per installable skill. Its `SKILL.md` holds the operation; `agents/openai.yaml` holds supported invocation metadata; its conditional references and templates live beside it. The project templates live in `skills/setup-atlas/templates/`, and every other skill reads formats from the project's own homes, never from another skill's folder. Author shared methods once in `methods/`, with the consumer map in `methods/consumers.json`. Generate copies with `python3 scripts/bundle-methods.py`; check source identities with `--check`. Consumer copies retain attribution and contain no sibling-skill dependencies. The shared evidence helper is authored in `scripts/evidence.py` and generated the same way.
 
 An index or label is a pointer, not a method body. Load a method only for the branch that requires it. An independently invocable method earns a public skill only when a real use case and invocation test justify that interface.
 
@@ -36,7 +36,7 @@ Keep the skills simple under [0025](../decisions/0025-finish-simple-skills-befor
 2. Perform the operation using the selected shared method where needed. Done when its declared output and evidence exist.
 3. Record the resulting state or the unresolved action and return a usable next step. Done when a fresh session can verify completion or resume.
 
-Adapt the number of steps to the operation. Each step has an observable completion condition. A read command must return cleanly under zsh when a folder or file kind is absent (no bare `folder/*.md` globs) and must not match an example block inside a README or a format comment; check it against a templates-only folder and a copy of `examples/brand/`. A save step names the skill's files and its message, and points to the project's `Saving work` section for everything else. Initialization identifies missing homes and restores them; another operation points to setup when its required state is absent. Report enough detail to recover from a failure. Use positive instructions with explicit ownership and prerequisites.
+Adapt the number of steps to the operation. Each step has an observable completion condition. A read command must return cleanly under zsh when a folder or file kind is absent (no bare `folder/*.md` globs) and must not match an example block inside a README or a format comment; check it against a templates-only folder and a copy of `examples/brand/`. A save step identifies the owned changes and follows the applicable project policy; message wording and commit timing belong to that policy. Setup resolves adoption conflicts and restores missing required homes; another operation points to setup when its required state is absent. Report enough detail to recover from a failure. Use positive instructions with explicit ownership and prerequisites.
 
 ## Invocation and packaging
 
@@ -60,3 +60,17 @@ policy:
 - Selective installation contains every required reference with a valid source version.
 - Applicable structural checks pass, and the package's behavioral cases have recorded results.
 - Human documentation describes demonstrated behavior and links remaining work.
+
+## Candidate operation contracts
+
+| Operation | Required reads and expansion | Owned changes | Finished or recovery |
+|---|---|---|---|
+| setup-atlas | Existing homes, project purpose, instructions and authority; migration guidance for old formats | Missing homes, scoped format upgrades and instruction pointers | Consistent adopted homes, or a precise conflict with old authority preserved; rerun continues adoption |
+| atlas | Map directory and task state, then selected brief/evidence and relevant handoff | None | An actionable next step, acceptance, or a named wait; unrelated questions do not steal focus |
+| interview-me | Selected scope, decisions and affected tasks; interview method, diagnosis only for unexplained failure | Brief, adopted/proposed choices, relevant terms and map questions; impacted acceptance records | Scope sufficient for next work, or one recorded unresolved input/experiment |
+| plan-it | Brief, task format, existing and incoming dependencies; interview method for material decomposition choices | Tasks and affected dependency/map pointers | Verifiable work with valid ids and blockers, or a specific missing decision/input |
+| build-it | Task/attempt, brief, requirements, actual blocker outputs and project conventions; diagnosis/verification as needed | Task output, its delivery and affected part progress | Verified delivery awaiting separate review, or partial work and exact pending action |
+| review-it | Actual output and scope, criteria, standards and dependencies; verification/diagnosis as needed | Review, affected task acceptance and combined part acceptance | Supported acceptance, material correction, or version-bound human wait |
+| map-it | Map format, affected part records and inbound links; interview method for responsibility changes | Map views and owned links | Consistent structure or a named fault; never invented Outcome acceptance |
+| prototype-it | Question, deciding evidence, prior experiments and prototype method | Experiment, dated evidence and answer/pending pointer | Supported answer, required preference, or next observation for an inconclusive result |
+| park-it | Current target/attempt, workspace and relevant existing handoff | Missing durable facts and a useful handoff/export | Exact resumption pointers or reuse of an unchanged adequate handoff |

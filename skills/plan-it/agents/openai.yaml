@@ -1,5 +1,5 @@
 interface:
   display_name: "Plan it"
-  short_description: "Turn a decided part's brief into numbered tasks with blocking edges"
+  short_description: "Plan verifiable work and preserve existing progress"
 policy:
   allow_implicit_invocation: false

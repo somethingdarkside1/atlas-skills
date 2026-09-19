@@ -1,5 +1,5 @@
 interface:
   display_name: "Map it"
-  short_description: "Redraw the map diagrams from their sections, or split a grown part"
+  short_description: "Maintain project responsibilities, views, and links"
 policy:
   allow_implicit_invocation: false

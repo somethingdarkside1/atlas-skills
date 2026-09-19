@@ -1,29 +1,17 @@
 ---
 name: setup-atlas
-description: Create the five things in a project, or only the ones that are missing, and add the Atlas block to the project instructions; safe to run again.
+description: Adopt Atlas in a new or existing project, preserving its work, formats, and delivery policy.
 disable-model-invocation: true
 ---
 
 # Set up Atlas
 
-Give this project its five things without touching what is already there.
+Create missing homes or explicitly upgrade an existing Atlas project. Use templates beside this file as starting formats, with the project's real content and conventions.
 
-## Read first
-- Which of `GLOSSARY.md`, `MAP.md`, `plan/README.md`, `decisions/README.md`, and `notes/README.md` exist.
-- `README.md`, and `CONTEXT.md` when there is one.
-- `CLAUDE.md` and `AGENTS.md`: whether each exists, whether they are one file (`ls -l` shows a link), and whether either holds an `## Atlas (atlas: N)` block or a `## Saving work` section.
-- `git rev-parse --is-inside-work-tree`.
+Read the project's purpose, existing homes and indices, applicable AGENTS.md/CLAUDE.md and their link relationship, and any existing task or delivery authority. Inspect existing changes before editing.
 
-## Steps
-1. Say what is there and what is missing, one line each, and ask `Create what is missing? (yes)` before writing anything; when `MAP.md` or `GLOSSARY.md` is missing and there is no README, ask `What is this, in a sentence?` in the same message. Nothing missing, the block current, and a `Saving work` section in place: print `Already set up.` and `Next: /atlas`, and stop. On no: print `Next: /setup-atlas` for when you are ready, and stop. Done when the human has said yes.
-2. Create only the missing homes from `templates/` beside this file: `GLOSSARY.md`, `MAP.md`, `plan/README.md`, `decisions/README.md`, `notes/README.md`. A home that exists stays exactly as it is. In a new `MAP.md` and `GLOSSARY.md`, fill the name and the paragraph from the README, or from the answer in step 1; `/interview-me` rewrites both later. Add no parts and no terms. Done when all five exist.
-3. When a `CONTEXT.md` exists: copy each term it defines into `GLOSSARY.md` in the entry shape, leave `CONTEXT.md` where it is, and say which terms were copied and what stayed behind. Done when every copied term is named.
-4. The block. `templates/CLAUDE-block.md` holds two sections, `## Atlas (atlas: N)` and `## Saving work`. Put them into the project instructions: into `CLAUDE.md` and `AGENTS.md` where each exists, once when they are one file, and when neither exists, into a new `CLAUDE.md` with `AGENTS.md` made a link to it (`ln -s CLAUDE.md AGENTS.md`). An Atlas block with a lower number: replace that section alone, from its heading to the next `##`. A `## Saving work` section that exists is the project's own, so leave it; add the template's only where there is none. Done when each instruction file holds the current Atlas block once and a `Saving work` section.
-5. No repo: offer `git init`, and carry on either way. Done when the human has answered.
-6. Save as the project's `Saving work` section says: the files you created or changed; message `setup-atlas: the five things`. Done when they are saved, or you have said why they are not.
-7. Print what was created, one line each, then `Next: /atlas` as the last line.
-
-## Output
-- The missing homes, the Atlas block, and the `Saving work` section in the project instructions.
-- Terms copied from `CONTEXT.md`, when there was one.
-- One save, as the project says.
+1. Establish the adoption scope from the request and existing authorization. Explain what is present and what needs creating or adapting. Resolve material conflicts, such as an existing hosted task authority or customized format with different semantics, before changing that authority; continue independent safe adoption where useful. Ordinary setup needs no Git account or tracker choice.
+2. Create only missing homes. When a matching glossary, map, or work record already exists, adopt or link it under one authoritative location instead of copying live content into two homes. For a new project, start with its stated purpose; empty homes need no invented terms, parts, or tasks. Ask only for a missing purpose that cannot be inferred.
+3. Upgrade owned format guidance from the templates while preserving project content, stable ids, historical evidence, and custom rules. Read [migration guidance](MIGRATION.md) for older formats or hosted tasks. Record old heading-derived part ids before renaming headings. A conflict leaves a precise pending action and the prior authority intact; a partial rerun resumes the recorded adoption.
+4. Add or update the Atlas instruction section using templates/CLAUDE-block.md. Follow the actual project's instruction files: update a shared symlink target once; preserve distinct host-specific instructions and project additions. When neither file exists, create AGENTS.md as the common entry and link CLAUDE.md only when that host needs it. Keep delivery policy in its existing owner. The template supplies no automatic commit or publish rule.
+5. Check the resulting links, unique owners, format compatibility, and instruction pointers. An unchanged rerun reports that setup is current. Save owned changes under project policy and report the actual diff or pending conflict. Finish with the next action for the requested work, or atlas for orientation.

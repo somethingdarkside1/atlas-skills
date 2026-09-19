@@ -1,5 +1,5 @@
 interface:
   display_name: "Review it"
-  short_description: "Check a task's result against its brief and the project's conventions"
+  short_description: "Assess the actual result against its agreed scope"
 policy:
   allow_implicit_invocation: false

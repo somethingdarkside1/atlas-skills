@@ -143,8 +143,8 @@ def check(root: Path) -> dict:
 
     for node in graph:
         visit(node)
-    docs = [root / name for name in ("README.md", "INDEX.md", "CLAUDE.md", "GLOSSARY.md", "MAP.md", "skills/README.md")]
-    for folder in ("plan", "glossary", "decisions", "notes"):
+    docs = [root / name for name in ("README.md", "GUIDE.md", "INDEX.md", "CLAUDE.md", "GLOSSARY.md", "MAP.md")]
+    for folder in ("plan", "glossary", "decisions", "notes", "skills", "methods"):
         docs.extend((root / folder).rglob("*.md"))
     links = 0
     for path in docs:

@@ -1,5 +1,5 @@
 interface:
   display_name: "Interview me"
-  short_description: "Ask until a part is settled, writing terms, decisions, and the brief as they land"
+  short_description: "Settle the material choices for the selected outcome"
 policy:
   allow_implicit_invocation: false

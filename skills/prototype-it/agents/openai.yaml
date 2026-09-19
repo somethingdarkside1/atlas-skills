@@ -1,5 +1,5 @@
 interface:
   display_name: "Prototype it"
-  short_description: "Make the smallest thing that answers one open question, and file the verdict"
+  short_description: "Answer one question through a bounded experiment"
 policy:
   allow_implicit_invocation: false

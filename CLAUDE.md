@@ -6,7 +6,7 @@ Read [INDEX.md](INDEX.md) to select a part, then its brief, the chosen task, and
 
 ## This repository
 
-Atlas is by Vitali Liouti. The active plan prepares the next public release. `skills/` contains the executable draft at 0.2, patched under decision 0021; the work packages specify its replacement contracts. Execute draft skills against scratch fixtures during validation. Use the package start prompts for work on this repository.
+Atlas is by Vitali Liouti. The active plan prepares the next public release. `skills/` contains the integrated process candidate under work-skills/07, built on the 0.2 patch; the work packages retain its adoption and release checks. Execute draft skills against scratch fixtures during validation. Use the package start prompts for work on this repository.
 
 - `INDEX.md` routes reads; the five things own project state.
 - `skills/<name>/` remains flat. Follow [skills/README.md](skills/README.md) when editing skills.

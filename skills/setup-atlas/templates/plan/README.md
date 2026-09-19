@@ -1,88 +1,90 @@
 # Plan
 
-One folder per part holds `brief.md` and numbered tasks.
+Atlas format: 3
+Tracker: files
 
-```
-plan/
-  <part>/
-    brief.md
-    01-<slug>.md
-    02-<slug>.md
-```
+One folder per part contains its brief and numbered tasks. The plan owns work, waiting, delivery, and acceptance. The map links here; it does not copy task state.
 
-## Ids and statuses
+## Working rules
 
-A task id is `<part>/<NN>`. Skills print and accept it in that shape everywhere: as an argument, on the `Next:` line, and in commit messages. Inside its own part, `blocked_by` may shorten it to `NN`.
+Start with the user's target, its brief, applicable project instructions, and the relevant records. Follow links to decisions, required outputs, and affected parts when their facts matter. Read a glossary entry to resolve meaning, rather than loading every term. Missing optional context is a discovery problem; missing required scope or an unavailable accepted output needs an explicit next action.
 
-| Status | Meaning | Set by |
-|---|---|---|
-| todo | Not started | `/plan-it` |
-| doing | Being made, or sent back with findings or a question | `/build-it`, and `/review-it` on findings |
-| review | Delivered; waiting for `/review-it`, or for you to tick the `(you)` boxes | `/build-it` |
-| done | Reviewed clean | `/review-it` |
-| canceled | Dropped by a re-plan; the file stays, with the reason | `/plan-it` |
+Use the smallest useful route. A clear request within a settled brief can be one task without another interview. A new or materially changed outcome needs clarification first. Update only homes whose facts changed. Skill invocations do their named operation; build ends with a separate review recommendation.
 
-A task is ready when it is todo and every task in its `blocked_by` list is done. A blocker may only name a task that exists and is not canceled. A part has a plan when it has at least one task that is not canceled. Task numbers are never reused or reordered; a re-plan edits or adds todo tasks, and cancels a task instead of deleting it. Part folders stay flat and are named by the part id, which is unique across the whole map.
+Before changing files, inspect existing work and preserve unrelated edits and staging. Save owned changes under project instructions. Commits, branches, pushes, merges, publishing, and external actions follow the project's existing authorization. When no delivery policy exists, leave the files saved in the workspace and report that state.
 
-**Which task is next.** The first part in map order with status building and a ready task. Else the first decided or done part with one. Then the lowest number in that part. `/build-it` and `/atlas` both use this rule.
+A return names what changed, what is verified or unresolved, and the next useful action. Use `Next: /command <target>` for an available operation, or `Next: waiting for <input or event>, then /command <target>`. Use the actual installed command name. A recommendation never invokes another operation or supplies permission.
+
+**Progress and waiting.** A repeated operation first checks its existing output and latest pending action. Continue when new input, changed evidence, or an untried relevant action makes progress possible. Otherwise report the existing wait without duplicating records or sending the same unchanged work between skills. Investigate a repeated failure before another attempt; record the missing input or next discriminating check when no justified action remains. Waiting on one target does not block unrelated eligible work.
 
 ## Brief
 
-```md
----
-part: wordmark
----
+`plan/<part>/brief.md` has `part: <stable-id>` frontmatter and these sections:
 
-# Wordmark
+- `Problem`: who needs what to change and why.
+- `Outcome`: the observable result, including how its combined usefulness can be assessed.
+- `Decisions`: linked consequential choices and short settled choices that need no separate file.
+- `Out of scope`: explicit exclusions.
 
-## Problem
-The studio name is set in a default font on every surface, so nothing looks like it belongs to the studio.
+A draft can exist before adoption. Mark unresolved scope as `Draft:` below the title and keep only material open questions on the map. Record agreed answers as they arrive. When changing adopted scope, retain its prior version through project history or a dated note before overwriting it. Name affected tasks and assess their acceptance, rather than restarting the whole project.
 
-## Outcome
-One wordmark that reads as the studio's own at every size from a favicon to a shopfront.
+## Tasks and dependencies
 
-## Decisions
-[0001](../../decisions/0001-one-mark-not-a-family.md): one mark, not a family.
-Lowercase only; the name never appears in capitals.
-
-## Out of scope
-A symbol or icon. Colour beyond black and white.
-```
-
-The brief is written by `/interview-me`. While the interview is still running, the first line under the title reads `Draft: open questions remain on the map.`; the line goes when the part is decided. Decisions holds a link per decision file and one line per settled choice too small for a file.
-
-## Task
+A task is `plan/<part>/NN-<slug>.md`; its id is `<part>/<NN>`. Numbers are never reused. Inside a part, blockers may use the short number. Quote blocker ids in frontmatter. A changed display name does not change the part id or its task paths.
 
 ```md
 ---
 status: todo
-blocked_by: [01, palette/02]
+blocked_by: []
 ---
 
-# 02: Build the lockups
+# 01: Deliver the agreed result
 
 ## Delivers
-The wordmark in horizontal and stacked lockups, each with clear-space rules, as SVG.
+One independently checkable output, in the medium the task needs.
 
 ## Check by
-Open `brand/wordmark/lockups.html` and check every lockup at 16, 64, and 400 pixels.
+A check that could fail if the result is wrong, with its expected answer from the brief, a source of record, or a person.
 
 ## Done when
-- [ ] Horizontal and stacked lockups exist as SVG
-- [ ] Clear space is defined as a multiple of the x-height
-- [ ] (you) Both read cleanly at 16 pixels
+- [ ] The required result exists and passes its check
+- [ ] (you) A stated judgment only the person can make
 
 ## Delivered
 
 ## Review
 ```
 
-Delivered and Review start empty. `/build-it` adds one dated entry per delivery (or per stop) under Delivered: what was made, where it lives, and what was verified. A delivery ends with two lines. `Files:` lists each delivered file by its path from the project root. `Version: <checksum> (<n> files)` lets a review see whether those files changed since. Run from the project root, the checksum is
+An optional `kind: decision | build | check | release` describes the output; it adds no new lifecycle. Tasks may deliver decisions, experiments, documents, data, code, or external work. Use complete useful slices. For a wide change that cannot be sliced independently, plan compatible expansion, migration, and removal, or an explicit integration task with its verification boundary.
 
-```sh
-printf '%s\n' <the Files paths> | LC_ALL=C sort | tr '\n' '\0' | xargs -0 shasum -a 256 | shasum -a 256 | cut -c1-12
-```
+| State | Meaning and owner |
+|---|---|
+| todo | Planned by plan-it; ready only when blockers are accepted and their needed outputs are accessible. |
+| doing | Started or resumed by build-it, or returned for changes by review-it; may have a pending question or failed check. |
+| review | Delivered by build-it; awaiting review or a required human judgment. |
+| done | Accepted by review-it against the identified output and scope. |
+| canceled | Removed by plan-it with its reason and incoming dependencies repaired. |
 
-A delivery that is not a file (a sent email, a setting in a tool) writes `Version: none, <what to look at>` and no `Files:` line. `/review-it` adds one dated pass per run under Review: `Reviewed: <version>`, then findings under each check (brief, conventions) with what they cite, or "clean".
+Read blocker outputs as well as their states. Part `Needs` edges concern prior decisions; task `blocked_by` edges concern accepted outputs. Neither an issue label nor a merge substitutes for acceptance. Integration is part of acceptance only when this task explicitly delivers it or project policy requires it.
 
-`status` is one of the five in the table. `blocked_by` lists task numbers in this part, or `<part>/<NN>` for another part. A Done when box starts with `(you)` when only a person can look: `/build-it` leaves it unticked, you tick it yourself, and `/review-it` treats a ticked `(you)` box as confirmed. A canceled task carries one line under its title: `Canceled: <date>, <why>`. Keep the headings exactly as shown, in this order.
+Plan-it preserves historical deliveries and reviews. It can revise active scope under the user's instruction, recording affected work and renewing affected acceptance. A canceled task supplies no output: repair every incoming dependency with an explicit replacement or scope reason. Check missing ids, self-dependencies, and cycles before calling the plan ready. Existing work is resumed or revised, not recreated because another command was run.
+
+## Delivery and review evidence
+
+Append a compact entry when a delivery, finding, decision, or pending action changes. Give entries distinct headings (date and a local suffix suffice for repeats). A stopped attempt records its workspace, usable partial output, check or question, and exact next action; it remains doing.
+
+A delivery records the output location, what was checked and observed, and any unchecked criterion. Identify both the output (`Version:`) and applicable brief and task criteria (`Scope:`). For files, name the examined paths (`Files:`), including explicit removals when relevant, and use a repeatable content identity. Record additional scope sources or the identity command when needed to reproduce the scope check. Exclude bookkeeping files from the output set unless they are themselves the deliverable. The build and review skills include an optional evidence helper when the project has no equivalent.
+
+Git history or the project's artifact versioning can retain the accepted result. Outside such storage, retain a copy before replacing an accepted output or its scope. The short identity stays in the task; copies are needed only where the earlier result would otherwise become unrecoverable. For an external result, use its stable record/version and inspection time, or state the limit if it cannot be retrieved. An unverifiable required result stays unresolved.
+
+A review names `Reviewed:` and `Scope:`, records criteria and conventions separately, and states findings with a location, consequence, and useful correction. Record only checks actually performed. Human-only criteria stay unticked until the person confirms them for this output; a later change renews affected judgments. A platform approval records platform state, not a substitute for examining the work.
+
+Changed content or scope triggers impact assessment: reuse unaffected evidence, renew affected checks, and preserve the earlier review. Review-it may complete the new checks within the requested review when evidence suffices; otherwise it records exactly what build-it or the person must supply. Correct a harmless reporting mistake in the review instead of forcing an unchanged artifact through another build.
+
+## Completing a part
+
+Task acceptance and part acceptance are different. Once the current tasks are accepted or deliberately canceled, review-it checks the combined result against the brief's Outcome and exclusions. Record that assessment in the final task's Review and link it from the map's `Acceptance:` field. Keep the part building if work is missing, retaining valid task acceptance and recording `Remaining work:` with a pointer for plan-it. A map redraw cannot infer this assessment from task counts. Later scope or result changes invalidate only the affected acceptance and reopen the part when needed.
+
+## Earlier projects
+
+This format replaces the draft's state-only handoff freshness and output-only checksum. Setup adopts it explicitly, preserving ids, custom content, prior evidence, and project policy. Old accepted tasks keep their historical state, but missing outputs or missing identity are not invented: verify what a new dependent or changed scope actually requires. Hosted-task projects keep their old authority until an explicit migration accounts for every task and dependency.

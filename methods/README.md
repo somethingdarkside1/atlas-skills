@@ -1,16 +1,7 @@
 # Shared method sources
 
-Canonical reasoning sources live here. Each source declares its trigger, inputs, process, and returned evidence. The caller owns persistence and state transitions. See [skill authoring](../skills/README.md) and the [shared methods brief](../plan/shared-methods/brief.md) for packaging ownership.
+The canonical methods are [interviewing](interview.md), [diagnosis](diagnosis.md), [verification](verification.md), and [prototyping](prototype.md). Each states when to use it, what it needs, and what it returns. Its caller owns persistence, task state, and project delivery.
 
-The table declares consumers for implemented sources. It is input to [task 05](../plan/shared-methods/05-bundle-method-references.md); generated references and installed operation wiring are pending that task and the work-skills migration. These source paths are repository authoring paths, not installed dependencies.
+[consumers.json](consumers.json) is the authoritative source-to-consumer mapping, including the shared evidence helper. Run `python3 scripts/bundle-methods.py` to generate local copies inside consumer skills and `python3 scripts/bundle-methods.py --check` to detect stale or missing copies. Generated headers identify the source and SHA-256; edit the source, then regenerate. Each operation's pointer states when its method is needed. These are plain local references, with no sibling-skill invocation dependency.
 
-| Source | Consumer | Conditional load |
-|---|---|---|
-| [Diagnosis](diagnosis.md) | `build-it` | An observed failure needs explanation before choosing a correction. |
-| [Diagnosis](diagnosis.md) | `review-it` | An unexplained regression prevents a justified finding or acceptance judgment. |
-| [Diagnosis](diagnosis.md) | `interview-me` | A reported constraint may be an existing failure, and that distinction changes the scoped choice. |
-| [Verification](verification.md) | `build-it` | Check by names no check that could fail for a wrong result in this medium (such as for a visual, factual, or data claim), or names only a check that restates the work. |
-| [Verification](verification.md) | `review-it` | The delivered checks cannot be rerun or could pass for a wrong result, or a platform status is offered as the evidence. |
-| [Prototype](prototype.md) | `prototype-it` | An open question needs a small experiment, not a fact lookup, to change the decision. |
-
-No standalone method invocation is declared. The interviewing method source and its mappings remain with task 01.
+The integrated candidate wires these sources into its operations. File-level packaging checks and scratch runs are recorded on work-skills/07; clean-profile host installation and public release remain separate acceptance work. No standalone method skill is advertised.

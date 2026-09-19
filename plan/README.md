@@ -20,7 +20,7 @@ Use [PROMPTS.md](PROMPTS.md) for standalone package and continuation prompts. [C
 
 Task blockers are the execution order. The table is a directory, not a claim that every first task is ready. The adopted boundaries are in `core-model/01`; task 02 is the next core-model task once 01 has accepted evidence accessible to the attempt. Method tasks and some policy/documentation tasks can run independently once their blockers are done. Each package brief contains an interview start prompt, read scope, ownership, completion criterion, and unresolved choices.
 
-Use the current project instructions and package prompts for work on this repository. The source Atlas skills are being migrated and are exercised in scratch fixtures; their older tracker and Git rules do not redefine this active plan.
+Use the current project instructions and package prompts for work on this repository. The integrated source candidate is implemented and exercised under [work-skills/07](work-skills/07-integrated-process-candidate.md). Its format-3 templates do not silently migrate this repository's active plan or accept the remaining release tasks.
 
 ## Work format for this repository
 

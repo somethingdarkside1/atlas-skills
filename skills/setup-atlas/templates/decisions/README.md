@@ -1,24 +1,7 @@
 # Decisions
 
-One short file per choice that is hard to reverse, would surprise a future reader, and came from a real trade-off. If any of the three is missing, it is not a decision; it is a note or a line in the brief.
+Record a consequential choice when its rationale would otherwise be lost: a costly reversal, a material tradeoff, or a choice that will surprise a future reader. Keep routine reversible choices in the brief.
 
-File name: `NNNN-<slug>.md`, numbered globally, never renumbered. The next number is one more than the highest here. The map's part sections link every decision that belongs to them, so browse by part there; `grep '^part:'` finds them by part here.
+Use `NNNN-<slug>.md` with globally stable numbers, frontmatter `part`, `date`, and `status: proposed | accepted | superseded`, a sentence title, and a short rationale. Include the important alternatives and a revisit condition when useful. Record who or what authorized adoption; a recommendation or unanswered question is still proposed. A superseded decision stays in place and names `superseded_by`.
 
-## Template
-
-```md
----
-part: wordmark
-date: 2026-09-14
-status: accepted
----
-
-# One mark, not a family
-
-The studio wanted a logo family (mark, monogram, pattern) and a launch in six weeks. One wordmark done well covers every surface listed in the brief, and a family would spend the six weeks on variants nobody asked for. We ship one mark and revisit when a second surface needs a symbol.
-
-Considered: a full family (rejected for time); a symbol only (rejected because the name is unknown).
-Revisit when: an app icon or a social avatar is needed, where a wordmark fails.
-```
-
-`status` is `proposed`, `accepted`, or `superseded`; a superseded decision adds `superseded_by: NNNN` and stays in place. The title is a full sentence saying what was decided. Keep the body to one to three sentences; Considered and Revisit when are one line each and may be omitted.
+Link a part's decisions from its map section and the applicable brief. A later change gets a new decision and an impact assessment of affected work; historical notes are not rewritten.

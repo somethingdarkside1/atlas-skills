@@ -1,0 +1,368 @@
+{
+  "files": [
+    ".claude-plugin/marketplace.json",
+    ".claude-plugin/plugin.json",
+    "GUIDE.md",
+    "README.md",
+    "methods/README.md",
+    "methods/consumers.json",
+    "methods/diagnosis.md",
+    "methods/interview.md",
+    "methods/prototype.md",
+    "methods/verification.md",
+    "notes/2026-09-19-review-integrated-process-candidate.md",
+    "notes/evidence/2026-09-19-process/candidate-source.json",
+    "notes/evidence/2026-09-19-process/observed-fixtures.json",
+    "scripts/bundle-methods.py",
+    "scripts/check-project.py",
+    "scripts/create-process-fixtures.py",
+    "scripts/evidence.py",
+    "scripts/test-evidence.py",
+    "scripts/test-packaging.py",
+    "skills/README.md",
+    "skills/atlas/SKILL.md",
+    "skills/atlas/agents/openai.yaml",
+    "skills/build-it/SKILL.md",
+    "skills/build-it/agents/openai.yaml",
+    "skills/build-it/diagnosis.md",
+    "skills/build-it/evidence.py",
+    "skills/build-it/verification.md",
+    "skills/interview-me/SKILL.md",
+    "skills/interview-me/agents/openai.yaml",
+    "skills/interview-me/diagnosis.md",
+    "skills/interview-me/interview.md",
+    "skills/map-it/SKILL.md",
+    "skills/map-it/agents/openai.yaml",
+    "skills/map-it/interview.md",
+    "skills/park-it/SKILL.md",
+    "skills/park-it/agents/openai.yaml",
+    "skills/plan-it/SKILL.md",
+    "skills/plan-it/agents/openai.yaml",
+    "skills/plan-it/interview.md",
+    "skills/prototype-it/SKILL.md",
+    "skills/prototype-it/agents/openai.yaml",
+    "skills/prototype-it/prototype.md",
+    "skills/review-it/SKILL.md",
+    "skills/review-it/agents/openai.yaml",
+    "skills/review-it/diagnosis.md",
+    "skills/review-it/evidence.py",
+    "skills/review-it/verification.md",
+    "skills/setup-atlas/MIGRATION.md",
+    "skills/setup-atlas/SKILL.md",
+    "skills/setup-atlas/agents/openai.yaml",
+    "skills/setup-atlas/templates/CLAUDE-block.md",
+    "skills/setup-atlas/templates/GLOSSARY.md",
+    "skills/setup-atlas/templates/MAP.md",
+    "skills/setup-atlas/templates/decisions/README.md",
+    "skills/setup-atlas/templates/notes/README.md",
+    "skills/setup-atlas/templates/plan/README.md"
+  ],
+  "absent": [],
+  "version": "sha256:8ee9ea7d2e8312e05022d83832f3062c6a2a8614b15407af05b6d26f2d863d97",
+  "scope": "sha256:f8902378e790452abed002ab22058f2d12897ceb820708c5a30772975583eecc",
+  "output_manifest": {
+    "files": [
+      {
+        "path": ".claude-plugin/marketplace.json",
+        "sha256": "a3e77c48285489a151dd6d9fa5594dde3e5bfbf77a538f8b3031d633b3cbe9d6",
+        "executable": false
+      },
+      {
+        "path": ".claude-plugin/plugin.json",
+        "sha256": "42980ae7bbfacd14b58c84b69d4ee40eaa0f3d3ee70c4f05ee260391ae6d7622",
+        "executable": false
+      },
+      {
+        "path": "GUIDE.md",
+        "sha256": "f305e9592f78386daee2fc35e377642e53bc6fea7e618969334de0f295b360a3",
+        "executable": false
+      },
+      {
+        "path": "README.md",
+        "sha256": "e72b2b5dd61094fa376bb66078b105c25b8881d742a2208389e5a520cf759d44",
+        "executable": false
+      },
+      {
+        "path": "methods/README.md",
+        "sha256": "f0896d9db1c79814db341740ce8904ac30da988162860a7c2591fc0ce2868278",
+        "executable": false
+      },
+      {
+        "path": "methods/consumers.json",
+        "sha256": "e24dde02b23dc74a9cd5b5e4510e48364b1bb97e74b0d0a884490f371018477d",
+        "executable": false
+      },
+      {
+        "path": "methods/diagnosis.md",
+        "sha256": "6ea0d100b24de61e671b7e1a0c260f5dad70f880bddf492eab102d35fd02b3ea",
+        "executable": false
+      },
+      {
+        "path": "methods/interview.md",
+        "sha256": "314e549b48d67bef38f54f56bab4b5cffeb104dbdbf0b52e146f0841b2278048",
+        "executable": false
+      },
+      {
+        "path": "methods/prototype.md",
+        "sha256": "be38b15b77002bc54bcbea07142388babf9a2a4cd3670a481a0124c58e4a4ba1",
+        "executable": false
+      },
+      {
+        "path": "methods/verification.md",
+        "sha256": "b17270a50ecdd41f217a25bc1d0c9d49f3339bb77bb48e951fc1b4d30c258f43",
+        "executable": false
+      },
+      {
+        "path": "notes/2026-09-19-review-integrated-process-candidate.md",
+        "sha256": "30066c96cb021d43a078b124b58fbe7a23f31c305738df39b5c4bb452fdd4f2e",
+        "executable": false
+      },
+      {
+        "path": "notes/evidence/2026-09-19-process/candidate-source.json",
+        "sha256": "290418bf55a2c63e18414dffd899c8a2a65a18b38b474396603b95e20df68b62",
+        "executable": false
+      },
+      {
+        "path": "notes/evidence/2026-09-19-process/observed-fixtures.json",
+        "sha256": "85a1f46a9ab9255668543946d6c2d6eaa86e84f3dd053144c6844e7f4f38b8fd",
+        "executable": false
+      },
+      {
+        "path": "scripts/bundle-methods.py",
+        "sha256": "e8b0cdcc475c5bb5fed0891d28d973f6ee53f1469dfbcc9d02cdf0c2a201f480",
+        "executable": false
+      },
+      {
+        "path": "scripts/check-project.py",
+        "sha256": "ff15f568c78a467ff34c6789de968e3f611ce75ba4de71d701470bde0f956c02",
+        "executable": false
+      },
+      {
+        "path": "scripts/create-process-fixtures.py",
+        "sha256": "9791e99d1fccc7acc067d71d2c186973289f71820220c33ca0547453ac767b9d",
+        "executable": false
+      },
+      {
+        "path": "scripts/evidence.py",
+        "sha256": "8f5b0c9425c6fd247890205528ead85056a20601a48c520ee953eac217b0be31",
+        "executable": false
+      },
+      {
+        "path": "scripts/test-evidence.py",
+        "sha256": "4100d908481e7469bce4b52294753b9fe9e425a1089856cfb693775256d6821a",
+        "executable": false
+      },
+      {
+        "path": "scripts/test-packaging.py",
+        "sha256": "86c2885b36ed0bfc4463932c88816506fb574f2dc5f4537d85dce4e3a910f26c",
+        "executable": false
+      },
+      {
+        "path": "skills/README.md",
+        "sha256": "7705cc9783f360c9d0b5cdf905e2aed2c6b27f131c9553758aeb80bbda73f609",
+        "executable": false
+      },
+      {
+        "path": "skills/atlas/SKILL.md",
+        "sha256": "45a26129ec71280d462e9ea265166ee79d3c686e7dc4c6d524d0de07487de35c",
+        "executable": false
+      },
+      {
+        "path": "skills/atlas/agents/openai.yaml",
+        "sha256": "3ab013b5f8f852b5641a39388fa9be2553b8d104c0678c7d9643b4537f065a5c",
+        "executable": false
+      },
+      {
+        "path": "skills/build-it/SKILL.md",
+        "sha256": "e868d3bb7cf5c14518ea6ebcee91915eb4e35f99032bff0bb86ce02c4a02aae7",
+        "executable": false
+      },
+      {
+        "path": "skills/build-it/agents/openai.yaml",
+        "sha256": "bcf34aaa30f11916e8a0e3947290148e7bd6a40b6cb0a6bfa9c01f473bb7ef50",
+        "executable": false
+      },
+      {
+        "path": "skills/build-it/diagnosis.md",
+        "sha256": "383c2216e54e9eb082ade3aa6aa3492815fc7988060bf22be6cd4f39b28cee48",
+        "executable": false
+      },
+      {
+        "path": "skills/build-it/evidence.py",
+        "sha256": "56b2aa0d02dde77554d0b4222af46a8a9171c80cdf8831a99af4439fd6696c57",
+        "executable": false
+      },
+      {
+        "path": "skills/build-it/verification.md",
+        "sha256": "2776b5d9d82600f2670b85b321dc303ebe856025e029579f11082158953f5cfe",
+        "executable": false
+      },
+      {
+        "path": "skills/interview-me/SKILL.md",
+        "sha256": "6bc3c3bd2323c32c5feb191c629923b5fa4a2d81fc390f9a878344545ae7a4ff",
+        "executable": false
+      },
+      {
+        "path": "skills/interview-me/agents/openai.yaml",
+        "sha256": "171c7f3858185e84c40e4ca301408d3d1fe690f6891a2252147d9c6aa05d3ff6",
+        "executable": false
+      },
+      {
+        "path": "skills/interview-me/diagnosis.md",
+        "sha256": "383c2216e54e9eb082ade3aa6aa3492815fc7988060bf22be6cd4f39b28cee48",
+        "executable": false
+      },
+      {
+        "path": "skills/interview-me/interview.md",
+        "sha256": "06b691f6cfba3b72becafea6a5341a847efaaefd93f075b0b591965598132a49",
+        "executable": false
+      },
+      {
+        "path": "skills/map-it/SKILL.md",
+        "sha256": "9193a4d5cb4478364d5fa5d3e20f8ff500d8f69157321047ff59ee5abe1152c8",
+        "executable": false
+      },
+      {
+        "path": "skills/map-it/agents/openai.yaml",
+        "sha256": "e7d9e3688483921985cc5cd2b849c3cd2b1a2a953002b6e04ff8d357d82fe8c9",
+        "executable": false
+      },
+      {
+        "path": "skills/map-it/interview.md",
+        "sha256": "06b691f6cfba3b72becafea6a5341a847efaaefd93f075b0b591965598132a49",
+        "executable": false
+      },
+      {
+        "path": "skills/park-it/SKILL.md",
+        "sha256": "6481e53534e490e91145e5fefcfdf6b7d805a60061352a03832633de45b347ae",
+        "executable": false
+      },
+      {
+        "path": "skills/park-it/agents/openai.yaml",
+        "sha256": "64962101ec9f58e4af966169265def64b165b5cfd34e4779d9b78f3398f76ab8",
+        "executable": false
+      },
+      {
+        "path": "skills/plan-it/SKILL.md",
+        "sha256": "660f5e6af433154b3c2ac2656be095a06512aea54494866ceb9beecd3c91d0ae",
+        "executable": false
+      },
+      {
+        "path": "skills/plan-it/agents/openai.yaml",
+        "sha256": "5f0a264eae812344a6d8bc6f2697af93b5aae7bdad9155944826e575e636f340",
+        "executable": false
+      },
+      {
+        "path": "skills/plan-it/interview.md",
+        "sha256": "06b691f6cfba3b72becafea6a5341a847efaaefd93f075b0b591965598132a49",
+        "executable": false
+      },
+      {
+        "path": "skills/prototype-it/SKILL.md",
+        "sha256": "807a53ff4c92ce4458b3382cbe0c559872e8d0b0ab03b95ed7973475b62fc2e5",
+        "executable": false
+      },
+      {
+        "path": "skills/prototype-it/agents/openai.yaml",
+        "sha256": "b82e900924d53da0f9acb9937d1088c4519bf31b9e00cbaed811c14ecc622fe0",
+        "executable": false
+      },
+      {
+        "path": "skills/prototype-it/prototype.md",
+        "sha256": "974d55e1dce7181b6c22f328df6b65b66a513f2335ca4b2e08aa1c457a099d95",
+        "executable": false
+      },
+      {
+        "path": "skills/review-it/SKILL.md",
+        "sha256": "3fe06223fa45ad43c1d30caa416f517ae1786ec06f60c7e3bd57fd50375d6e0a",
+        "executable": false
+      },
+      {
+        "path": "skills/review-it/agents/openai.yaml",
+        "sha256": "6f9ec12c3916e7dcccac1ac5c2ec4a389514e9b664df22d4fc249d6e5eba30f1",
+        "executable": false
+      },
+      {
+        "path": "skills/review-it/diagnosis.md",
+        "sha256": "383c2216e54e9eb082ade3aa6aa3492815fc7988060bf22be6cd4f39b28cee48",
+        "executable": false
+      },
+      {
+        "path": "skills/review-it/evidence.py",
+        "sha256": "56b2aa0d02dde77554d0b4222af46a8a9171c80cdf8831a99af4439fd6696c57",
+        "executable": false
+      },
+      {
+        "path": "skills/review-it/verification.md",
+        "sha256": "2776b5d9d82600f2670b85b321dc303ebe856025e029579f11082158953f5cfe",
+        "executable": false
+      },
+      {
+        "path": "skills/setup-atlas/MIGRATION.md",
+        "sha256": "a542ffc4d135d148dfe6e58edd03c62cc09deecd55a7f590f8d29b6870dd7889",
+        "executable": false
+      },
+      {
+        "path": "skills/setup-atlas/SKILL.md",
+        "sha256": "69eac0ab88182f2e2f5b43017d6030d0269224a0658403acf99f10ce7587a036",
+        "executable": false
+      },
+      {
+        "path": "skills/setup-atlas/agents/openai.yaml",
+        "sha256": "78e38088641871d91391ef0860ebc95cb01f5115529568e1a33d1ccda0022282",
+        "executable": false
+      },
+      {
+        "path": "skills/setup-atlas/templates/CLAUDE-block.md",
+        "sha256": "f66a2f397482cdb2510780d5cff2a71ab801fd3568e34fcefbab5aaab0974434",
+        "executable": false
+      },
+      {
+        "path": "skills/setup-atlas/templates/GLOSSARY.md",
+        "sha256": "35edbdf8857e3b25ce9087ee77a97dd90627bf22699e3b3406eecacd2d6223a5",
+        "executable": false
+      },
+      {
+        "path": "skills/setup-atlas/templates/MAP.md",
+        "sha256": "d5d50fb52cd2ec9f5a65314fd448e8d695f2184514fc48649ce341c82cf29e40",
+        "executable": false
+      },
+      {
+        "path": "skills/setup-atlas/templates/decisions/README.md",
+        "sha256": "98a24428635e49b40ad57bfe1479fed0ed1bb661b452e9c27e6594b1d0368f2d",
+        "executable": false
+      },
+      {
+        "path": "skills/setup-atlas/templates/notes/README.md",
+        "sha256": "e0e59d62bed9251ddc861d49fecb10ca9adab638b6e7d37fb9ae6515f57b2f4b",
+        "executable": false
+      },
+      {
+        "path": "skills/setup-atlas/templates/plan/README.md",
+        "sha256": "d42bb953602cd5c4d5a33bbe784f7def8d5a02e7505b45bd1a2b7ee7e727a42d",
+        "executable": false
+      }
+    ],
+    "absent": []
+  },
+  "scope_manifest": {
+    "task": "plan/work-skills/07-integrated-process-candidate.md",
+    "criteria": {
+      "Delivers": "A simple user guide, revised operation instructions and shared formats, portable method bundles, and observed scratch-fixture results for the process requested on 2026-09-19.\n\nThis user-selected work combines the candidate implementation surfaces of core-model/02, shared-methods/01 and 05, project setup, work-skills/01 to 05, and context routing. Their original tasks retain their individual acceptance and release obligations; this task does not declare those packages complete. The candidate choices are in decision 0028 and the operation contracts in skills/README.md.",
+      "Check by": "Run project and packaging checks, exercise the evidence helper with changed content and requirements, and use independent fresh agents on isolated software and non-code fixtures. Inspect the resulting artifacts and routes, including repeated commands with no new information.",
+      "Done when": "- [] The guide explains the normal route, small work, changed scope, waiting, and all nine skills.\n- [] Each operation declares its reads, owned changes, finish, and recovery without repeating the shared formats.\n- [] Work and decision dependencies stay distinct; stable identities survive presentation changes.\n- [] Build and review remain separate; acceptance names output and scope, and part completion checks the combined Outcome.\n- [] Repeated waiting, stale handoffs, missing output, review findings, and an incomplete part Outcome produce actionable progress or an honest wait.\n- [] Shared methods and helpers have one authored source and verified consumer copies.\n- [] Scratch runs cover software, non-code work, and setup; results and limits are recorded without claiming universal or release acceptance."
+    },
+    "sources": [
+      {
+        "path": "decisions/0028-evaluate-a-small-integrated-process.md",
+        "sha256": "345c563af481a12525a4cfcb1a5f42e9e5d334661d4c0b2020d2cad3f6fad594",
+        "executable": false
+      },
+      {
+        "path": "plan/work-skills/brief.md",
+        "sha256": "7ae907f93a4f3f80d41d8c16df95ba88752eb5d72b8fedba5f1834469114f574",
+        "executable": false
+      }
+    ]
+  }
+}

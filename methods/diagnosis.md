@@ -26,7 +26,7 @@ Include only the evidence needed to reproduce or assess the signal; remove secre
 
 ## Attribution
 
-Adapted from Matt Pocock's [diagnosing-bugs](https://github.com/mattpocock/skills/blob/main/skills/engineering/diagnosing-bugs/SKILL.md), inspected from the local reference labeled 1.2.3. The source inspired the reproduction, falsifiable prediction, and targeted probe discipline. Atlas adds proportional bounds, non-code evidence, and a caller-owned return. The upstream URL is a locator, not a pinned revision; the [task evidence](../notes/2026-09-15-review-diagnosis-method.md) identifies the inspected bytes.
+Adapted from Matt Pocock's [diagnosing-bugs](https://github.com/mattpocock/skills/blob/main/skills/engineering/diagnosing-bugs/SKILL.md), inspected from the local reference labeled 1.2.3. The source inspired the reproduction, falsifiable prediction, and targeted probe discipline. Atlas adds proportional bounds, non-code evidence, and a caller-owned return. The upstream URL is a locator, not a pinned revision; the [task evidence](https://github.com/somethingdarkside1/atlas-skills/blob/72e890a/notes/2026-09-15-review-diagnosis-method.md) identifies the inspected bytes.
 
 MIT License
 

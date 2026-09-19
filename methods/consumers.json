@@ -1,0 +1,7 @@
+{
+  "methods/interview.md": ["interview-me", "plan-it", "map-it"],
+  "methods/diagnosis.md": ["interview-me", "build-it", "review-it"],
+  "methods/verification.md": ["build-it", "review-it"],
+  "methods/prototype.md": ["prototype-it"],
+  "scripts/evidence.py": ["build-it", "review-it"]
+}

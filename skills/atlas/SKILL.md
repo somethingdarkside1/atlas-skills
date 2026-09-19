@@ -1,30 +1,17 @@
 ---
 name: atlas
-description: Print where the project stands in five lines and name the next command; changes nothing.
+description: Show current progress and recommend the next useful action for the selected work, without changing files.
 disable-model-invocation: true
 ---
 
 # Atlas
 
-Say where things stand and what to run next. Change nothing.
+Orient the person from current records. This operation reads and recommends; it changes nothing.
 
-## Read first
-- Which of `GLOSSARY.md`, `MAP.md`, `plan/README.md`, `decisions/README.md`, and `notes/README.md` exist.
-- Parts: `grep -E '^## |^\*\*Status:\*\*|^Needs:|^Open questions:' MAP.md`, and the same for each file in `map/` when that folder exists. Then the mermaid diagram block in each of those files, to compare with the sections.
-- Tasks: `grep -rH -E '^(status|blocked_by):' plan --include='[0-9]*.md'`, and the Ids and statuses section of `plan/README.md`. For a task in doing or review, also its Done when boxes and its Delivered and Review sections.
-- Handoffs: `ls notes | grep -- '-handoff-' | tail -1` (names sort by date and time), then that file, whole. The rule for a live handoff is in `notes/README.md`.
-- Decisions: `grep -rH '^part:' decisions --include='[0-9]*.md'`.
-- The `## Atlas (atlas: N)` block and the `## Saving work` section in `CLAUDE.md` or `AGENTS.md`; `git status --short`, in a repo.
+Read project instructions, the map's directory and relevant part sections, and the working and readiness rules in plan/README.md. Inspect task states to find active work, then read the relevant task's brief, latest delivery/review, and required outputs. Follow split-map pointers. Read a handoff only when it targets that work and supplies missing context.
 
-## Steps
-1. A home is missing: print which, then `Next: /setup-atlas`, and stop. Done when every missing home is named.
-2. Print five lines.
-   One: parts by status, in this shape: `<n> sketched, <n> decided, <n> building (<ids>), <n> done`.
-   Two: ready tasks by id, by the rule in `plan/README.md`, or `none`.
-   Three: the newest handoff as `date slug`, followed by `live` when it is, or `none`.
-   Four: problems, one per line, each with the command or the person that fixes it, or `none`: a diagram node, class, or `Needs:` id that disagrees with the sections (`/map-it`); a part that reads building while every one of its tasks is done or canceled, with at least one done, or a split part whose status disagrees with its sub-parts (`/map-it`); a blocker naming a task that does not exist or is canceled (`/plan-it <part>`); a task in doing with nothing under Delivered (`/build-it <id>`); a task in review that is waiting on you, meaning its newest pass has no findings, lists `For you to check:`, and a `(you)` box is still unticked (you: tick the boxes, or tell `/review-it <id>` what is wrong); a decision whose `part:` is not on the map (you); uncommitted changes in the five things (you: save them as `Saving work` says); no Atlas block in the project instructions, one older than `atlas: 2`, or no `Saving work` section (`/setup-atlas`); a `Tracker: github` line in `plan/README.md`, which this version does not read (you: tasks live in `plan/`).
-   Five: `Next: /command <id>`, the first that applies. A task in review that is not waiting on you: `/review-it <id>`. A decided or building part with an open question: marked `(prototype)`, `/prototype-it <part>`; with no marker or marked `(answered ...)`, `/interview-me <part>`; a `(later: ...)` question never routes. A sketched part with a `(prototype)` question: `/prototype-it <part>`. A sketched part with an `(answered ...)` question: `/interview-me <part>`. A live handoff: its `Next:` line, with the note's date beside it. A task in doing: `/build-it <id>`. A ready task: `/build-it <id>`. A decided or building part with no plan: `/plan-it <part>`. The first sketched part in map order none of whose `Needs:` is still sketched: `/interview-me <part>`. An empty map: `/interview-me`. Every part done, or nothing left but your checks: `Next: nothing to run`, with the reason. Otherwise `/map-it`.
-   Done when five lines are printed and the last starts with `Next:`.
+1. Prefer the user's named task, part, or purpose. Resolve ambiguous names from the map and existing work before asking. Without a target, prefer actionable review, resumable work, then ready work; show other useful choices if priority is not settled. A different part's open question does not interrupt the selected work.
+2. Determine the next action from what the target actually needs: missing required homes or incompatible formats, setup; a material scope choice, interview; an empirical unknown requiring a made answer, prototype; settled scope with missing tasks, planning; accessible ready work or a resumable attempt, build; delivered work, review. Map maintenance is for a specific structural fault. Inspect the relevant record rather than inferring acceptance from status alone.
+3. If that action is waiting for the same unanswered input or unchanged external condition, report the wait and its resume action. Offer unrelated eligible work if useful. If the target is accepted and no work remains, say so. Reuse current progress rather than following an obsolete handoff or manufacturing another task.
 
-## Output
-- Five lines in the terminal. No file changes.
+Report the target, meaningful progress, any actionable obstacle, and the next useful action under the plan's working rules. Missing optional references can be discovered; missing required evidence must be named. If a recommended skill is unavailable, name the missing capability and installation requirement instead of sending the person to a nonexistent command.
