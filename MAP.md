@@ -37,8 +37,8 @@ flowchart LR
 **Status:** decided
 Define the boundary between Atlas work, reusable methods, project delivery, and evidence so every consumer can make the same state decision.
 Needs: none.
-Open questions: Task 02 defines the evidence fields and transitions; task 03 defines and tests migration. The boundary choices are adopted in core-model/01.
-Decisions: [0012](decisions/0012-atlas-owns-work-projects-own-delivery.md), [0013](decisions/0013-local-tasks-first.md), [0018](decisions/0018-one-method-modular-skills.md), [0019](decisions/0019-acceptance-follows-output-and-scope.md), [0020](decisions/0020-decide-only-the-selected-scope.md).
+Open questions: Task 02 defines the evidence fields and transitions; task 03 defines and tests migration. The boundary choices are adopted in core-model/01. [0027](decisions/0027-glossary-checks-meaning-not-every-word.md) proposes limiting glossary enforcement to meaningful ambiguity and explicit project requirements.
+Decisions: [0012](decisions/0012-atlas-owns-work-projects-own-delivery.md), [0013](decisions/0013-local-tasks-first.md), [0018](decisions/0018-one-method-modular-skills.md), [0019](decisions/0019-acceptance-follows-output-and-scope.md), [0020](decisions/0020-decide-only-the-selected-scope.md), [0027 proposed](decisions/0027-glossary-checks-meaning-not-every-word.md).
 Plan: [plan/core-model/](plan/core-model/).
 
 ## Shared methods
@@ -64,8 +64,8 @@ Plan: [plan/project-setup/](plan/project-setup/).
 **Status:** building
 Give all eight Atlas operations explicit reads, owned changes, completion evidence, and recovery, with local canonical work and project-owned delivery.
 Needs: core-model, shared-methods, project-setup.
-Open questions: Whether `/review-it` starts on its own after `/build-it`; how a part's last review checks the brief's combined Outcome; reconcile 0022's accepted checksum default with [0019](decisions/0019-acceptance-follows-output-and-scope.md). Tasks 01 to 05 choose the smallest useful read scope and retry receipt per operation. The full release scope and refinement before Vitali's cold run are settled in 0025; [the simplicity assessment](notes/2026-09-19-research-matt-simplicity.md) informs that refinement.
-Decisions: [0012](decisions/0012-atlas-owns-work-projects-own-delivery.md), [0013](decisions/0013-local-tasks-first.md), [0021](decisions/0021-patch-the-draft-first.md), [0022](decisions/0022-one-version-line-per-delivery.md), [0023](decisions/0023-no-glossary-diagram.md), [0024](decisions/0024-rounds-follow-the-answers.md), [0025](decisions/0025-finish-simple-skills-before-the-human-run.md).
+Open questions: Reconcile 0022's accepted checksum default with [0019](decisions/0019-acceptance-follows-output-and-scope.md). Tasks 01 to 05 choose the smallest useful read scope and retry receipt per operation, with the proposed glossary boundary in 0027. Separate review invocation is settled in the brief, combined Outcome acceptance in 0026, and the full release scope and cold-run order in 0025. [The remaining-design assessment](notes/2026-09-19-review-remaining-design.md) identifies the next refinements.
+Decisions: [0012](decisions/0012-atlas-owns-work-projects-own-delivery.md), [0013](decisions/0013-local-tasks-first.md), [0021](decisions/0021-patch-the-draft-first.md), [0022](decisions/0022-one-version-line-per-delivery.md), [0023](decisions/0023-no-glossary-diagram.md), [0024](decisions/0024-rounds-follow-the-answers.md), [0025](decisions/0025-finish-simple-skills-before-the-human-run.md), [0026](decisions/0026-part-completion-checks-the-combined-outcome.md).
 Plan: [plan/work-skills/](plan/work-skills/).
 
 ## Context routing
