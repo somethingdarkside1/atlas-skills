@@ -1,32 +1,9 @@
 # Notes
 
-Dated, write-once files. A note records what was true on a date: a handoff, a prototype verdict, research findings, a review. Leave a note alone once its day is over; a later correction is a new note that links the old one. Anything that stays true gets copied into the glossary, the map, the plan, or a decision.
+Notes preserve dated research, experiments, reviews, and the session context needed for a handoff. Current scope, tasks, terms, and adopted choices belong in their existing homes; link them rather than copying their contents.
 
-File name: `YYYY-MM-DD-<kind>-<slug>.md`. When that name is taken, add `-2`, `-3`, and so on. A handoff's slug starts with the time as `HHMM` (`2026-09-15-handoff-1740-lockups-half-drawn.md`), so handoff names sort in the order they were written. A skill reads a note when the map, a task, or a handoff points to it. `/atlas` reads the newest handoff, and `/interview-me`, `/plan-it`, `/build-it`, and `/prototype-it` read it when it targets their part or task.
+Use `YYYY-MM-DD-<kind>-<slug>.md`, with a time or suffix when needed to keep names distinct. Frontmatter has `date`, `kind: handoff | prototype | research | review`, and `part: <id> | project`. Use Summary, Detail, and Copied into sections. A finalized note remains historical; later conclusions go in a new linked note.
 
-## Template
+A handoff's Detail identifies `Target:`, the task attempt or current scope, the workspace, and pointers to partial output and pending interaction. Include only context absent from the authoritative records. Its Summary ends with a useful `Next:` action. Export a portable copy when moving to another person, workspace, or tool; verify that its pointers remain usable there. Exclude secrets.
 
-```md
----
-date: 2026-09-14
-kind: prototype
-part: wordmark
----
-
-# Wordmark in three weights
-
-## Summary
-Three sentences at most.
-
-## Detail
-Whatever the reader needs. Link the five things instead of repeating them.
-
-## Copied into
-Which home received the durable result, or "nothing durable".
-```
-
-`kind` is `handoff`, `prototype`, `research`, or `review`. `part` is a part id or `project`.
-
-## Handoffs
-
-A handoff's Summary ends with a `Next: /command <id>` line naming the command that resumes the target, never `/atlas`, and its Detail opens with `Target: <task id or part id>, <its status today>`. When the session was about the whole project, the line is `Target: project, <n> sketched, <n> decided, <n> building (<ids>), <n> done`, the shape of `/atlas` line one. A handoff is live while its target's status today equals the status on that line. Once they differ, the handoff is history. A live handoff is a hint, not an order: `/atlas` still routes a task in review and any open question first. Only the newest handoff is ever live.
+Find handoffs by the selected target, not just the newest file globally. Compare a handoff against the current task, scope, output, and latest pending action. Matching status alone does not make it current. Use it for missing context only; current records and new user answers take precedence. If the next action is still waiting, explain the wait without creating another identical handoff.

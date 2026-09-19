@@ -1,6 +1,6 @@
 # Start here
 
-This is a directory of context pointers. Current state belongs to the five things; the rows here route to it. Read the brief and one task for the selected part, then expand only where their dependencies or the actual change require it.
+For using Atlas, read [the simple guide](GUIDE.md). This is a directory of repository context pointers. Current state belongs to the five things; the rows here route to it. Read the brief and one task for the selected part, then expand only where their dependencies or the actual change require it.
 
 | Focus | Use when | Read next |
 |---|---|---|
@@ -25,4 +25,4 @@ Use [the copy-and-paste prompts](plan/PROMPTS.md) to start, resume, or review wo
 
 Open its brief and first eligible task. Use the brief's start prompt to settle its unresolved choices through concrete examples. Record decisions and update task acceptance before implementation when the package calls for an interview. Existing user answers and accepted decisions count; ask only about remaining material uncertainty.
 
-The skill sources are the draft at 0.2, patched under [decision 0021](decisions/0021-patch-the-draft-first.md). Work on this repository from its current project instructions and package briefs, and exercise evolving Atlas skills in scratch fixtures until their contracts pass validation.
+The skill sources are the integrated process candidate under [work-skills/07](plan/work-skills/07-integrated-process-candidate.md), built on the 0.2 patch. Work on this repository from its current project instructions and package briefs, and exercise evolving Atlas skills in scratch fixtures until their contracts pass validation.

@@ -6,6 +6,8 @@ A decision records a consequential choice with its rationale and the alternative
 
 Files are `NNNN-<slug>.md`, globally numbered and retained. Frontmatter has `part`, `date`, and `status: proposed | accepted | superseded`; a superseded decision also names `superseded_by`. Use a sentence title and one to three body sentences, with optional one-line Considered and Revisit when entries. A proposed decision guides discussion and becomes authoritative after its adoption is recorded.
 
+The [integrated process candidate](0028-evaluate-a-small-integrated-process.md) records proposed refinements being exercised under work-skills/07.
+
 ## Current release decisions
 
 | Decision | Owner | Subject |
@@ -41,4 +43,4 @@ The [core-model decision task](../plan/core-model/01-settle-boundaries.md) recor
 | side-skills | shared-methods and work-skills |
 | packaging | public-release |
 
-Numbers 0009, 0010, and 0011 are reserved for the prior second-pass branch, preserved as `codex/second-pass-reference`. They cover task ids, durable waiting/review, and precedence of homes. Review their intent during migration; the branch is reference material rather than current runtime support. The next new decision is 0028.
+Numbers 0009, 0010, and 0011 are reserved for the prior second-pass branch, preserved as `codex/second-pass-reference`. They cover task ids, durable waiting/review, and precedence of homes. Review their intent during migration; the branch is reference material rather than current runtime support. The next new decision is 0029.

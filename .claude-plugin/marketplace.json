@@ -5,13 +5,13 @@
     "url": "https://github.com/somethingdarkside1"
   },
   "metadata": {
-    "description": "Atlas: map it before you build it. Nine agent skills and five plain-Markdown files for any domain."
+    "description": "Atlas: keep project scope, work, decisions, and evidence understandable."
   },
   "plugins": [
     {
       "name": "atlas-skills",
       "source": "./",
-      "description": "Atlas: map it before you build it."
+      "description": "Nine explicit operations for connected project work."
     }
   ]
 }

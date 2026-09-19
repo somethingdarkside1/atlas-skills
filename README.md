@@ -1,127 +1,40 @@
 # Atlas
 
-**Map it before you build it.** By **[Vitali Liouti](https://github.com/somethingdarkside1)**. A small set of agent skills that take an idea from fuzzy to finished: interview it, map it, plan it, build it, review it. It works for a website, a CRM rollout, a brand system, or a codebase, because the method is the same and the files are plain Markdown.
+**Keep the work understandable.** By **[Vitali Liouti](https://github.com/somethingdarkside1)**.
 
-Everything the agent learns lands in five places you can read, diff, and draw.
+Atlas is a project method implemented through nine agent skills. It connects scope, choices, tasks, results, and evidence in plain Markdown, so another session can find the work and continue it. Use the same organising method for software, research, documents, design, or an operational project, with checks suited to the actual medium.
 
-> **Status: draft 0.2, not yet run end to end.** The skills below are written and their read commands are checked, but no full run on a real project has been recorded. There is no tagged release. The [plan](plan/README.md) further down is how the rest gets finished.
+Start with the **[simple guide](GUIDE.md)**. It explains the process, every skill, how to organise a project, and what happens when work changes or gets stuck. The [actual skill contracts](skills/README.md) are for authors and reviewers.
 
-## The five things
+> **Status: development candidate, not a tagged release.** The operation set and format-3 templates have been revised under [work-skills/07](plan/work-skills/07-integrated-process-candidate.md). Its evidence distinguishes structural checks and isolated runs from supported host installation, the deferred human acceptance run, and public release. Package metadata remains at the existing 0.2.0 development version pending the release task's version choice.
 
-Run `/setup-atlas` once in any project folder and it creates these. Each starts with its own format in a hidden comment, so the agent always knows how to write it.
+## The normal route
 
-| Path | Holds | One-line rule |
-|---|---|---|
-| `GLOSSARY.md` | The words | One term per concept the project owns, no implementation detail |
-| `MAP.md` | The shape | One diagram, one section per part, a status on every part |
-| `plan/` | The work | One folder per part: a brief and numbered tasks that say what blocks them |
-| `decisions/` | The why | One short file per decision that is hard to reverse |
-| `notes/` | The dated record | Write once; anything durable is copied into a home |
+Set up once, clarify only what is uncertain, plan the smallest useful work, build a task, then review it separately. A clear task under a settled brief can skip the interview. `/atlas` recommends the next useful action; it does not run a chain of commands.
 
-If it is true today it lives in one of the first four. If it was true on a date, it is a note.
+| Skill | Purpose |
+|---|---|
+| `/setup-atlas` | Adopt a new or existing project without losing its work or delivery rules |
+| `/atlas` | Inspect selected work and recommend an action or explain a wait |
+| `/interview-me` | Resolve material uncertainty and record the brief and choices |
+| `/plan-it` | Create or revise verifiable tasks with stable ids and real blockers |
+| `/build-it` | Deliver or resume one task, check it, and record the result |
+| `/review-it` | Assess the actual result and scope; record findings or acceptance |
+| `/map-it` | Maintain responsibilities, views, and links without inventing completion |
+| `/prototype-it` | Run a bounded experiment and record what it establishes |
+| `/park-it` | Preserve missing context and exact pointers for resumption |
 
-```
-my-project/
-  GLOSSARY.md               the words, one entry per concept
-  MAP.md                    the shape: one diagram, one section per part, a status on each
-  plan/
-    README.md               ids, statuses, and the brief and task templates
-    logo-system/
-      brief.md
-      01-choose-the-mark.md
-      02-build-the-lockups.md
-  decisions/
-    README.md               the format
-    0001-one-mark-not-a-family.md
-  notes/
-    README.md               the note template and the handoff rule
-    2026-09-14-prototype-mark-in-three-weights.md
-  prototypes/               only if /prototype-it ran: one folder per answered question
-    wordmark-three-weights/
-```
+## Five homes
 
-## How the skills fit together
+`GLOSSARY.md` owns project meanings. `MAP.md` owns responsibilities and decision prerequisites. `plan/` owns briefs, tasks, attempts, and acceptance. `decisions/` owns consequential choices and their rationale. `notes/` holds dated evidence and handoffs. The deliverable itself lives where the project needs it.
 
-Every skill ends by printing a `Next:` line, almost always `Next: /command <id>`. That line is the join between them, and `/atlas` can work it out again from the files at any time.
+A part groups a meaningful responsibility or outcome. Its id remains stable when its display name or view changes. The map links to the work; it does not duplicate task state. A part becomes done only when the combined result satisfies its brief.
 
-```mermaid
-flowchart LR
-  setup["/setup-atlas<br/>once per project"]
-  atlas["/atlas<br/>what is next?"]
-  interview["/interview-me<br/>ask until settled"]
-  plan["/plan-it<br/>brief into tasks"]
-  build["/build-it<br/>one task"]
-  review["/review-it<br/>brief and conventions"]
-  prototype["/prototype-it<br/>answer one question"]
-  park["/park-it<br/>pause to a note"]
-  map["/map-it<br/>redraw and check"]
+Atlas follows project instructions for saving, commits, branches, sharing, merges, and publication. A clean review does not grant new delivery permission.
 
-  setup --> atlas --> interview --> plan --> build --> review --> atlas
-  review -. findings .-> build
-  interview -. needs a made answer .-> prototype -. verdict .-> interview
-  park -. any time .-> atlas
-  map -. any time .-> atlas
-```
+## Installation and compatibility
 
-What each skill writes:
-
-```mermaid
-flowchart TB
-  subgraph skills[Skills]
-    direction LR
-    setup
-    interview
-    map
-    plan
-    build
-    review
-    prototype
-    park
-  end
-  subgraph things[The five things]
-    direction LR
-    G[GLOSSARY.md]
-    M[MAP.md]
-    P[plan/]
-    D[decisions/]
-    N[notes/]
-  end
-  setup --> G & M & P & D & N
-  interview --> G & M & D & P
-  map --> M
-  plan --> P
-  build --> P & M
-  build -. when the work needs one .-> D & G
-  review --> P & M
-  prototype --> N & M
-  park --> N
-```
-
-`/atlas` reads all five and writes none.
-
-## The skills
-
-| Skill | What it does | Why it exists |
-|---|---|---|
-| `/setup-atlas` | Creates the five things, or only the ones that are missing, and adds the Atlas block to the project instructions. Asks first. Safe to run again | One safe way in, for a new folder or an old project |
-| `/atlas` | Prints five lines: parts by status, ready tasks, the newest handoff, problems with the command that fixes each, and the next command. Changes nothing | You should never have to remember the method |
-| `/interview-me` | Asks in rounds until the next work is safe to plan, writing terms, map changes, decisions, and a draft brief as answers land. On a whole project it drafts the map first and questions the draft | Sharp thinking before any building |
-| `/plan-it` | Turns a decided part's brief into numbered tasks with blockers, after one sizing round. `/plan-it <part> "<one task>"` adds a single task under an existing brief | Work that fits one session each |
-| `/build-it` | Works one task in whatever medium it needs, or picks up one that came back with findings, then records what it delivered and hands it to review | The doing |
-| `/review-it` | Checks a task's result against its brief and the project's own conventions, in a fresh context, and marks it done when clean | Catches drift before it compounds |
-| `/prototype-it` | Makes the smallest thing that answers one open question, takes your verdict, writes it back to the map and a note | Some questions need a made answer |
-| `/park-it` | Pauses the session into a dated note the next `/atlas` resumes from | Nothing gets lost between sessions |
-| `/map-it` | Checks the map, redraws the map diagrams from their sections, sets derived statuses, reports drift, and splits a sketched part into its own file | The shape stays visible as it fills in |
-
-Two ladders carry the state. A part goes sketched, decided, building, done: `/interview-me` decides it, `/build-it` starts it, `/review-it` finishes it. A task goes todo, doing, review, done, or canceled, and the table in every project's `plan/README.md` says which skill makes each move.
-
-Atlas commands save their work the way the project's own `Saving work` section says. By default that is one local commit per command and no push. Branches, pull requests, and merges belong to the project, not to the skills.
-
-## A worked example
-
-[`examples/brand/`](examples/brand/) is a small brand project partway through: two parts on the map, three tasks, one decision, one note. It is a teaching fixture, and some files its tasks name are not there yet. Copy it before you run anything in it.
-
-## Install
+The existing development installation routes are:
 
 ```bash
 npx skills add somethingdarkside1/atlas-skills
@@ -129,43 +42,31 @@ claude plugin marketplace add somethingdarkside1/atlas-skills
 claude plugin install atlas-skills@atlas-skills
 ```
 
-Claude plugin commands use names such as `/atlas-skills:atlas`. Marketplace registration and plugin installation are separate actions; see [the official installation guide](https://code.claude.com/docs/en/discover-plugins). Clean-profile installation is [release work](plan/public-release/02-verify-installation-matrix.md) and has not been verified.
+Claude plugin names may be namespaced, such as `/atlas-skills:atlas`; use the installed names. [Clean-profile installation](plan/public-release/02-verify-installation-matrix.md) remains a release requirement. Generated method references are included in consumer folders and checked locally; that alone does not establish host-level installation support.
 
-## Finishing the framework
+Existing projects keep their current records until `/setup-atlas` explicitly adopts the candidate formats. See [migration guidance](skills/setup-atlas/MIGRATION.md). Hosted task authority is not silently converted into local files. The full package is the default; selective installation depends on an already adopted project and the required templates/resources.
 
-Start at **[INDEX.md](INDEX.md)**. It routes a focus to the right brief and files. The **[active plan](plan/README.md)** has seven work packages and 25 tasks. Under [decision 0021](decisions/0021-patch-the-draft-first.md) the draft was patched first so real use can start; the packages then finish the job:
+## Examples and development
 
-1. **Core model:** boundaries, task evidence, and migration.
-2. **Shared methods:** interviewing, diagnosis, verification, and prototyping, authored once.
-3. **Project setup:** adopting existing projects and their own delivery rules safely.
-4. **Work skills:** clear reads, changes, finish, and recovery for every operation.
-5. **Context routing:** bounded reads, measured.
-6. **Validation:** normal and failure paths proven in fresh contexts.
-7. **Public release:** documented, installable, verified, and tagged.
+[examples/brand/](examples/brand/) is the preserved earlier teaching fixture, including intentionally missing outputs. Copy it before a run; it is useful for migration and recovery rather than a clean candidate acceptance result. Candidate fixtures and observations are described in the [validation record](plan/work-skills/07-integrated-process-candidate.md).
 
-The adopted boundaries are in [core-model/01](plan/core-model/01-settle-boundaries.md): Atlas operations create and assess work, shared methods supply the reasoning, and project instructions own commits, branches, PRs, and merges. Tasks live in local files; tracking tasks in GitHub issues and an automatic build and review loop are deferred. Copy a package starter from [the agent prompts](plan/PROMPTS.md) and use [the package issues](plan/COORDINATION.md) to coordinate PRs. The earlier plan is [preserved and mapped](plan/MIGRATION.md).
-
-## Read the analysis
-
-- [The eight skills as a whole: what works, what stops a run, what to cut](notes/2026-09-17-review-skills-as-a-whole.md)
-- [Architecture, reusable methods, and project-policy review](notes/2026-09-13-review-methods-and-project-policy.md)
-- [Primary-source research on methods, packaging, and focused reads](notes/2026-09-13-research-methods-and-delivery.md)
-- [Initial framework review: 28 finding groups and every skill](notes/2026-09-13-review-atlas-framework.md)
-- [What to learn from Matt Pocock, and where his framework also has gaps](notes/2026-09-13-research-matt-pocock-comparison.md)
-
-## Development
-
-Read [AGENTS.md](AGENTS.md) for this repository's delivery policy and [skills/README.md](skills/README.md) before changing a skill. Run:
+[INDEX.md](INDEX.md) routes repository work to its brief and tasks. [AGENTS.md](AGENTS.md) owns delivery policy, and [the active plan](plan/README.md) retains the release obligations.
 
 ```bash
 python3 scripts/check-project.py
-claude plugin validate .
-claude plugin validate .claude-plugin/plugin.json
-bash -n scripts/link-skills.sh
+python3 scripts/bundle-methods.py --check
+python3 scripts/test-evidence.py
+python3 scripts/test-packaging.py
 ```
 
-## Credit and license
+These checks do not prove agent behavior. Run meaningful isolated scenarios when an instruction changes, then record the actual results and limits.
 
-Atlas is authored and published by Vitali Liouti, with inspiration from [Matt Pocock's skills](https://github.com/mattpocock/skills). The comparison notes identify the mechanisms being considered. Adapted source retains its required attribution and notices; original Atlas work remains identified as such.
+## Research and credit
+
+- [Atlas and Matt: the segmented comparison](notes/2026-09-19-research-atlas-matt-segmented-framework.md)
+- [Simplicity and finalisation](notes/2026-09-19-research-matt-simplicity.md)
+- [First agent run of the 0.2 draft](notes/2026-09-18-review-first-agent-run-of-0-2.md)
+
+Atlas is authored by Vitali Liouti, with inspiration and attributed adaptations from [Matt Pocock's skills](https://github.com/mattpocock/skills). Shared method sources and generated copies retain the required attribution and MIT notices. Original Atlas work remains identified as such.
 
 MIT. See [LICENSE](LICENSE).

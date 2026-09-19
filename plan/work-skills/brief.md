@@ -8,7 +8,7 @@ part: work-skills
 The [architecture review](../../notes/2026-09-13-review-methods-and-project-policy.md) identifies responsibilities and failure paths that the initial skill-by-skill plan did not separate sufficiently. This work package owns a bounded part of the revised method.
 
 ## Outcome
-Give all eight Atlas operations explicit reads, owned changes, completion evidence, and recovery, with local canonical work and project-owned delivery.
+Give all nine Atlas operations explicit reads, owned changes, completion evidence, and recovery, with local canonical work and project-owned delivery.
 
 ## Decisions
 [0012](../../decisions/0012-atlas-owns-work-projects-own-delivery.md): accepted release direction.
@@ -39,6 +39,10 @@ Also settled on 2026-09-19: `/build-it` ends with the next review command, and `
 - Package finished when: The interview-plan-build-review cycle and the map/prototype/handoff routes run without hard-coded commits, branches, PRs, or merges in their method logic.
 - Coordination: select one eligible task, record its branch and current work in Delivered, and keep shared contract edits with their named owner. Follow affected cross-package dependencies when the evidence requires it.
 
+### Integrated candidate
+
+The user requested a complete process revision and simple guide on 2026-09-19. [Task 07](07-integrated-process-candidate.md) implements and exercises that candidate across the operation set. [0028](../../decisions/0028-evaluate-a-small-integrated-process.md) records its proposed refinements. This is explicit scope for combined candidate work; the existing tasks and release checks still own their individual acceptance.
+
 ### Tasks
 
 - [01: Refine interview and planning operations](01-interview-and-plan.md)
@@ -47,6 +51,7 @@ Also settled on 2026-09-19: `/build-it` ends with the next review command, and `
 - [04: Refine prototype and handoff operations](04-prototype-and-handoff.md)
 - [05: Cut over routing and remove provider coupling](05-cut-over-router-and-contracts.md)
 - [06: Patch the draft so an ordinary run works](06-patch-the-draft.md), first in order
+- [07: Implement the integrated process candidate](07-integrated-process-candidate.md).
 
 ## Out of scope
 The hosted task adapter and unattended cross-skill orchestration are deferred from the first public revision. This package changes only its declared ownership; another package owns adjacent delivery or method behavior. Source publication of this plan does not count as implementation or release acceptance.

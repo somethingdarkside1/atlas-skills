@@ -1,5 +1,5 @@
 interface:
   display_name: "Atlas"
-  short_description: "Where the project stands in five lines, and what to run next"
+  short_description: "Find the next useful action for current work"
 policy:
   allow_implicit_invocation: false

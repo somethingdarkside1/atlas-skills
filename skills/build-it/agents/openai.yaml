@@ -1,5 +1,5 @@
 interface:
   display_name: "Build it"
-  short_description: "Work one ready task, verify it, and record what was delivered"
+  short_description: "Deliver or resume one task and record its evidence"
 policy:
   allow_implicit_invocation: false

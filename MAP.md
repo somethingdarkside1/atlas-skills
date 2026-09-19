@@ -5,7 +5,7 @@ This map describes current release-work ownership. Each ## section is a part wit
 
 # Atlas public revision
 
-Atlas is Vitali Liouti's project method: five homes for durable knowledge, operations for work, reusable methods for reasoning, and project-owned delivery policy. This map groups the work needed to finalize the public revision; the installed skill sources remain the earlier draft. [INDEX.md](INDEX.md) routes reads and [the plan](plan/README.md) supplies the execution order. The former skill-by-skill map is retained in the [initial snapshot](notes/archive/2026-09-13-initial-review/MAP.md).
+Atlas is Vitali Liouti's project method: five homes for durable knowledge, operations for work, reusable methods for reasoning, and project-owned delivery policy. This map groups the work needed to finalize the public revision; the skill sources contain the integrated candidate under work-skills/07. [INDEX.md](INDEX.md) routes reads and [the plan](plan/README.md) supplies the execution order. The former skill-by-skill map is retained in the [initial snapshot](notes/archive/2026-09-13-initial-review/MAP.md).
 
 ```mermaid
 flowchart LR
@@ -62,9 +62,9 @@ Plan: [plan/project-setup/](plan/project-setup/).
 ## Work skills
 
 **Status:** building
-Give all eight Atlas operations explicit reads, owned changes, completion evidence, and recovery, with local canonical work and project-owned delivery.
+Give all nine Atlas operations explicit reads, owned changes, completion evidence, and recovery, with local canonical work and project-owned delivery.
 Needs: core-model, shared-methods, project-setup.
-Open questions: Reconcile 0022's accepted checksum default with [0019](decisions/0019-acceptance-follows-output-and-scope.md). Tasks 01 to 05 choose the smallest useful read scope and retry receipt per operation, with the proposed glossary boundary in 0027. Separate review invocation is settled in the brief, combined Outcome acceptance in 0026, and the full release scope and cold-run order in 0025. [The remaining-design assessment](notes/2026-09-19-review-remaining-design.md) identifies the next refinements.
+Open questions: Evaluate [the integrated candidate](plan/work-skills/07-integrated-process-candidate.md) and [0028](decisions/0028-evaluate-a-small-integrated-process.md), including reconciliation of 0022's accepted checksum default with [0019](decisions/0019-acceptance-follows-output-and-scope.md). Tasks 01 to 05 choose the smallest useful read scope and retry receipt per operation, with the proposed glossary boundary in 0027. Separate review invocation is settled in the brief, combined Outcome acceptance in 0026, and the full release scope and cold-run order in 0025. [The remaining-design assessment](notes/2026-09-19-review-remaining-design.md) identifies the next refinements.
 Decisions: [0012](decisions/0012-atlas-owns-work-projects-own-delivery.md), [0013](decisions/0013-local-tasks-first.md), [0021](decisions/0021-patch-the-draft-first.md), [0022](decisions/0022-one-version-line-per-delivery.md), [0023](decisions/0023-no-glossary-diagram.md), [0024](decisions/0024-rounds-follow-the-answers.md), [0025](decisions/0025-finish-simple-skills-before-the-human-run.md), [0026](decisions/0026-part-completion-checks-the-combined-outcome.md).
 Plan: [plan/work-skills/](plan/work-skills/).
 
